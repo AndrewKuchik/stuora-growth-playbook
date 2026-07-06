@@ -224,7 +224,7 @@ footer a:hover{text-decoration:underline}
     <div class="tools">
       <span class="filterlabel">Show</span>
       <button class="filterbtn" data-filter="all" aria-pressed="true">All</button>
-      <button class="filterbtn" data-filter="free" aria-pressed="false">Free</button>
+      <button class="filterbtn" data-filter="free" aria-pressed="false">Free to start</button>
       <button class="filterbtn" data-filter="paid" aria-pressed="false">Paid</button>
       <button class="filterbtn" data-filter="p1" aria-pressed="false">Priority 1</button>
       <select id="langsel" aria-label="Language" class="hidden"></select>
@@ -295,21 +295,21 @@ const CH = [
    domain:"tripadvisor.com/Owners",
    gives:{en:"The #1 platform tourists use to plan a trip. The single biggest gap — the bar isn't here yet."},
    traffic:{en:"Global tourist intent, huge volume"}, price:{en:"Free (ads optional)"},
-   steps:{en:["Open Tripadvisor for Owners, search “Stuora”.","Found a review-made page? Claim it. If not, use “Get listed now”.","Add address, hours, photos, EN description; verify (approved in 3–5 days).","Ask happy foreign guests for reviews → Travelers' Choice is automatic (top 10%) after 12 months."]},
+   steps:{en:["Open Tripadvisor for Owners, search “Stuora”.","Found a review-made page? Claim it. If not, use “Get listed now”.","Add address, hours, photos, EN description; verify (approved in 3–5 days).","Ask happy foreign guests for reviews → aim for Travelers' Choice (top 10%): not automatic — needs 12+ months listed, a review threshold and a high rating."]},
    cta:{label:{en:"Open & claim"}, url:"https://www.tripadvisor.com/Owners"}},
 
   {b:"a", cost:"free", priority:1, status:"missing", name:"LiveRiga",
    domain:"liveriga.com",
    gives:{en:"Riga's official city tourism portal — with a curated “Best Cocktail Bars in Riga” guide you're absent from."},
    traffic:{en:"Tourists actively planning Riga"}, price:{en:"Free (listed on request)"},
-   steps:{en:["Submit the venue via portal contacts / Tourist Info Centre at the Town Hall.","Pitch the editor for the cocktail guide: house infusions, рюмочная concept, 3–5 photos."]},
-   cta:{label:{en:"Open LiveRiga"}, url:"https://www.liveriga.com/en/4-eat-drink"}},
+   steps:{en:["Submit the venue via portal contacts / Tourist Info Centre at the Town Hall.","Pitch the editor for the cocktail guide: house infusions, ryumochnaya (old-school shot bar) concept, 3–5 photos."]},
+   cta:{label:{en:"Open the cocktail guide"}, url:"https://www.liveriga.com/en/visit/eat-drink/time-for-a-cocktail"}},
 
   {b:"a", cost:"free", priority:1, status:"missing", name:"latvia.travel",
    domain:"latvia.travel · LIAA",
    gives:{en:"Latvia's national tourism portal. Its editorial cocktail guide lists 10 bars — a speakeasy is already in it, so the format fits. You're missing."},
    traffic:{en:"National official reach + endorsement"}, price:{en:"Free"},
-   steps:{en:["Email LIAA tourism@liaa.gov.lv (or the “Publishing information” e-service) with venue data.","Add a short editorial pitch: what makes Stuora unique + photos."]},
+   steps:{en:["Submit via LIAA's “Publishing information in latvia.travel” e-service, or email tourism@liaa.gov.lv (verify the address first).","Add a short editorial pitch: what makes Stuora unique + photos."]},
    cta:{label:{en:"Email LIAA"}, url:"mailto:tourism@liaa.gov.lv?subject=Stuora%20cocktail%20bar%20%E2%80%94%20listing%20%26%20cocktail%20guide&body=Hello%2C%20we%27d%20like%20to%20list%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20on%20latvia.travel%20and%20be%20considered%20for%20the%20Riga%20cocktail%20guide."}},
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"Atlas Obscura",
@@ -317,7 +317,7 @@ const CH = [
    gives:{en:"International guide to hidden, wondrous places. A concealed рюмочная-style speakeasy is a perfect fit for curious travelers."},
    traffic:{en:"Global, curiosity-driven travelers"}, price:{en:"Free (user submission)"},
    steps:{en:["Use “Add a place” (see FAQ): exact address, photos.","Lead with the single most interesting thing — the hidden entrance, the infusions."]},
-   cta:{label:{en:"Submit a place"}, url:"https://www.atlasobscura.com/faq"}},
+   cta:{label:{en:"How to submit (FAQ)"}, url:"https://www.atlasobscura.com/faq"}},
 
   {b:"a", cost:"paid", priority:2, status:"missing", name:"GetYourGuide",
    domain:"getyourguide.supply",
@@ -335,7 +335,7 @@ const CH = [
 
   {b:"a", cost:"paid", priority:3, status:"missing", name:"Airbnb Experiences",
    domain:"airbnb.com/host/experiences",
-   gives:{en:"Travelers who booked a stay and want a local experience. Applications are open again since the 2025 relaunch."},
+   gives:{en:"Travelers who booked a stay and want a local experience. Reopened to hosts in the 2025 relaunch — first check that Riga / Latvia is supported before building the listing."},
    traffic:{en:"Stay-and-do travelers"}, price:{en:"Free to list · service fee on bookings"},
    steps:{en:["Apply at airbnb.com/host/experiences.","Offer the cocktail/infusion experience."]},
    cta:{label:{en:"Host an experience"}, url:"https://www.airbnb.com/host/experiences"}},
@@ -344,7 +344,7 @@ const CH = [
    domain:"redfoxtours.eu · riga-pub-crawl.com",
    gives:{en:"Groups of tourists delivered to your door. Routes already run through your Old Town block (Kaļķu / Peldu)."},
    traffic:{en:"Nightly tourist groups"}, price:{en:"Usually free — you give a welcome-drink"},
-   steps:{en:["Email operators directly (no application form exists).","Pitch as an unusual speakeasy stop with a welcome infusion shot.","Choose small / premium crawls — big loud groups clash with the intimate room."]},
+   steps:{en:["Email operators directly, e.g. Red Fox info@redfoxtours.eu — there's no application form.","Pitch as an unusual speakeasy stop with a welcome infusion shot.","Choose small / premium crawls — big loud groups clash with the intimate room."]},
    cta:{label:{en:"Contact Red Fox Tours"}, url:"https://redfoxtours.eu/riga-pub-crawl.html"}},
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"Apple Maps",
@@ -363,7 +363,7 @@ const CH = [
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Foursquare",
    domain:"business.foursquare.com/claim",
-   gives:{en:"Foursquare data quietly powers many travel apps and city guides — claiming it improves you in all of them."},
+   gives:{en:"Foursquare data still feeds some travel apps, but it closed its consumer City Guide app in late 2024, so the payoff is smaller. Verify that claiming still works before spending time."},
    traffic:{en:"Downstream app & guide network"}, price:{en:"Free"},
    steps:{en:["Claim the venue at business.foursquare.com/claim.","Correct category, hours, photos."]},
    cta:{label:{en:"Claim listing"}, url:"https://business.foursquare.com/claim/"}},
@@ -372,7 +372,7 @@ const CH = [
    domain:"neighborhood.lv · Vogue · Lonely Planet",
    gives:{en:"Outlets that already cover Riga bars. A feature = authority links + tourist traffic, for the price of a good pitch."},
    traffic:{en:"High-trust editorial audiences"}, price:{en:"Free (earned)"},
-   steps:{en:["Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, рюмочная concept).","Attach photos + invite to a tasting.","Targets: Neighborhood.lv, Vogue Scandinavia, Lonely Planet, Hop Culture."]},
+   steps:{en:["Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, ryumochnaya (old-school shot bar) concept).","Attach photos + invite to a tasting.","Targets: Neighborhood.lv, Vogue Scandinavia, Lonely Planet, Hop Culture."]},
    cta:{label:{en:"See Neighborhood.lv"}, url:"https://neighborhood.lv/en/where-to-drink-cocktails-in-riga-top-14-bars/"}},
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Local directories & guides",
@@ -381,6 +381,13 @@ const CH = [
    traffic:{en:"Search long-tail + planners"}, price:{en:"Free (some upsells)"},
    steps:{en:["Add / request inclusion on: Nomax, Wanderlog, LikeALocal, Local Life, Riga Guide.","Register on Latvian catalogs 1188.lv and Gurmania.lv."]},
    cta:{label:{en:"Add on 1188.lv"}, url:"https://www.1188.lv/ru/katalog/registratsiya-kompanii"}},
+
+  {b:"a", cost:"free", priority:3, status:"missing", name:"Falstaff Bar Guide",
+   domain:"falstaff.com",
+   gives:{en:"International drinks guide that already lists Riga's nosaints — a credibility channel for craft cocktail bars. Free to be listed if you meet the quality bar."},
+   traffic:{en:"International drinks audience"}, price:{en:"Free"},
+   steps:{en:["Email guides@falstaff.com (or the site contact form) to be listed.","Send concept, photos and signature drinks."]},
+   cta:{label:{en:"Email Falstaff guides"}, url:"mailto:guides@falstaff.com?subject=Stuora%20cocktail%20bar%2C%20Riga%20%E2%80%94%20listing%20request&body=Hello%2C%20we%27d%20like%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20to%20be%20considered%20for%20the%20Falstaff%20bar%20guide."}},
 
   /* ---------- BLOCK CORP — corporate outreach channels ---------- */
   {b:"corp", cost:"free", priority:1, status:"missing", name:"LinkedIn",
@@ -425,12 +432,12 @@ const CH = [
    steps:{en:["Offer LPVA to host their afterparty / networking at Stuora.","Speak at or sponsor an HR event with a mini-tasting."]},
    cta:{label:{en:"LPVA events"}, url:"https://lpva.lv/events"}},
 
-  {b:"corp", cost:"free", priority:3, status:"missing", name:"Team-building catalogs",
-   domain:"ballites.lv · weasgley.lv",
-   gives:{en:"Directories where companies browse and pick activities — inbound corporate leads."},
-   traffic:{en:"Companies browsing activities"}, price:{en:"Free / commission (verify)"},
-   steps:{en:["List Stuora on Ballītes.lv (corporate section) and Weasgley.","Add to Dāvanu Serviss gift-cards if relevant."]},
-   cta:{label:{en:"List on Ballītes.lv"}, url:"https://ballites.lv/komandas-saliedesana/korporativie-pasakumi/"}},
+  {b:"corp", cost:"free", priority:3, status:"missing", name:"Experience-gift shops",
+   domain:"davanuserviss.lv",
+   gives:{en:"Gift-experience shops where companies buy team activities as vouchers — a place to be listed for inbound corporate leads."},
+   traffic:{en:"Companies buying activity gifts"}, price:{en:"Free / commission (verify)"},
+   steps:{en:["List your masterclass on experience-gift shops such as Dāvanu Serviss.","Note: Weasgley (weasgley.com) and Ballītes.lv are event organizers (competitors), not open directories — approach them only as a subcontracting partner who can send you groups."]},
+   cta:{label:{en:"Dāvanu Serviss (business)"}, url:"https://www.davanuserviss.lv/biznesa-davanas/komandas-saliedesanai/"}},
 
   {b:"corp", cost:"mixed", priority:3, status:"missing", name:"Eventbrite / Meetup showcase",
    domain:"eventbrite.com · meetup.com",
@@ -467,6 +474,20 @@ const CH = [
    traffic:{en:"Funded media & creator visits"}, price:{en:"Free for the bar (LIAA covers the guest)"},
    steps:{en:["Pitch via the Media Request / Influencer Request form.","Offer a themed story angle; approval isn't guaranteed."]},
    cta:{label:{en:"Pitch LIAA"}, url:"https://www.latvia.travel/en/media-and-influencers"}},
+
+  {b:"b", cost:"free", priority:2, status:"missing", name:"Reach Russian-speaking Rigans",
+   domain:"afishamira.com · meeting.lv",
+   gives:{en:"53.5% of Riga speaks Russian at home — half of your local audience. Reach them without Yandex: Google works, plus Russian-language listings and creators."},
+   traffic:{en:"Half of Riga's locals"}, price:{en:"Free / barter"},
+   steps:{en:["Post events on Russian-language what's-on sites: afishamira.com, meeting.lv/afisha, rus.tvnet.lv, rus.delfi.lv.","Publish bilingual posts (LV / RU / EN).","Invite Russian-speaking Riga micro-bloggers (barter)."]},
+   cta:{label:{en:"Afisha Mira · Riga"}, url:"https://afishamira.com/city/riga/"}},
+
+  {b:"b", cost:"free", priority:3, status:"missing", name:"Facebook (events & locals)",
+   domain:"facebook.com",
+   gives:{en:"Still where locals 35+ and Russian-speaking Rigans find what's on. Good for event reach and community."},
+   traffic:{en:"Local 35+ & event-goers"}, price:{en:"Free (ads optional)"},
+   steps:{en:["Keep a Facebook Page with an event for every quiz / tasting / guest shift.","Cross-post from Instagram; join Riga what's-on groups."]},
+   cta:{label:{en:"Create a Page"}, url:"https://www.facebook.com/pages/create"}},
 
   /* ---------- BLOCK C ---------- */
   {b:"c", cost:"free", priority:2, status:"missing", name:"Escape Room Riga",
@@ -507,7 +528,7 @@ const CH = [
   /* ---------- BLOCK D ---------- */
   {b:"d", cost:"free", priority:3, status:"missing", name:"Europe's / World's 50 Best Bars",
    domain:"theworlds50best.com",
-   gives:{en:"Elite international recognition. The new Europe's 50 Best (2026) targets “emerging scenes” — good for Riga. Can't be applied for or bought — Academy voters decide by visiting."},
+   gives:{en:"Elite international recognition. Europe's 50 Best 2026 has already launched (no Baltic bar yet) — a play for future editions. Their free 50 Best Discovery directory (where Riga's nosaints & Gimlet already appear) works the same way: earned by Academy votes, not applied for."},
    traffic:{en:"Global industry & press halo"}, price:{en:"No fee — organic only"},
    steps:{en:["Host industry peers and guest shifts to get on voters' radar.","Take part in Baltic bar events; let the work be seen."]},
    cta:{label:{en:"How voting works"}, url:"https://www.theworlds50best.com/bars/voting/the-voting-system"}},
@@ -555,7 +576,7 @@ const CH = [
 /* ============ CORPORATE SECTION DATA ============ */
 const CORP_FORMATS = [
   {name:{en:"Infusion Lab — build your own"}, desc:{en:"Guided by the bartender, the team creates its own house infusion, brands the bottle with the company name and takes it home. A hands-on flagship with a keepsake."}, meta:{en:"Any team · 8–20 · flagship"}},
-  {name:{en:"«Рюмочная» storytelling + blind tasting"}, desc:{en:"A bartender-raconteur walks guests through the world of infusions and old-school drinking culture; 5–6 signature infusions tasted blind."}, meta:{en:"Execs, lawyers, embassies · 6–20 · premium"}},
+  {name:{en:"Ryumochnaya storytelling + blind tasting"}, desc:{en:"A bartender-raconteur walks guests through the world of infusions and old-school drinking culture; 5–6 signature infusions tasted blind."}, meta:{en:"Execs, lawyers, embassies · 6–20 · premium"}},
   {name:{en:"Team Cocktail Battle"}, desc:{en:"Teams build a cocktail around a secret ingredient; a jury scores taste, presentation and name. Maximum engagement."}, meta:{en:"IT, fintech · 15–40 · competitive"}},
   {name:{en:"Branded cocktail for your company"}, desc:{en:"Stuora designs a signature cocktail in your brand's colours and values; the team learns to make it and it goes on the menu for the night."}, meta:{en:"Launches, client receptions · 20–50"}},
   {name:{en:"Speakeasy quest + cocktails"}, desc:{en:"Password entry, a 1920s mini-plot around the room, checkpoints where teams mix their own cocktails."}, meta:{en:"Playful teams · 10–30"}},
@@ -573,7 +594,7 @@ function corpIntro(){
     <h3 class="corp-h">Signature formats — built on the speakeasy &amp; house infusions</h3>
     <div class="fmt-grid">${fmts}</div>
     <p class="corp-na">Every format has a full non-alcoholic option — an easy win with HR.</p>
-    <h3 class="corp-h">Ready-made packages <span class="corp-note">orientative — calibrate to cost &amp; Riga market</span></h3>
+    <h3 class="corp-h">Ready-made packages <span class="corp-note">placeholder prices — confirm with the owner before quoting a client</span></h3>
     <div class="pkg-row">${pkgs}</div>
     <h3 class="corp-h">Where to find corporate clients</h3>
   </div>`;
@@ -649,7 +670,7 @@ function applyFilter(){
   document.querySelectorAll(".card").forEach(el=>{
     let show = true;
     const f = state.filter;
-    if(f==="free") show = el.dataset.cost==="free";
+    if(f==="free") show = el.dataset.cost==="free" || el.dataset.cost==="mixed";
     else if(f==="paid") show = el.dataset.cost==="paid" || el.dataset.cost==="mixed";
     else if(f==="p1") show = el.dataset.priority==="1";
     el.classList.toggle("hidden", !show);
