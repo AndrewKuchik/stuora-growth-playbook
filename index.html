@@ -169,6 +169,26 @@ main{padding:20px 0 40px}
 .card.optional .why{font-size:.92rem; color:var(--ink-soft)}
 .pill.flag{color:var(--brass); border-color:color-mix(in srgb,var(--brass) 42%,transparent); background:color-mix(in srgb,var(--brass) 10%,transparent)}
 
+/* Corporate section — signature formats + packages */
+.corp-intro{display:flex; flex-direction:column; gap:12px; margin-bottom:24px}
+.corp-h{font-size:1.06rem; color:var(--ink); margin:14px 0 2px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.corp-note{font-family:"Instrument Sans",sans-serif; font-weight:500; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+.corp-na{margin:2px 0 0; font-size:.85rem; color:var(--muted); font-style:italic}
+.fmt-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:12px}
+.fmt{background:var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:15px 16px; display:flex; flex-direction:column; gap:7px}
+.fmt h4{font-family:"Fraunces",serif; font-weight:600; font-size:1.02rem; color:var(--brass-bright); margin:0; text-wrap:balance}
+.fmt p{margin:0; font-size:.87rem; color:var(--ink-soft)}
+.fmt-meta{font-family:"IBM Plex Mono",monospace; font-size:.7rem; color:var(--muted); margin-top:auto; padding-top:4px}
+.pkg-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(224px,1fr)); gap:12px}
+.pkg{position:relative; background:var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:18px 18px 16px; display:flex; flex-direction:column; gap:7px}
+.pkg.feat{border-color:color-mix(in srgb,var(--brass) 55%,transparent); box-shadow:0 0 0 1px color-mix(in srgb,var(--brass) 26%,transparent) inset}
+.pkg-tag{position:absolute; top:-9px; left:16px; font-size:.63rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#1a1109; background:var(--brass); padding:3px 9px; border-radius:999px}
+.pkg h4{font-family:"Fraunces",serif; font-size:1.1rem; margin:0; color:var(--ink)}
+.pkg-price{font-family:"Fraunces",serif; font-size:1.32rem; color:var(--brass-bright); font-variant-numeric:tabular-nums}
+.pkg-min{font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-top:-3px}
+.pkg ul{margin:6px 0 0; padding-left:16px; display:flex; flex-direction:column; gap:4px}
+.pkg li{font-size:.85rem; color:var(--ink-soft)}
+
 a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--brass); outline-offset:2px}
 
 /* ============ FOOTER ============ */
@@ -261,6 +281,7 @@ const UPDATED = "2026-07-06";
 
 const BLOCKS = [
   {id:"a", idx:"A", title:{en:"Untapped & high-traffic"}, sub:{en:"Big audiences where the bar is not present yet. This is where to spend the first week."}},
+  {id:"corp", idx:"◆", title:{en:"For corporate clients"}, sub:{en:"The bar is free early in the week (Mon–Wed) — ideal for private corporate events. Two sales tracks: reach HR & office managers directly on LinkedIn, and partner with event agencies & business chambers who bring clients to you."}},
   {id:"b", idx:"B", title:{en:"Amplify what already works"}, sub:{en:"Channels you already own — sharpen them and turn them into a review engine."}},
   {id:"c", idx:"C", title:{en:"Partnerships & foot traffic"}, sub:{en:"Send other businesses' guests through your door — mostly free, mostly barter."}},
   {id:"d", idx:"D", title:{en:"Awards & recognition"}, sub:{en:"The long game for reputation. Can't be bought — earned by being seen."}},
@@ -360,6 +381,70 @@ const CH = [
    traffic:{en:"Search long-tail + planners"}, price:{en:"Free (some upsells)"},
    steps:{en:["Add / request inclusion on: Nomax, Wanderlog, LikeALocal, Local Life, Riga Guide.","Register on Latvian catalogs 1188.lv and Gurmania.lv."]},
    cta:{label:{en:"Add on 1188.lv"}, url:"https://www.1188.lv/ru/katalog/registratsiya-kompanii"}},
+
+  /* ---------- BLOCK CORP — corporate outreach channels ---------- */
+  {b:"corp", cost:"free", priority:1, status:"missing", name:"LinkedIn",
+   domain:"linkedin.com",
+   gives:{en:"The main B2B channel — every decision-maker (HR, office managers, EAs, event managers) is here. Your most direct line to corporate clients."},
+   traffic:{en:"Direct access to HR / office managers"}, price:{en:"Free · Premium optional (~€60–80/mo)"},
+   steps:{en:["Create a Stuora Company Page + a strong personal profile.","Direct-message HR / People & Culture / Office Manager / EA roles at target Riga firms (IT, fintech, consulting).","Post 1–2×/week: masterclass clips, Infusion Lab, team reviews.","Join Latvian HR & business groups."]},
+   cta:{label:{en:"Create a Company Page"}, url:"https://www.linkedin.com/company/setup/new/"}},
+
+  {b:"corp", cost:"mixed", priority:1, status:"missing", name:"Event & DMC agencies",
+   domain:"meetriga.com · eventagency.lv",
+   gives:{en:"Agencies package events for corporate clients and pick the venue. One good partner = a steady flow of orders with zero marketing spend."},
+   traffic:{en:"Steady referred corporate orders"}, price:{en:"Free to join · ~10–20% referral (verify)"},
+   steps:{en:["Prepare a 1-page trade sheet (formats, capacity, net prices, photos).","Contact 5–8 Riga event / DMC agencies; offer a free “fam visit” mini-class.","Agree referral terms."]},
+   cta:{label:{en:"Riga agencies list"}, url:"https://meetriga.com/en/1021-dmc-s-pcos-event-agencies"}},
+
+  {b:"corp", cost:"free", priority:2, status:"missing", name:"Meet Rīga (MICE)",
+   domain:"meetriga.com",
+   gives:{en:"Riga's official convention bureau — a supplier registry connecting event organizers with local venues. Inbound MICE & after-conference leads."},
+   traffic:{en:"Congress & MICE organizers"}, price:{en:"Free listing"},
+   steps:{en:["Apply to be listed as a venue / activity supplier.","Position Stuora for receptions & team activities."]},
+   cta:{label:{en:"Get listed"}, url:"https://meetriga.com/en/"}},
+
+  {b:"corp", cost:"mixed", priority:2, status:"missing", name:"Business chambers (AmCham & co.)",
+   domain:"amcham.lv",
+   gives:{en:"Communities of exactly the decision-makers you want. AmCham's “Business After Hours” lets a member host peers on-site — a perfect showcase."},
+   traffic:{en:"150+ international companies"}, price:{en:"Free to host · membership paid"},
+   steps:{en:["Offer to host an AmCham “Business After Hours” / LPVA networking night at the bar.","They bring the audience; you show the venue.","Later, join the one chamber closest to your target."]},
+   cta:{label:{en:"AmCham Latvia"}, url:"https://www.amcham.lv/"}},
+
+  {b:"corp", cost:"free", priority:2, status:"missing", name:"Coworkings & startup hubs",
+   domain:"startuphouse.lv",
+   gives:{en:"Where startup & IT teams concentrate — the crowd that books offbeat team-building."},
+   traffic:{en:"Startup & IT teams"}, price:{en:"Free (partnership)"},
+   steps:{en:["Offer residents a perk (promo class / first-booking discount).","Host one demo evening for the community manager & residents.","Leave a flyer / QR."]},
+   cta:{label:{en:"Startup House Riga"}, url:"https://www.startuphouse.lv/"}},
+
+  {b:"corp", cost:"mixed", priority:2, status:"missing", name:"HR communities (LPVA)",
+   domain:"lpva.lv",
+   gives:{en:"The people who actually decide on team-building. Get in front of them directly."},
+   traffic:{en:"HR decision-makers"}, price:{en:"Free to partner · events may be paid"},
+   steps:{en:["Offer LPVA to host their afterparty / networking at Stuora.","Speak at or sponsor an HR event with a mini-tasting."]},
+   cta:{label:{en:"LPVA events"}, url:"https://lpva.lv/events"}},
+
+  {b:"corp", cost:"free", priority:3, status:"missing", name:"Team-building catalogs",
+   domain:"ballites.lv · weasgley.lv",
+   gives:{en:"Directories where companies browse and pick activities — inbound corporate leads."},
+   traffic:{en:"Companies browsing activities"}, price:{en:"Free / commission (verify)"},
+   steps:{en:["List Stuora on Ballītes.lv (corporate section) and Weasgley.","Add to Dāvanu Serviss gift-cards if relevant."]},
+   cta:{label:{en:"List on Ballītes.lv"}, url:"https://ballites.lv/komandas-saliedesana/korporativie-pasakumi/"}},
+
+  {b:"corp", cost:"mixed", priority:3, status:"missing", name:"Eventbrite / Meetup showcase",
+   domain:"eventbrite.com · meetup.com",
+   gives:{en:"Run an open “Cocktail Thursday” as a shop-window: HR people test the format before booking, and you collect photos & reviews."},
+   traffic:{en:"Warm HR leads + cases"}, price:{en:"Free events free · ticket fee if paid"},
+   steps:{en:["Publish an open masterclass on a free weeknight via Eventbrite.","Invite Riga Meetup groups (Startup House, ProductTank) to host at the bar."]},
+   cta:{label:{en:"Create an event"}, url:"https://www.eventbrite.com/organizer/overview/"}},
+
+  {b:"corp", cost:"free", priority:3, status:"missing", name:"Hotels & conference venues",
+   domain:"Old Town hotels",
+   gives:{en:"Old Town hotels host congresses & business groups needing an atmospheric after-conference reception nearby — that's you."},
+   traffic:{en:"After-conference receptions"}, price:{en:"Free (referral)"},
+   steps:{en:["Reach event coordinators at central / Old Town hotels for a referral deal.","Via Meet Rīga, reach congress organizers."]},
+   cta:{label:{en:"Map Old Town hotels"}, url:"https://www.google.com/maps/search/hotels+Old+Town+Riga"}},
 
   /* ---------- BLOCK B ---------- */
   {b:"b", cost:"free", priority:1, status:"live", name:"Google Business Profile",
@@ -467,6 +552,33 @@ const CH = [
    why:{en:"This one we're sure about: 50 Best lists can't be applied for or bought, so anyone promising a paid ranking is best avoided. (Also worth knowing: Collabstr isn't fully free — a platform fee applies on top of the creator's price.)"}}
 ];
 
+/* ============ CORPORATE SECTION DATA ============ */
+const CORP_FORMATS = [
+  {name:{en:"Infusion Lab — build your own"}, desc:{en:"Guided by the bartender, the team creates its own house infusion, brands the bottle with the company name and takes it home. A hands-on flagship with a keepsake."}, meta:{en:"Any team · 8–20 · flagship"}},
+  {name:{en:"«Рюмочная» storytelling + blind tasting"}, desc:{en:"A bartender-raconteur walks guests through the world of infusions and old-school drinking culture; 5–6 signature infusions tasted blind."}, meta:{en:"Execs, lawyers, embassies · 6–20 · premium"}},
+  {name:{en:"Team Cocktail Battle"}, desc:{en:"Teams build a cocktail around a secret ingredient; a jury scores taste, presentation and name. Maximum engagement."}, meta:{en:"IT, fintech · 15–40 · competitive"}},
+  {name:{en:"Branded cocktail for your company"}, desc:{en:"Stuora designs a signature cocktail in your brand's colours and values; the team learns to make it and it goes on the menu for the night."}, meta:{en:"Launches, client receptions · 20–50"}},
+  {name:{en:"Speakeasy quest + cocktails"}, desc:{en:"Password entry, a 1920s mini-plot around the room, checkpoints where teams mix their own cocktails."}, meta:{en:"Playful teams · 10–30"}},
+  {name:{en:"Blind tasting: infusion vs infusion"}, desc:{en:"Teams score points guessing what's in each infusion. Intellectual — and easy to run fully alcohol-free."}, meta:{en:"Inclusive / low-alcohol · 8–24"}}
+];
+const CORP_PACKAGES = [
+  {name:{en:"Mixology Class"}, price:{en:"€35–45 / person"}, min:{en:"min 8–10 guests"}, specs:{en:["2–2.5 hours","3 cocktails, hands-on","Bartender-led"]}},
+  {name:{en:"Cocktail Battle"}, price:{en:"€45–55 / person"}, min:{en:"min 12 guests"}, specs:{en:["2.5–3 hours","Team competition + judging","Winner's certificate"]}},
+  {name:{en:"Speakeasy Experience"}, price:{en:"Bar buyout · min spend"}, min:{en:"Premium · by request"}, specs:{en:["Full bar buyout","Storytelling + infusion tasting","Infusion Lab included"]}, featured:true}
+];
+function corpIntro(){
+  const fmts = CORP_FORMATS.map(f=>`<div class="fmt"><h4>${esc(t(f.name))}</h4><p>${esc(t(f.desc))}</p><div class="fmt-meta">${esc(t(f.meta))}</div></div>`).join("");
+  const pkgs = CORP_PACKAGES.map(p=>`<div class="pkg${p.featured?' feat':''}">${p.featured?'<span class="pkg-tag">Signature</span>':''}<h4>${esc(t(p.name))}</h4><div class="pkg-price">${esc(t(p.price))}</div><div class="pkg-min">${esc(t(p.min))}</div><ul>${t(p.specs).map(s=>`<li>${esc(s)}</li>`).join("")}</ul></div>`).join("");
+  return `<div class="corp-intro">
+    <h3 class="corp-h">Signature formats — built on the speakeasy &amp; house infusions</h3>
+    <div class="fmt-grid">${fmts}</div>
+    <p class="corp-na">Every format has a full non-alcoholic option — an easy win with HR.</p>
+    <h3 class="corp-h">Ready-made packages <span class="corp-note">orientative — calibrate to cost &amp; Riga market</span></h3>
+    <div class="pkg-row">${pkgs}</div>
+    <h3 class="corp-h">Where to find corporate clients</h3>
+  </div>`;
+}
+
 /* ============ RENDER ============ */
 const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const costLabel = {free:"Free", paid:"Paid", mixed:"Free + paid"};
@@ -506,9 +618,11 @@ function render(){
   const app = document.getElementById("app");
   app.innerHTML = BLOCKS.map(b=>{
     const cards = CH.filter(c=>c.b===b.id).map(card).join("");
+    const intro = b.id==="corp" ? corpIntro() : "";
     return `<section class="block" id="block-${b.id}">
       <div class="block-head"><span class="block-idx">${b.idx}</span><h2>${esc(t(b.title))}</h2></div>
       <p class="block-sub">${esc(t(b.sub))}</p>
+      ${intro}
       <div class="grid">${cards}</div>
     </section>`;
   }).join("");
