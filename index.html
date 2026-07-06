@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuora — Placement & Growth Playbook</title>
+<meta name="description" content="Where a hidden Riga speakeasy should get listed to reach tourists and locals — what each channel gives, what it costs, and one click to apply.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  /* Light — a warm letterpress bar-menu card */
+  --ground:#ECE2D1; --surface:#F7F0E1; --surface-2:#F0E6D3;
+  --ink:#22150F; --ink-soft:#463428; --muted:#7c6a58;
+  --brass:#966418; --brass-bright:#B27F26; --oxblood:#7C1D28;
+  --verdigris:#3C6A56; --avoid:#8a2b2b;
+  --hairline:rgba(52,34,22,.14); --hairline-2:rgba(52,34,22,.08);
+  --shadow:0 1px 2px rgba(40,24,14,.05), 0 10px 30px -18px rgba(40,24,14,.28);
+  --glow:transparent;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#140D0C; --surface:#1D1513; --surface-2:#271B18;
+    --ink:#F1E4D5; --ink-soft:#DAC7B4; --muted:#A28A78;
+    --brass:#D2A85A; --brass-bright:#E7C179; --oxblood:#C4404F;
+    --verdigris:#74A88B; --avoid:#D0656B;
+    --hairline:rgba(214,170,92,.16); --hairline-2:rgba(214,170,92,.08);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 24px 46px -22px rgba(0,0,0,.7);
+    --glow:radial-gradient(120% 90% at 50% -10%, rgba(196,64,79,.20), rgba(210,168,90,.06) 40%, transparent 66%);
+  }
+}
+:root[data-theme="light"]{
+  --ground:#ECE2D1; --surface:#F7F0E1; --surface-2:#F0E6D3;
+  --ink:#22150F; --ink-soft:#463428; --muted:#7c6a58;
+  --brass:#966418; --brass-bright:#B27F26; --oxblood:#7C1D28;
+  --verdigris:#3C6A56; --avoid:#8a2b2b;
+  --hairline:rgba(52,34,22,.14); --hairline-2:rgba(52,34,22,.08);
+  --shadow:0 1px 2px rgba(40,24,14,.05), 0 10px 30px -18px rgba(40,24,14,.28);
+  --glow:transparent;
+}
+:root[data-theme="dark"]{
+  --ground:#140D0C; --surface:#1D1513; --surface-2:#271B18;
+  --ink:#F1E4D5; --ink-soft:#DAC7B4; --muted:#A28A78;
+  --brass:#D2A85A; --brass-bright:#E7C179; --oxblood:#C4404F;
+  --verdigris:#74A88B; --avoid:#D0656B;
+  --hairline:rgba(214,170,92,.16); --hairline-2:rgba(214,170,92,.08);
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 24px 46px -22px rgba(0,0,0,.7);
+  --glow:radial-gradient(120% 90% at 50% -10%, rgba(196,64,79,.20), rgba(210,168,90,.06) 40%, transparent 66%);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Instrument Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before{content:""; position:fixed; inset:0; background:var(--glow); pointer-events:none; z-index:0}
+.wrap{max-width:1140px; margin:0 auto; padding:0 22px; position:relative; z-index:1}
+a{color:inherit}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif; text-wrap:balance; margin:0; font-weight:600; letter-spacing:-.01em}
+
+/* ============ MASTHEAD ============ */
+.masthead{padding:60px 0 30px}
+.wordmark{
+  font-family:"Fraunces",serif; font-weight:600; font-size:.82rem; letter-spacing:.42em;
+  text-transform:uppercase; color:var(--brass); display:flex; align-items:center; gap:12px;
+}
+.wordmark::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,var(--brass),transparent)}
+.masthead h1{font-size:clamp(2.1rem,5.4vw,3.4rem); line-height:1.02; margin:18px 0 0; max-width:16ch}
+.masthead h1 em{font-style:italic; color:var(--brass-bright)}
+.dek{margin:18px 0 0; max-width:60ch; color:var(--ink-soft); font-size:1.06rem}
+.statline{
+  display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:26px; padding-top:22px;
+  border-top:1px solid var(--hairline);
+}
+.stat{display:flex; flex-direction:column; gap:2px}
+.stat b{font-family:"Fraunces",serif; font-size:1.5rem; color:var(--ink); font-variant-numeric:tabular-nums}
+.stat span{font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
+.updated{font-family:"IBM Plex Mono",monospace; font-size:.74rem; color:var(--muted); margin-top:18px}
+
+/* ============ TOOLBAR ============ */
+.toolbar{
+  position:sticky; top:0; z-index:20; margin-top:6px;
+  background:color-mix(in srgb, var(--ground) 86%, transparent);
+  backdrop-filter:blur(12px) saturate(1.2); -webkit-backdrop-filter:blur(12px) saturate(1.2);
+  border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+}
+.toolbar-inner{display:flex; align-items:center; gap:14px; padding:11px 22px; max-width:1140px; margin:0 auto; overflow-x:auto}
+.navlinks{display:flex; gap:4px; flex:1; min-width:0}
+.navlinks a{
+  white-space:nowrap; font-size:.82rem; padding:7px 11px; border-radius:8px; text-decoration:none;
+  color:var(--ink-soft); font-weight:500; transition:background .15s,color .15s;
+}
+.navlinks a:hover,.navlinks a.active{background:var(--surface-2); color:var(--ink)}
+.tools{display:flex; gap:6px; align-items:center}
+.filterbtn,.iconbtn,#langsel{
+  font:inherit; font-size:.8rem; cursor:pointer; color:var(--ink-soft);
+  background:var(--surface); border:1px solid var(--hairline); border-radius:8px; padding:7px 12px;
+  transition:border-color .15s,color .15s,background .15s; white-space:nowrap;
+}
+.filterbtn[aria-pressed="true"]{background:var(--brass); border-color:var(--brass); color:#1a1109; font-weight:600}
+.iconbtn:hover,.filterbtn:hover,#langsel:hover{border-color:var(--brass)}
+.filterlabel{font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.09em; margin-right:2px}
+
+/* ============ SECTIONS ============ */
+main{padding:20px 0 40px}
+.block{padding:38px 0 8px; scroll-margin-top:74px}
+.block-head{display:flex; align-items:baseline; gap:14px; margin-bottom:6px; flex-wrap:wrap}
+.block-idx{font-family:"IBM Plex Mono",monospace; font-size:.8rem; color:var(--brass); padding-top:4px}
+.block-head h2{font-size:clamp(1.4rem,3.2vw,1.9rem)}
+.block-sub{color:var(--muted); margin:2px 0 22px; max-width:66ch; font-size:.98rem}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(316px,1fr)); gap:16px}
+
+/* ============ CARD ============ */
+.card{
+  position:relative; background:var(--surface); border:1px solid var(--hairline);
+  border-radius:14px; padding:20px 20px 18px 22px; box-shadow:var(--shadow);
+  display:flex; flex-direction:column; gap:12px; overflow:hidden;
+}
+.card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--muted)}
+.card[data-priority="1"]::before{background:linear-gradient(var(--oxblood),color-mix(in srgb,var(--oxblood) 60%,var(--brass)))}
+.card[data-priority="2"]::before{background:var(--brass)}
+.card[data-priority="3"]::before{background:color-mix(in srgb,var(--muted) 70%,transparent)}
+.card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
+.card h3{font-size:1.16rem; line-height:1.15}
+.domain{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--muted); margin-top:3px; word-break:break-all}
+.pills{display:flex; flex-wrap:wrap; gap:6px}
+.pill{
+  font-size:.68rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  padding:3px 8px; border-radius:999px; border:1px solid transparent; white-space:nowrap;
+}
+.pill.free{color:var(--verdigris); border-color:color-mix(in srgb,var(--verdigris) 40%,transparent); background:color-mix(in srgb,var(--verdigris) 12%,transparent)}
+.pill.paid{color:var(--brass); border-color:color-mix(in srgb,var(--brass) 40%,transparent); background:color-mix(in srgb,var(--brass) 12%,transparent)}
+.pill.mixed{color:var(--brass-bright); border-color:color-mix(in srgb,var(--brass) 34%,transparent); background:color-mix(in srgb,var(--brass) 9%,transparent)}
+.pill.prio{color:var(--muted); border-color:var(--hairline)}
+.pill.status-missing{color:var(--oxblood); border-color:color-mix(in srgb,var(--oxblood) 42%,transparent); background:color-mix(in srgb,var(--oxblood) 12%,transparent)}
+.pill.status-live{color:var(--verdigris); border-color:color-mix(in srgb,var(--verdigris) 40%,transparent)}
+.pill.status-progress{color:var(--brass); border-color:color-mix(in srgb,var(--brass) 40%,transparent)}
+.gives{color:var(--ink); font-size:.96rem; margin:0}
+.meta-row{display:flex; flex-direction:column; gap:7px; margin:2px 0}
+.meta-row .m{display:flex; gap:9px; font-size:.86rem; color:var(--ink-soft)}
+.meta-row .m b{color:var(--muted); font-weight:500; text-transform:uppercase; font-size:.68rem; letter-spacing:.07em; min-width:58px; padding-top:2px}
+.steps{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; border-top:1px dashed var(--hairline); padding-top:13px}
+.steps li{display:flex; gap:10px; font-size:.88rem; color:var(--ink-soft)}
+.steps li span{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--brass); padding-top:2px; flex:none}
+.cta{
+  margin-top:auto; align-self:flex-start; display:inline-flex; align-items:center; gap:9px;
+  text-decoration:none; font-weight:600; font-size:.9rem; color:#1a1109;
+  background:linear-gradient(180deg,var(--brass-bright),var(--brass));
+  padding:10px 16px; border-radius:10px; border:1px solid color-mix(in srgb,var(--brass) 60%,#000);
+  transition:transform .12s,box-shadow .15s;
+}
+.cta:hover{transform:translateY(-1px); box-shadow:0 8px 18px -8px color-mix(in srgb,var(--brass) 70%,transparent)}
+.cta .arw{transition:transform .15s}
+.cta:hover .arw{transform:translate(2px,-1px)}
+.cta.ghost{background:none; color:var(--brass); border-color:var(--hairline)}
+.note{font-size:.82rem; color:var(--muted); font-style:italic}
+
+/* Avoid block cards */
+.card.avoid{opacity:.96; background:var(--surface-2); border-style:dashed}
+.card.avoid::before{background:repeating-linear-gradient(45deg,var(--avoid),var(--avoid) 5px,transparent 5px,transparent 10px)}
+.card.avoid h3{color:var(--avoid)}
+.card.avoid .why{font-size:.9rem; color:var(--ink-soft)}
+
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--brass); outline-offset:2px}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--hairline); margin-top:30px; padding:34px 0 60px; color:var(--muted); font-size:.86rem}
+footer h4{font-family:"Fraunces",serif; color:var(--ink); font-size:1rem; margin:0 0 8px}
+.foot-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:26px}
+footer ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:5px}
+footer a{color:var(--brass); text-decoration:none}
+footer a:hover{text-decoration:underline}
+.multiling{margin-top:24px; padding:12px 16px; border:1px solid var(--hairline); border-radius:10px; background:var(--surface); color:var(--ink-soft); font-size:.84rem}
+
+.hidden{display:none !important}
+@media (max-width:560px){
+  .masthead{padding:40px 0 20px}
+  .filterlabel{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="wordmark">Stuora · Riga Old Town</div>
+    <h1>Where to get listed &amp; <em>how to be recommended</em></h1>
+    <p class="dek">A practical placement board for a hidden speakeasy cocktail bar on Audēju iela 15 — reaching both tourists and Rigans. Every channel says what it gives, what it costs, and links straight to where you apply.</p>
+    <div class="statline" id="statline"></div>
+    <div class="updated" id="updated"></div>
+  </header>
+</div>
+
+<nav class="toolbar" aria-label="Sections and filters">
+  <div class="toolbar-inner">
+    <div class="navlinks" id="navlinks"></div>
+    <div class="tools">
+      <span class="filterlabel">Show</span>
+      <button class="filterbtn" data-filter="all" aria-pressed="true">All</button>
+      <button class="filterbtn" data-filter="free" aria-pressed="false">Free</button>
+      <button class="filterbtn" data-filter="paid" aria-pressed="false">Paid</button>
+      <button class="filterbtn" data-filter="p1" aria-pressed="false">Priority 1</button>
+      <select id="langsel" aria-label="Language" class="hidden"></select>
+      <button class="iconbtn" id="theme" aria-label="Toggle light/dark">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>How to read this</h4>
+        <p>Cards are ranked by a left stripe: <b style="color:var(--oxblood)">deep red = Priority 1</b>, <b style="color:var(--brass)">brass = Priority 2</b>, grey = later. Start with Priority 1 free channels where the bar is <b>not listed yet</b>.</p>
+      </div>
+      <div>
+        <h4>Good to know</h4>
+        <ul>
+          <li>Official portals list on request — getting into a <i>curated</i> guide needs a direct pitch to the editor.</li>
+          <li>Pub crawls have no application form — reach operators directly.</li>
+          <li>GetYourGuide commission for Latvia is shown after you register.</li>
+          <li>Figures reflect checks around 2026 — re-verify before acting.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Key sources</h4>
+        <ul>
+          <li><a href="https://www.tripadvisor.com/Owners">Tripadvisor for owners</a></li>
+          <li><a href="https://www.liveriga.com/en/4-eat-drink">LiveRiga · Eat &amp; Drink</a></li>
+          <li><a href="https://www.latvia.travel/en/where-enjoy-cocktail-riga-and-near-it">latvia.travel cocktail guide</a></li>
+          <li><a href="https://www.getyourguide.supply/">GetYourGuide Supply</a></li>
+          <li><a href="https://rop.lv/en/passengers">Freeport of Riga · passengers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="multiling">🌐 <b>Multilingual-ready.</b> This page is built English-first, but the content is data-driven — a second language (Russian, Latvian) can be switched on by adding one translations object. See <code>ARCHITECTURE.md</code> in the repo.</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA MODEL — data-driven so languages/filters are trivial.
+   Each field that a translator would touch is wrapped as {en:"..."}.
+   To add a language: give every t() field an extra key (e.g. ru:"…")
+   and push {code:"ru",label:"Русский"} to LOCALES. The <select> appears
+   automatically once LOCALES has more than one entry.
+   ============================================================ */
+const LOCALES = [{code:"en", label:"English"}];
+const state = {lang:"en", filter:"all"};
+const t = (o)=> (o && (o[state.lang] ?? o.en)) || "";
+const UPDATED = "2026-07-06";
+
+const BLOCKS = [
+  {id:"a", idx:"A", title:{en:"Untapped & high-traffic"}, sub:{en:"Big audiences where the bar is not present yet. This is where to spend the first week."}},
+  {id:"b", idx:"B", title:{en:"Amplify what already works"}, sub:{en:"Channels you already own — sharpen them and turn them into a review engine."}},
+  {id:"c", idx:"C", title:{en:"Partnerships & foot traffic"}, sub:{en:"Send other businesses' guests through your door — mostly free, mostly barter."}},
+  {id:"d", idx:"D", title:{en:"Awards & recognition"}, sub:{en:"The long game for reputation. Can't be bought — earned by being seen."}},
+  {id:"e", idx:"E", title:{en:"Claim your auto-listings (optional)"}, sub:{en:"Not new reach — housekeeping on cards other sites already created from your Google data."}},
+  {id:"x", idx:"✕", title:{en:"Skip these — here's why"}, sub:{en:"Channels that look plausible but don't work for this bar. Saving you the effort."}}
+];
+
+const CH = [
+  /* ---------- BLOCK A ---------- */
+  {b:"a", cost:"free", priority:1, status:"missing", name:"Tripadvisor",
+   domain:"tripadvisor.com/Owners",
+   gives:{en:"The #1 platform tourists use to plan a trip. The single biggest gap — the bar isn't here yet."},
+   traffic:{en:"Global tourist intent, huge volume"}, price:{en:"Free (ads optional)"},
+   steps:{en:["Open Tripadvisor for Owners, search “Stuora”.","Found a review-made page? Claim it. If not, use “Get listed now”.","Add address, hours, photos, EN description; verify (approved in 3–5 days).","Ask happy foreign guests for reviews → Travelers' Choice is automatic (top 10%) after 12 months."]},
+   cta:{label:{en:"Open & claim"}, url:"https://www.tripadvisor.com/Owners"}},
+
+  {b:"a", cost:"free", priority:1, status:"missing", name:"LiveRiga",
+   domain:"liveriga.com",
+   gives:{en:"Riga's official city tourism portal — with a curated “Best Cocktail Bars in Riga” guide you're absent from."},
+   traffic:{en:"Tourists actively planning Riga"}, price:{en:"Free (listed on request)"},
+   steps:{en:["Submit the venue via portal contacts / Tourist Info Centre at the Town Hall.","Pitch the editor for the cocktail guide: house infusions, рюмочная concept, 3–5 photos."]},
+   cta:{label:{en:"Open LiveRiga"}, url:"https://www.liveriga.com/en/4-eat-drink"}},
+
+  {b:"a", cost:"free", priority:1, status:"missing", name:"latvia.travel",
+   domain:"latvia.travel · LIAA",
+   gives:{en:"Latvia's national tourism portal. Its editorial cocktail guide lists 10 bars — a speakeasy is already in it, so the format fits. You're missing."},
+   traffic:{en:"National official reach + endorsement"}, price:{en:"Free"},
+   steps:{en:["Email LIAA tourism@liaa.gov.lv (or the “Publishing information” e-service) with venue data.","Add a short editorial pitch: what makes Stuora unique + photos."]},
+   cta:{label:{en:"Email LIAA"}, url:"mailto:tourism@liaa.gov.lv?subject=Stuora%20cocktail%20bar%20%E2%80%94%20listing%20%26%20cocktail%20guide&body=Hello%2C%20we%27d%20like%20to%20list%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20on%20latvia.travel%20and%20be%20considered%20for%20the%20Riga%20cocktail%20guide."}},
+
+  {b:"a", cost:"free", priority:2, status:"missing", name:"Atlas Obscura",
+   domain:"atlasobscura.com",
+   gives:{en:"International guide to hidden, wondrous places. A concealed рюмочная-style speakeasy is a perfect fit for curious travelers."},
+   traffic:{en:"Global, curiosity-driven travelers"}, price:{en:"Free (user submission)"},
+   steps:{en:["Use “Add a place” (see FAQ): exact address, photos.","Lead with the single most interesting thing — the hidden entrance, the infusions."]},
+   cta:{label:{en:"Submit a place"}, url:"https://www.atlasobscura.com/faq"}},
+
+  {b:"a", cost:"paid", priority:2, status:"missing", name:"GetYourGuide",
+   domain:"getyourguide.supply",
+   gives:{en:"40M+ monthly visits. You can't list “a bar” — list a bookable cocktail masterclass. Bonus: fills the private Mon–Wed days."},
+   traffic:{en:"40M+ monthly experience-seekers"}, price:{en:"Free to list · ~20–30% commission on bookings"},
+   steps:{en:["Register as a business at getyourguide.supply.","Create a Workshop: “Cocktail-making masterclass at a hidden Riga speakeasy”.","Pass moderation; commission rate for Latvia shows after signup."]},
+   cta:{label:{en:"Become a supplier"}, url:"https://www.getyourguide.supply/"}},
+
+  {b:"a", cost:"paid", priority:3, status:"missing", name:"Viator",
+   domain:"supplier.viator.com",
+   gives:{en:"Large tourist marketplace — and listings surface on Tripadvisor too. Same model: a bookable masterclass."},
+   traffic:{en:"Big OTA traffic + Tripadvisor spillover"}, price:{en:"Free to list · commission on bookings"},
+   steps:{en:["Register at supplier.viator.com.","List the same cocktail masterclass / tasting."]},
+   cta:{label:{en:"Register as supplier"}, url:"https://supplier.viator.com/"}},
+
+  {b:"a", cost:"paid", priority:3, status:"missing", name:"Airbnb Experiences",
+   domain:"airbnb.com/host/experiences",
+   gives:{en:"Travelers who booked a stay and want a local experience. Applications are open again since the 2025 relaunch."},
+   traffic:{en:"Stay-and-do travelers"}, price:{en:"Free to list · service fee on bookings"},
+   steps:{en:["Apply at airbnb.com/host/experiences.","Offer the cocktail/infusion experience."]},
+   cta:{label:{en:"Host an experience"}, url:"https://www.airbnb.com/host/experiences"}},
+
+  {b:"a", cost:"free", priority:2, status:"missing", name:"Riga pub crawls",
+   domain:"redfoxtours.eu · riga-pub-crawl.com",
+   gives:{en:"Groups of tourists delivered to your door. Routes already run through your Old Town block (Kaļķu / Peldu)."},
+   traffic:{en:"Nightly tourist groups"}, price:{en:"Usually free — you give a welcome-drink"},
+   steps:{en:["Email operators directly (no application form exists).","Pitch as an unusual speakeasy stop with a welcome infusion shot.","Choose small / premium crawls — big loud groups clash with the intimate room."]},
+   cta:{label:{en:"Contact Red Fox Tours"}, url:"https://redfoxtours.eu/riga-pub-crawl.html"}},
+
+  {b:"a", cost:"free", priority:2, status:"missing", name:"Apple Maps",
+   domain:"businessconnect.apple.com",
+   gives:{en:"iPhone tourists (US/EU) searching “bar near me” use Apple Maps — and you're likely not on it."},
+   traffic:{en:"iPhone-carrying visitors"}, price:{en:"Free"},
+   steps:{en:["Go to Apple Business Connect → Get Started.","Register/verify the venue, add photos and hours."]},
+   cta:{label:{en:"Register on Apple"}, url:"https://businessconnect.apple.com/"}},
+
+  {b:"a", cost:"free", priority:2, status:"progress", name:"Bing Places",
+   domain:"bingplaces.com",
+   gives:{en:"Feeds Bing search and the Copilot assistant. Already being set up — just finish it."},
+   traffic:{en:"Bing + Copilot AI answers"}, price:{en:"Free"},
+   steps:{en:["Finish the listing at bingplaces.com.","Match the exact name/address/hours to Google for consistency."]},
+   cta:{label:{en:"Finish setup"}, url:"https://www.bingplaces.com/"}},
+
+  {b:"a", cost:"free", priority:3, status:"missing", name:"Foursquare",
+   domain:"business.foursquare.com/claim",
+   gives:{en:"Foursquare data quietly powers many travel apps and city guides — claiming it improves you in all of them."},
+   traffic:{en:"Downstream app & guide network"}, price:{en:"Free"},
+   steps:{en:["Claim the venue at business.foursquare.com/claim.","Correct category, hours, photos."]},
+   cta:{label:{en:"Claim listing"}, url:"https://business.foursquare.com/claim/"}},
+
+  {b:"a", cost:"free", priority:3, status:"missing", name:"Editorial features (earned PR)",
+   domain:"neighborhood.lv · Vogue · Lonely Planet",
+   gives:{en:"Outlets that already cover Riga bars. A feature = authority links + tourist traffic, for the price of a good pitch."},
+   traffic:{en:"High-trust editorial audiences"}, price:{en:"Free (earned)"},
+   steps:{en:["Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, рюмочная concept).","Attach photos + invite to a tasting.","Targets: Neighborhood.lv, Vogue Scandinavia, Lonely Planet, Hop Culture."]},
+   cta:{label:{en:"See Neighborhood.lv"}, url:"https://neighborhood.lv/en/where-to-drink-cocktails-in-riga-top-14-bars/"}},
+
+  {b:"a", cost:"free", priority:3, status:"missing", name:"Local directories & guides",
+   domain:"nomax · wanderlog · 1188 · likealocal",
+   gives:{en:"Long-tail “where to drink in Riga” visibility across many small guides that tourists and locals browse."},
+   traffic:{en:"Search long-tail + planners"}, price:{en:"Free (some upsells)"},
+   steps:{en:["Add / request inclusion on: Nomax, Wanderlog, LikeALocal, Local Life, Riga Guide.","Register on Latvian catalogs 1188.lv and Gurmania.lv."]},
+   cta:{label:{en:"Add on 1188.lv"}, url:"https://www.1188.lv/ru/katalog/registratsiya-kompanii"}},
+
+  /* ---------- BLOCK B ---------- */
+  {b:"b", cost:"free", priority:1, status:"live", name:"Google Business Profile",
+   domain:"business.google.com",
+   gives:{en:"Your main local-discovery channel (already ~5.0 / 40 reviews). Also reaches Russian-speaking locals — who use Google, not Yandex."},
+   traffic:{en:"Highest-intent local search"}, price:{en:"Free (ads optional)"},
+   steps:{en:["Add categories (Cocktail bar + Speakeasy), 20–30 photos incl. the entrance.","Post weekly (new infusions).","Put a “leave a review” QR on tables — build the review flywheel."]},
+   cta:{label:{en:"Manage profile"}, url:"https://business.google.com/"}},
+
+  {b:"b", cost:"mixed", priority:2, status:"live", name:"Instagram + micro-influencers",
+   domain:"instagram.com/stuora.bar · collabstr",
+   gives:{en:"Reach both locals and tourists via user content. Direct barter is cheaper than a marketplace."},
+   traffic:{en:"Social discovery, high shareability"}, price:{en:"Barter (free) or ~$50–100 per clip"},
+   steps:{en:["Find Riga food/drink micro-bloggers (geotag Audēju iela, #rigabars) — barter drinks for Reels.","Or hire on Collabstr (note: a platform fee applies on top of the clip price)."]},
+   cta:{label:{en:"Browse Riga creators"}, url:"https://collabstr.com/influencer-marketing/riga-rix-latvia"}},
+
+  {b:"b", cost:"free", priority:3, status:"missing", name:"LIAA press & blogger trips",
+   domain:"latvia.travel/media-and-influencers",
+   gives:{en:"The state agency invites and funds a limited number of journalist/influencer visits — you can be a stop on the route."},
+   traffic:{en:"Funded media & creator visits"}, price:{en:"Free for the bar (LIAA covers the guest)"},
+   steps:{en:["Pitch via the Media Request / Influencer Request form.","Offer a themed story angle; approval isn't guaranteed."]},
+   cta:{label:{en:"Pitch LIAA"}, url:"https://www.latvia.travel/en/media-and-influencers"}},
+
+  /* ---------- BLOCK C ---------- */
+  {b:"c", cost:"free", priority:2, status:"missing", name:"Escape Room Riga",
+   domain:"escaperoom.lv",
+   gives:{en:"A big operator selling corporate/team events — natural “after the quest, drinks at Stuora”. Also fills your private Mon–Wed."},
+   traffic:{en:"Corporate & tourist groups"}, price:{en:"Free / barter referral"},
+   steps:{en:["Propose a “quest → cocktails” package + a group promo code.","Offer to host their corporate groups on Mon–Wed."]},
+   cta:{label:{en:"Contact Escape Room"}, url:"https://escaperoom.lv/en/"}},
+
+  {b:"c", cost:"free", priority:3, status:"missing", name:"Pub-quiz night",
+   domain:"extrareality.lv",
+   gives:{en:"A recurring weekday quiz brings a steady local crowd — and gets you onto Riga's quiz aggregator."},
+   traffic:{en:"Local regulars, weeknights"}, price:{en:"Free"},
+   steps:{en:["Run a weekly quiz (e.g. a private Tue slot).","Get listed on the Riga quiz agenda (Extrareality)."]},
+   cta:{label:{en:"See quiz agenda"}, url:"https://extrareality.lv/en/riga/afisha"}},
+
+  {b:"c", cost:"free", priority:2, status:"missing", name:"Hotel concierges",
+   domain:"boutique hotels within 10 min",
+   gives:{en:"A concierge is a human recommendation engine — and you're a 5-minute walk from dozens of them. Best target: boutique hotels with NO bar of their own."},
+   traffic:{en:"Warm, in-person referrals"}, price:{en:"Free (cards) or a small per-guest perk"},
+   steps:{en:["Walk the 10-minute radius; meet concierges in person.","Leave beautiful map-cards (entrance is hard to find).","Offer a welcome-drink on presentation of the card."]},
+   cta:{label:{en:"Map nearby hotels"}, url:"https://www.google.com/maps/search/hotels+near+Aud%C4%93ju+iela+15+Riga"}},
+
+  {b:"c", cost:"free", priority:3, status:"missing", name:"Cruise tourism",
+   domain:"rop.lv",
+   gives:{en:"2025 hit a record 85 ships / 115,500 passengers, and the Old Town is a 15-min walk from the terminal — a big daytime, high-spend flow."},
+   traffic:{en:"115,500 cruise passengers (2025)"}, price:{en:"Free / partner"},
+   steps:{en:["Offer daytime tasting slots timed to ship calls.","Get into shore-excursion operators' recommendations."]},
+   cta:{label:{en:"Riga port · passengers"}, url:"https://rop.lv/en/passengers"}},
+
+  {b:"c", cost:"mixed", priority:3, status:"missing", name:"Alcohol-brand co-branding",
+   domain:"Riga Black Balsam · local distilleries",
+   gives:{en:"Brands often supply product or co-fund events for placement + posts. Build a signature cocktail around a Latvian icon."},
+   traffic:{en:"Brand co-marketing reach"}, price:{en:"Often free / co-funded"},
+   steps:{en:["Design a signature cocktail on Riga Black Balsam or a local distillery spirit.","Pitch a joint event / tasting to their marketing team."]},
+   cta:null, note:{en:"No single sign-up — reach brand reps directly."}},
+
+  /* ---------- BLOCK D ---------- */
+  {b:"d", cost:"free", priority:3, status:"missing", name:"Europe's / World's 50 Best Bars",
+   domain:"theworlds50best.com",
+   gives:{en:"Elite international recognition. The new Europe's 50 Best (2026) targets “emerging scenes” — good for Riga. Can't be applied for or bought — Academy voters decide by visiting."},
+   traffic:{en:"Global industry & press halo"}, price:{en:"No fee — organic only"},
+   steps:{en:["Host industry peers and guest shifts to get on voters' radar.","Take part in Baltic bar events; let the work be seen."]},
+   cta:{label:{en:"How voting works"}, url:"https://www.theworlds50best.com/bars/voting/the-voting-system"}},
+
+  {b:"d", cost:"paid", priority:3, status:"missing", name:"Baltic Wine & Drinks Awards",
+   domain:"neighborhood.lv",
+   gives:{en:"Regional award covering Latvia/Estonia/Lithuania — a Riga cocktail bar (Mākonis) was a 2025 highlight."},
+   traffic:{en:"Regional trade recognition"}, price:{en:"Usually an entry fee"},
+   steps:{en:["Watch for the entry window and submit.","Line up your award-worthy menu highlights."]},
+   cta:{label:{en:"Read 2025 results"}, url:"https://neighborhood.lv/en/baltic-wine-drinks-awards-2025-winners-stories-expert-insights/"}},
+
+  {b:"d", cost:"mixed", priority:3, status:"missing", name:"Industry events & comps",
+   domain:"bt1.lv/rigafood",
+   gives:{en:"Monin Cup Latvia, Riga Food expo, Star Wine List Baltics — visibility, networking, and a path onto the 50 Best radar."},
+   traffic:{en:"Trade & bartender community"}, price:{en:"Varies (entry / stand)"},
+   steps:{en:["Enter your bartender in Monin Cup Latvia.","Attend / take a stand at Riga Food."]},
+   cta:{label:{en:"Riga Food expo"}, url:"https://www.bt1.lv/rigafood/eng/"}},
+
+  /* ---------- BLOCK E ---------- */
+  {b:"e", cost:"free", priority:2, status:"missing", name:"RestaurantGuru",
+   domain:"restaurantguru.com",
+   gives:{en:"A 20M+ visits/month aggregator that already auto-created a Stuora card from your Google data — but it's unmanaged. Claiming is the highest-value “claim”."},
+   traffic:{en:"20M+ monthly visitors"}, price:{en:"Free business account"},
+   steps:{en:["Claim a free business account at restaurantguru.com/business.","Fix photos, hours; add promotions."]},
+   cta:{label:{en:"Claim on RestaurantGuru"}, url:"https://restaurantguru.com/businessLanding"}},
+
+  {b:"e", cost:"free", priority:3, status:"missing", name:"Name audit (everything else)",
+   domain:'Google: "Stuora" Riga',
+   gives:{en:"A one-time sweep: search your name and claim/correct every auto-created card (directmap.info and others) so nothing points guests to wrong info."},
+   traffic:{en:"Reputation hygiene"}, price:{en:"Free — just time"},
+   steps:{en:["Search “Stuora” Riga in Google, scan 3–5 pages.","For each third-party card: claim / correct / add your Instagram link."]},
+   cta:{label:{en:"Run the search"}, url:"https://www.google.com/search?q=%22Stuora%22+Riga+bar"}},
+
+  /* ---------- BLOCK X — AVOID ---------- */
+  {b:"x", avoid:true, name:"Yandex Maps",
+   why:{en:"Two hard facts: Russian tourists can't legally enter Latvia (tourist-visa ban extended to end-2026), and Yandex has been blocked in Latvia since Dec 2023 (needs a VPN). Reach Russian-speaking locals — 53.5% of Riga — via Google + Instagram + Russian-language listings (afishamira, meeting.lv) instead."}},
+
+  {b:"x", avoid:true, name:"visam.lv",
+   why:{en:"It's a brand-new classifieds board (goods, cars, property) — a competitor to ss.lv, not a venue directory. People don't go there to find “where to drink”. Marginal use only: staff hiring or selling event tickets."}},
+
+  {b:"x", avoid:true, name:"“Buying” a 50 Best spot / paid rank",
+   why:{en:"Impossible — 50 Best lists can't be applied for or bought. And Collabstr is not fully free (a platform fee applies). Don't pay anyone promising a ranking."}}
+];
+
+/* ============ RENDER ============ */
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const costLabel = {free:"Free", paid:"Paid", mixed:"Free + paid"};
+const statusLabel = {missing:"Not listed yet", live:"Live — optimize", progress:"In progress"};
+
+function card(c){
+  if(c.avoid){
+    return `<article class="card avoid" data-cost="none" data-priority="0" data-status="avoid">
+      <div class="card-top"><div><h3>${esc(c.name)}</h3></div><span class="pill" style="color:var(--avoid);border-color:color-mix(in srgb,var(--avoid) 45%,transparent)">Skip</span></div>
+      <p class="why">${esc(t(c.why))}</p></article>`;
+  }
+  const pills = [
+    `<span class="pill ${c.cost}">${costLabel[c.cost]}</span>`,
+    `<span class="pill status-${c.status}">${statusLabel[c.status]}</span>`,
+    `<span class="pill prio">Priority ${c.priority}</span>`
+  ].join("");
+  const steps = t(c.steps).map((s,i)=>`<li><span>${i+1}</span>${esc(s)}</li>`).join("");
+  const cta = c.cta
+    ? `<a class="cta" href="${esc(c.cta.url)}" target="_blank" rel="noopener">${esc(t(c.cta.label))} <span class="arw">↗</span></a>`
+    : (c.note?`<p class="note">${esc(t(c.note))}</p>`:"");
+  return `<article class="card" data-cost="${c.cost}" data-priority="${c.priority}" data-status="${c.status}">
+    <div class="card-top">
+      <div><h3>${esc(c.name)}</h3><div class="domain">${esc(c.domain)}</div></div>
+    </div>
+    <div class="pills">${pills}</div>
+    <p class="gives">${esc(t(c.gives))}</p>
+    <div class="meta-row">
+      <div class="m"><b>Reach</b><span>${esc(t(c.traffic))}</span></div>
+      <div class="m"><b>Cost</b><span>${esc(t(c.price))}</span></div>
+    </div>
+    <ol class="steps">${steps}</ol>
+    ${cta}
+  </article>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = BLOCKS.map(b=>{
+    const cards = CH.filter(c=>c.b===b.id).map(card).join("");
+    return `<section class="block" id="block-${b.id}">
+      <div class="block-head"><span class="block-idx">${b.idx}</span><h2>${esc(t(b.title))}</h2></div>
+      <p class="block-sub">${esc(t(b.sub))}</p>
+      <div class="grid">${cards}</div>
+    </section>`;
+  }).join("");
+  // nav
+  document.getElementById("navlinks").innerHTML = BLOCKS.map(b=>`<a href="#block-${b.id}">${esc(t(b.title))}</a>`).join("");
+  applyFilter();
+  buildStats();
+}
+
+function buildStats(){
+  const actionable = CH.filter(c=>!c.avoid);
+  const missing = actionable.filter(c=>c.status==="missing").length;
+  const free = actionable.filter(c=>c.cost==="free").length;
+  const p1 = actionable.filter(c=>c.priority===1).length;
+  document.getElementById("statline").innerHTML = `
+    <div class="stat"><b>${missing}</b><span>channels you're missing</span></div>
+    <div class="stat"><b>${free}</b><span>free to join</span></div>
+    <div class="stat"><b>${p1}</b><span>Priority 1 · do first</span></div>
+    <div class="stat"><b>${actionable.length}</b><span>opportunities total</span></div>`;
+  document.getElementById("updated").textContent = "Last updated "+UPDATED+" · Stuora, Audēju iela 15, Riga";
+}
+
+function applyFilter(){
+  document.querySelectorAll(".card").forEach(el=>{
+    let show = true;
+    const f = state.filter;
+    if(f==="free") show = el.dataset.cost==="free";
+    else if(f==="paid") show = el.dataset.cost==="paid" || el.dataset.cost==="mixed";
+    else if(f==="p1") show = el.dataset.priority==="1";
+    el.classList.toggle("hidden", !show);
+  });
+  // hide empty blocks
+  document.querySelectorAll(".block").forEach(bl=>{
+    const any = [...bl.querySelectorAll(".card")].some(c=>!c.classList.contains("hidden"));
+    bl.classList.toggle("hidden", !any);
+  });
+}
+
+/* ============ CONTROLS ============ */
+document.querySelectorAll(".filterbtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filterbtn").forEach(b=>b.setAttribute("aria-pressed","false"));
+    btn.setAttribute("aria-pressed","true");
+    state.filter = btn.dataset.filter;
+    applyFilter();
+  });
+});
+
+// theme
+const root = document.documentElement;
+const savedTheme = localStorage.getItem("stuora-theme");
+if(savedTheme) root.setAttribute("data-theme", savedTheme);
+document.getElementById("theme").addEventListener("click",()=>{
+  const cur = root.getAttribute("data-theme")
+    || (matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");
+  const next = cur==="dark"?"light":"dark";
+  root.setAttribute("data-theme", next);
+  localStorage.setItem("stuora-theme", next);
+});
+
+// language switch (auto-shows when a second locale is added)
+const langsel = document.getElementById("langsel");
+if(LOCALES.length>1){
+  langsel.classList.remove("hidden");
+  langsel.innerHTML = LOCALES.map(l=>`<option value="${l.code}">${l.label}</option>`).join("");
+  langsel.value = state.lang;
+  langsel.addEventListener("change",()=>{ state.lang = langsel.value; render(); });
+}
+
+// active section highlight
+render();
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches && "IntersectionObserver" in window){
+  const links = () => [...document.querySelectorAll("#navlinks a")];
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = e.target.id;
+        links().forEach(a=>a.classList.toggle("active", a.getAttribute("href")==="#"+id));
+      }
+    });
+  },{rootMargin:"-45% 0px -50% 0px"});
+  document.querySelectorAll(".block").forEach(b=>obs.observe(b));
+}
+</script>
+</body>
+</html>
