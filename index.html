@@ -162,11 +162,12 @@ main{padding:20px 0 40px}
 .cta.ghost{background:none; color:var(--brass); border-color:var(--hairline)}
 .note{font-size:.82rem; color:var(--muted); font-style:italic}
 
-/* Avoid block cards */
-.card.avoid{opacity:.96; background:var(--surface-2); border-style:dashed}
-.card.avoid::before{background:repeating-linear-gradient(45deg,var(--avoid),var(--avoid) 5px,transparent 5px,transparent 10px)}
-.card.avoid h3{color:var(--avoid)}
-.card.avoid .why{font-size:.9rem; color:var(--ink-soft)}
+/* Optional / lower-confidence cards */
+.card.optional{background:var(--surface-2); border-style:dashed}
+.card.optional::before{background:repeating-linear-gradient(45deg,var(--brass),var(--brass) 4px,transparent 4px,transparent 9px)}
+.card.optional h3{color:var(--ink)}
+.card.optional .why{font-size:.92rem; color:var(--ink-soft)}
+.pill.flag{color:var(--brass); border-color:color-mix(in srgb,var(--brass) 42%,transparent); background:color-mix(in srgb,var(--brass) 10%,transparent)}
 
 a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--brass); outline-offset:2px}
 
@@ -264,7 +265,7 @@ const BLOCKS = [
   {id:"c", idx:"C", title:{en:"Partnerships & foot traffic"}, sub:{en:"Send other businesses' guests through your door — mostly free, mostly barter."}},
   {id:"d", idx:"D", title:{en:"Awards & recognition"}, sub:{en:"The long game for reputation. Can't be bought — earned by being seen."}},
   {id:"e", idx:"E", title:{en:"Claim your auto-listings (optional)"}, sub:{en:"Not new reach — housekeeping on cards other sites already created from your Google data."}},
-  {id:"x", idx:"✕", title:{en:"Skip these — here's why"}, sub:{en:"Channels that look plausible but don't work for this bar. Saving you the effort."}}
+  {id:"x", idx:"?", title:{en:"Optional & lower-confidence"}, sub:{en:"We're less sure about these — treat them as “your call”, not rules. Two are worth a cheap test; one is a genuine caution."}}
 ];
 
 const CH = [
@@ -455,15 +456,15 @@ const CH = [
    steps:{en:["Search “Stuora” Riga in Google, scan 3–5 pages.","For each third-party card: claim / correct / add your Instagram link."]},
    cta:{label:{en:"Run the search"}, url:"https://www.google.com/search?q=%22Stuora%22+Riga+bar"}},
 
-  /* ---------- BLOCK X — AVOID ---------- */
-  {b:"x", avoid:true, name:"Yandex Maps",
-   why:{en:"Two hard facts: Russian tourists can't legally enter Latvia (tourist-visa ban extended to end-2026), and Yandex has been blocked in Latvia since Dec 2023 (needs a VPN). Reach Russian-speaking locals — 53.5% of Riga — via Google + Instagram + Russian-language listings (afishamira, meeting.lv) instead."}},
+  /* ---------- BLOCK X — OPTIONAL / LOWER CONFIDENCE ---------- */
+  {b:"x", avoid:true, flag:{en:"Likely low value"}, name:"Yandex Maps",
+   why:{en:"Probably not worth it for Latvia — Russian tourists are visa-restricted until end-2026 and Yandex has been blocked here since Dec 2023 (needs a VPN). Not 100% certain, though: if you specifically want Russian-speaking Rigans (53.5% of the city), it's a minor “maybe” — but Google + Instagram + Russian-language listings reach them better and for free. Verdict: low priority, not forbidden."}},
 
-  {b:"x", avoid:true, name:"visam.lv",
-   why:{en:"It's a brand-new classifieds board (goods, cars, property) — a competitor to ss.lv, not a venue directory. People don't go there to find “where to drink”. Marginal use only: staff hiring or selling event tickets."}},
+  {b:"x", avoid:true, flag:{en:"Worth a cheap test"}, name:"visam.lv",
+   why:{en:"A new Latvian app spending aggressively on advertising and growing fast (top-5 downloads) — a genuinely interesting, high-attention player right now, and people are on it. It's a classifieds board, not a venue directory, so it won't drive “where to drink” discovery — but a low-cost experiment could pay off while attention is high: post your private / corporate-event offer or ticketed events there and see what comes back. Worth watching as it grows."}},
 
-  {b:"x", avoid:true, name:"“Buying” a 50 Best spot / paid rank",
-   why:{en:"Impossible — 50 Best lists can't be applied for or bought. And Collabstr is not fully free (a platform fee applies). Don't pay anyone promising a ranking."}}
+  {b:"x", avoid:true, flag:{en:"Genuine caution"}, name:"Paid “rankings” & guaranteed awards",
+   why:{en:"This one we're sure about: 50 Best lists can't be applied for or bought, so anyone promising a paid ranking is best avoided. (Also worth knowing: Collabstr isn't fully free — a platform fee applies on top of the creator's price.)"}}
 ];
 
 /* ============ RENDER ============ */
@@ -473,8 +474,8 @@ const statusLabel = {missing:"Not listed yet", live:"Live — optimize", progres
 
 function card(c){
   if(c.avoid){
-    return `<article class="card avoid" data-cost="none" data-priority="0" data-status="avoid">
-      <div class="card-top"><div><h3>${esc(c.name)}</h3></div><span class="pill" style="color:var(--avoid);border-color:color-mix(in srgb,var(--avoid) 45%,transparent)">Skip</span></div>
+    return `<article class="card optional" data-cost="none" data-priority="0" data-status="avoid">
+      <div class="card-top"><div><h3>${esc(c.name)}</h3></div><span class="pill flag">${esc(c.flag?t(c.flag):"Optional")}</span></div>
       <p class="why">${esc(t(c.why))}</p></article>`;
   }
   const pills = [
