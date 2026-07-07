@@ -230,13 +230,6 @@ main{padding:20px 0 40px}
 .copybtn:hover{background:var(--brass-bright)}
 .tpl pre{margin:0; padding:14px; font-family:"IBM Plex Mono",monospace; font-size:.78rem; line-height:1.55; color:var(--ink-soft); white-space:pre-wrap; word-break:break-word; overflow-x:auto}
 
-/* Metrics */
-.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:6px}
-.metric{background:var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:15px 16px; display:flex; flex-direction:column; gap:6px}
-.metric h4{font-family:"Fraunces",serif; font-weight:600; font-size:1rem; margin:0; color:var(--ink)}
-.metric p{margin:0; font-size:.85rem; color:var(--ink-soft)}
-.metric-t{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--brass); margin-top:auto; padding-top:4px}
-
 /* Corporate enquiry CTA */
 .corp-cta{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; background:linear-gradient(120deg,color-mix(in srgb,var(--oxblood) 14%,var(--surface)),var(--surface)); border:1px solid color-mix(in srgb,var(--oxblood) 30%,var(--hairline)); border-radius:14px; padding:16px 18px; margin-bottom:6px}
 .corp-cta h4{font-family:"Fraunces",serif; font-size:1.15rem; margin:0 0 3px; color:var(--ink)}
@@ -482,7 +475,7 @@ const CH = [
    domain:"amcham.lv",
    gives:{en:"Communities of exactly the decision-makers you want. AmCham's “Business After Hours” lets a member host peers on-site — a perfect showcase."},
    traffic:{en:"150+ international companies"}, price:{en:"Free to host · membership paid"},
-   steps:{en:["Offer to host an AmCham “Business After Hours” / LPVA networking night at the bar.","They bring the audience; you show the venue.","Later, join the one chamber closest to your target."]},
+   steps:{en:["Offer to host an AmCham “Business After Hours” networking night at the bar.","They bring the audience; you show the venue.","Later, join the one chamber closest to your target."]},
    cta:{label:{en:"AmCham Latvia"}, url:"https://www.amcham.lv/"}},
 
   {b:"corp", cost:"free", priority:2, status:"missing", name:"Coworkings & startup hubs",
@@ -537,7 +530,7 @@ const CH = [
 
   {b:"b", cost:"free", priority:2, status:"missing", name:"Reach Russian-speaking Rigans",
    domain:"afishamira.com · meeting.lv",
-   gives:{en:"53.5% of Riga speaks Russian at home — half of your local audience. Reach them without Yandex: Google works, plus Russian-language listings and creators."},
+   gives:{en:"53.5% of Rigans are native Russian speakers — about half your local audience. Reach them without Yandex: Google works, plus Russian-language listings and creators."},
    traffic:{en:"Half of Riga's locals"}, price:{en:"Free / barter"},
    steps:{en:["Post events on Russian-language what's-on sites: afishamira.com, meeting.lv/afisha, rus.tvnet.lv, rus.delfi.lv.","Publish bilingual posts (LV / RU / EN).","Invite Russian-speaking Riga micro-bloggers (barter)."]},
    cta:{label:{en:"Afisha Mira · Riga"}, url:"https://afishamira.com/city/riga/"}},
@@ -588,7 +581,7 @@ const CH = [
   /* ---------- BLOCK D ---------- */
   {b:"d", cost:"free", priority:3, status:"missing", name:"Europe's / World's 50 Best Bars",
    domain:"theworlds50best.com",
-   gives:{en:"Elite international recognition. Europe's 50 Best 2026 has already launched (no Baltic bar yet) — a play for future editions. Their free 50 Best Discovery directory (where Riga's nosaints & Gimlet already appear) works the same way: earned by Academy votes, not applied for."},
+   gives:{en:"Elite international recognition. Europe's 50 Best 2026 has already launched (no Baltic bar yet) — a play for future editions. Their free 50 Best Discovery directory (where Riga's Gimlet already appears) works the same way: earned by Academy votes, not applied for."},
    traffic:{en:"Global industry & press halo"}, price:{en:"No fee — organic only"},
    steps:{en:["Host industry peers and guest shifts to get on voters' radar.","Take part in Baltic bar events; let the work be seen."]},
    cta:{label:{en:"How voting works"}, url:"https://www.theworlds50best.com/bars/voting/the-voting-system"}},
@@ -650,7 +643,7 @@ function corpIntro(){
 }
 
 /* ============ AUDIENCE TAGGING ============ */
-const AUD_BLOCK = {a:["tourists"], corp:["corporate"], b:["locals"], c:["tourists","locals"], d:["tourists","locals"], e:["tourists","locals"], x:[]};
+const AUD_BLOCK = {a:["tourists"], corp:["corporate"], b:["locals"], c:["tourists","locals"], d:["tourists","locals"], x:[]};
 const AUD_OVERRIDE = {
   "LiveRiga":["tourists","locals"], "Apple Maps":["tourists","locals"], "Bing Places":["tourists","locals"],
   "Editorial features (earned PR)":["tourists","locals"], "Local directories & guides":["tourists","locals"],
@@ -672,7 +665,7 @@ function trackerHTML(c){
   return `<div class="trk" data-key="${esc(ST_KEY(c))}"><span class="trk-lbl">Status</span>${segs}</div>`;
 }
 
-/* ============ ROADMAP / TEMPLATES / METRICS ============ */
+/* ============ ROADMAP / TEMPLATES ============ */
 const ROADMAP = [
   {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Add a “leave a review” QR on tables (Google & Tripadvisor)","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories"]}},
   {ph:{en:"Weeks 2–4 — free / barter"}, items:{en:["Walk the concierges (hotels without a bar)","Email 3 pub-crawl operators","Partner with Escape Room Riga for Mon–Wed","Pitch a LIAA blog-trip + 3–4 outlets","Line up 5–10 local micro-bloggers","Corporate: LinkedIn outreach + 5 agencies + offer to host AmCham"]}},
@@ -698,17 +691,6 @@ const TEMPLATES = [
 ];
 function templatesIntro(){
   return `<div class="tpls">${TEMPLATES.map((tp,i)=>`<div class="tpl"><div class="tpl-top"><h4>${esc(t(tp.name))}</h4><button class="copybtn" data-copy="tpl-${i}">Copy</button></div><pre id="tpl-${i}">${esc(t(tp.body))}</pre></div>`).join("")}</div>`;
-}
-const METRICS = [
-  {m:{en:"Reviews / month + rating"}, w:{en:"Leading signal on Google & Tripadvisor; hitting the review volume is what earns Travelers' Choice."}, k:{en:"Steady new reviews via a table QR"}},
-  {m:{en:"Listing actions (Google)"}, w:{en:"In Business Profile insights: views → directions / calls / website clicks. Shows if the card converts."}, k:{en:"Watch the monthly trend"}},
-  {m:{en:"Booking share by channel"}, w:{en:"Walk-in vs pub-crawl vs corporate — so you fund what works and drop what doesn't."}, k:{en:"Tag links with UTM"}},
-  {m:{en:"Repeat visits / NPS"}, w:{en:"For locals, retention beats reach. Ask guests to rate 0–10."}, k:{en:"Flag if NPS < ~55"}},
-  {m:{en:"Cost per guest"}, w:{en:"Marketing spend ÷ new guests — keeps paid channels honest."}, k:{en:"Reassess if it climbs"}},
-  {m:{en:"Corporate: leads → bookings"}, w:{en:"Enquiries, conversion, average event value and Mon–Wed occupancy — the direct business goal."}, k:{en:"Track average event value"}}
-];
-function metricsIntro(){
-  return `<div class="metrics">${METRICS.map(x=>`<div class="metric"><h4>${esc(t(x.m))}</h4><p>${esc(t(x.w))}</p><div class="metric-t">${esc(t(x.k))}</div></div>`).join("")}</div>`;
 }
 function buildProgress(){
   const cards = [...document.querySelectorAll(".card:not(.optional)")];
@@ -758,7 +740,7 @@ function render(){
   const app = document.getElementById("app");
   app.innerHTML = BLOCKS.map(b=>{
     const cards = CH.filter(c=>c.b===b.id).map(card).join("");
-    const intro = b.id==="corp" ? corpIntro() : b.id==="plan" ? planIntro() : b.id==="templates" ? templatesIntro() : b.id==="metrics" ? metricsIntro() : "";
+    const intro = b.id==="corp" ? corpIntro() : b.id==="plan" ? planIntro() : b.id==="templates" ? templatesIntro() : "";
     return `<section class="block" id="block-${b.id}">
       <div class="block-head"><span class="block-idx">${b.idx}</span><h2>${esc(t(b.title))}</h2></div>
       <p class="block-sub">${esc(t(b.sub))}</p>
