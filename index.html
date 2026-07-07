@@ -189,6 +189,59 @@ main{padding:20px 0 40px}
 .pkg ul{margin:6px 0 0; padding-left:16px; display:flex; flex-direction:column; gap:4px}
 .pkg li{font-size:.85rem; color:var(--ink-soft)}
 
+/* Toolbar audience filter + divider */
+.tool-div{width:1px; align-self:stretch; background:var(--hairline); margin:0 3px}
+.audbtn{font:inherit; font-size:.8rem; cursor:pointer; color:var(--ink-soft); background:var(--surface); border:1px solid var(--hairline); border-radius:8px; padding:7px 11px; white-space:nowrap; transition:border-color .15s,background .15s,color .15s}
+.audbtn:hover{border-color:var(--brass)}
+.audbtn[aria-pressed="true"]{background:var(--oxblood); border-color:var(--oxblood); color:#fff; font-weight:600}
+
+/* Progress bar */
+.progress{margin-top:16px; display:flex; flex-direction:column; gap:7px}
+.pbar{height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden; border:1px solid var(--hairline)}
+.pfill{height:100%; background:linear-gradient(90deg,var(--brass),var(--brass-bright)); transition:width .35s ease}
+.plabel{font-size:.82rem; color:var(--muted)}
+.plabel b{color:var(--ink); font-variant-numeric:tabular-nums}
+.plabel span{color:var(--brass)}
+
+/* Status tracker on cards */
+.trk{margin-top:12px; padding-top:12px; border-top:1px solid var(--hairline); display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+.trk-lbl{font-size:.64rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-right:2px}
+.trk-seg{font:inherit; font-size:.72rem; cursor:pointer; color:var(--muted); background:transparent; border:1px solid var(--hairline); border-radius:7px; padding:4px 9px; transition:all .12s}
+.trk-seg:hover{border-color:var(--brass); color:var(--ink)}
+.trk-seg.on[data-st="todo"]{background:var(--surface-2); color:var(--ink); border-color:var(--muted)}
+.trk-seg.on[data-st="applied"]{background:color-mix(in srgb,var(--brass) 16%,transparent); color:var(--brass); border-color:color-mix(in srgb,var(--brass) 50%,transparent); font-weight:600}
+.trk-seg.on[data-st="live"]{background:color-mix(in srgb,var(--verdigris) 18%,transparent); color:var(--verdigris); border-color:color-mix(in srgb,var(--verdigris) 55%,transparent); font-weight:600}
+
+/* Roadmap */
+.roadmap{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:6px}
+.phase{background:var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:16px 17px}
+.phase h4{font-family:"Fraunces",serif; font-weight:600; font-size:1rem; color:var(--brass-bright); margin:0 0 10px}
+.phase ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+.chk{display:flex; gap:9px; align-items:flex-start; font-size:.88rem; color:var(--ink-soft); cursor:pointer}
+.chk input{margin-top:3px; accent-color:var(--brass); flex:none; width:15px; height:15px; cursor:pointer}
+.chk input:checked + span{color:var(--muted); text-decoration:line-through}
+
+/* Pitch templates */
+.tpls{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin-top:6px}
+.tpl{background:var(--surface); border:1px solid var(--hairline); border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.tpl-top{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid var(--hairline)}
+.tpl-top h4{font-family:"Fraunces",serif; font-size:.98rem; margin:0; color:var(--ink)}
+.copybtn{font:inherit; font-size:.76rem; font-weight:600; cursor:pointer; color:#1a1109; background:var(--brass); border:none; border-radius:7px; padding:5px 12px; transition:background .15s}
+.copybtn:hover{background:var(--brass-bright)}
+.tpl pre{margin:0; padding:14px; font-family:"IBM Plex Mono",monospace; font-size:.78rem; line-height:1.55; color:var(--ink-soft); white-space:pre-wrap; word-break:break-word; overflow-x:auto}
+
+/* Metrics */
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:6px}
+.metric{background:var(--surface); border:1px solid var(--hairline); border-radius:12px; padding:15px 16px; display:flex; flex-direction:column; gap:6px}
+.metric h4{font-family:"Fraunces",serif; font-weight:600; font-size:1rem; margin:0; color:var(--ink)}
+.metric p{margin:0; font-size:.85rem; color:var(--ink-soft)}
+.metric-t{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--brass); margin-top:auto; padding-top:4px}
+
+/* Corporate enquiry CTA */
+.corp-cta{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; background:linear-gradient(120deg,color-mix(in srgb,var(--oxblood) 14%,var(--surface)),var(--surface)); border:1px solid color-mix(in srgb,var(--oxblood) 30%,var(--hairline)); border-radius:14px; padding:16px 18px; margin-bottom:6px}
+.corp-cta h4{font-family:"Fraunces",serif; font-size:1.15rem; margin:0 0 3px; color:var(--ink)}
+.corp-cta p{margin:0; font-size:.85rem; color:var(--ink-soft); max-width:54ch}
+
 a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--brass); outline-offset:2px}
 
 /* ============ FOOTER ============ */
@@ -214,6 +267,7 @@ footer a:hover{text-decoration:underline}
     <h1>Where to get listed &amp; <em>how to be recommended</em></h1>
     <p class="dek">A practical placement board for a hidden speakeasy cocktail bar on Audēju iela 15 — reaching both tourists and Rigans. Every channel says what it gives, what it costs, and links straight to where you apply.</p>
     <div class="statline" id="statline"></div>
+    <div class="progress" id="progress"></div>
     <div class="updated" id="updated"></div>
   </header>
 </div>
@@ -227,6 +281,13 @@ footer a:hover{text-decoration:underline}
       <button class="filterbtn" data-filter="free" aria-pressed="false">Free to start</button>
       <button class="filterbtn" data-filter="paid" aria-pressed="false">Paid</button>
       <button class="filterbtn" data-filter="p1" aria-pressed="false">Priority 1</button>
+      <span class="tool-div"></span>
+      <span class="filterlabel">For</span>
+      <button class="audbtn" data-aud="all" aria-pressed="true">Everyone</button>
+      <button class="audbtn" data-aud="tourists" aria-pressed="false">Tourists</button>
+      <button class="audbtn" data-aud="locals" aria-pressed="false">Locals</button>
+      <button class="audbtn" data-aud="corporate" aria-pressed="false">Corporate</button>
+      <span class="tool-div"></span>
       <select id="langsel" aria-label="Language" class="hidden"></select>
       <button class="iconbtn" id="theme" aria-label="Toggle light/dark">◐</button>
     </div>
@@ -275,17 +336,20 @@ footer a:hover{text-decoration:underline}
    automatically once LOCALES has more than one entry.
    ============================================================ */
 const LOCALES = [{code:"en", label:"English"}];
-const state = {lang:"en", filter:"all"};
+const state = {lang:"en", filter:"all", aud:"all"};
 const t = (o)=> (o && (o[state.lang] ?? o.en)) || "";
 const UPDATED = "2026-07-06";
 
 const BLOCKS = [
+  {id:"plan", idx:"▶", title:{en:"Your rollout plan"}, sub:{en:"A week-by-week checklist. Tick things off as you go — progress is saved on this device."}},
   {id:"a", idx:"A", title:{en:"Untapped & high-traffic"}, sub:{en:"Big audiences where the bar is not present yet. This is where to spend the first week."}},
   {id:"corp", idx:"◆", title:{en:"For corporate clients"}, sub:{en:"The bar is free early in the week (Mon–Wed) — ideal for private corporate events. Two sales tracks: reach HR & office managers directly on LinkedIn, and partner with event agencies & business chambers who bring clients to you."}},
   {id:"b", idx:"B", title:{en:"Amplify what already works"}, sub:{en:"Channels you already own — sharpen them and turn them into a review engine."}},
   {id:"c", idx:"C", title:{en:"Partnerships & foot traffic"}, sub:{en:"Send other businesses' guests through your door — mostly free, mostly barter."}},
   {id:"d", idx:"D", title:{en:"Awards & recognition"}, sub:{en:"The long game for reputation. Can't be bought — earned by being seen."}},
   {id:"e", idx:"E", title:{en:"Claim your auto-listings (optional)"}, sub:{en:"Not new reach — housekeeping on cards other sites already created from your Google data."}},
+  {id:"templates", idx:"✎", title:{en:"Ready-to-send pitches"}, sub:{en:"Copy, fill the blanks, send. These remove the friction from actually reaching out."}},
+  {id:"metrics", idx:"∑", title:{en:"How to tell it's working"}, sub:{en:"A handful of numbers worth tracking monthly — leading signals, not vanity metrics."}},
   {id:"x", idx:"?", title:{en:"Optional & lower-confidence"}, sub:{en:"We're less sure about these — treat them as “your call”, not rules. Two are worth a cheap test; one is a genuine caution."}}
 ];
 
@@ -591,6 +655,10 @@ function corpIntro(){
   const fmts = CORP_FORMATS.map(f=>`<div class="fmt"><h4>${esc(t(f.name))}</h4><p>${esc(t(f.desc))}</p><div class="fmt-meta">${esc(t(f.meta))}</div></div>`).join("");
   const pkgs = CORP_PACKAGES.map(p=>`<div class="pkg${p.featured?' feat':''}">${p.featured?'<span class="pkg-tag">Signature</span>':''}<h4>${esc(t(p.name))}</h4><div class="pkg-price">${esc(t(p.price))}</div><div class="pkg-min">${esc(t(p.min))}</div><ul>${t(p.specs).map(s=>`<li>${esc(s)}</li>`).join("")}</ul></div>`).join("");
   return `<div class="corp-intro">
+    <div class="corp-cta">
+      <div><h4>Book a corporate event</h4><p>Point all your outreach to one place. <b>Replace the email below with the bar's real inbox / WhatsApp before sharing.</b></p></div>
+      <a class="cta" href="mailto:hello@stuora.lv?subject=Corporate%20event%20enquiry%20%E2%80%94%20Stuora">Enquire →</a>
+    </div>
     <h3 class="corp-h">Signature formats — built on the speakeasy &amp; house infusions</h3>
     <div class="fmt-grid">${fmts}</div>
     <p class="corp-na">Every format has a full non-alcoholic option — an easy win with HR.</p>
@@ -598,6 +666,76 @@ function corpIntro(){
     <div class="pkg-row">${pkgs}</div>
     <h3 class="corp-h">Where to find corporate clients</h3>
   </div>`;
+}
+
+/* ============ AUDIENCE TAGGING ============ */
+const AUD_BLOCK = {a:["tourists"], corp:["corporate"], b:["locals"], c:["tourists","locals"], d:["tourists","locals"], e:["tourists","locals"], x:[]};
+const AUD_OVERRIDE = {
+  "LiveRiga":["tourists","locals"], "Apple Maps":["tourists","locals"], "Bing Places":["tourists","locals"],
+  "Editorial features (earned PR)":["tourists","locals"], "Local directories & guides":["tourists","locals"],
+  "Google Business Profile":["tourists","locals"], "Instagram + micro-influencers":["tourists","locals"],
+  "Reach Russian-speaking Rigans":["locals"], "Facebook (events & locals)":["locals"], "LIAA press & blogger trips":["tourists"],
+  "Escape Room Riga":["tourists","locals"], "Pub-quiz night":["locals"], "Hotel concierges":["tourists"], "Cruise tourism":["tourists"],
+  "Alcohol-brand co-branding":["tourists","locals"]
+};
+CH.forEach(c=>{ if(!c.avoid) c.aud = AUD_OVERRIDE[c.name] || AUD_BLOCK[c.b] || []; });
+
+/* ============ STATUS TRACKER (saved in localStorage) ============ */
+const ST_KEY = c => "st:"+c.b+":"+c.name;
+const ST_DEFAULT = {live:"live", progress:"applied", missing:"todo"};
+const ST_LABEL = {todo:"Not started", applied:"Applied", live:"Live"};
+function getSt(c){ try{ return localStorage.getItem(ST_KEY(c)) || ST_DEFAULT[c.status] || "todo"; }catch(e){ return ST_DEFAULT[c.status]||"todo"; } }
+function trackerHTML(c){
+  const cur = getSt(c);
+  const segs = ["todo","applied","live"].map(s=>`<button class="trk-seg${s===cur?' on':''}" data-st="${s}" aria-pressed="${s===cur}">${ST_LABEL[s]}</button>`).join("");
+  return `<div class="trk" data-key="${esc(ST_KEY(c))}"><span class="trk-lbl">Status</span>${segs}</div>`;
+}
+
+/* ============ ROADMAP / TEMPLATES / METRICS ============ */
+const ROADMAP = [
+  {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Optimise Google Business Profile: photos, categories, review QR","Run a name audit + claim RestaurantGuru","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories"]}},
+  {ph:{en:"Weeks 2–4 — free / barter"}, items:{en:["Walk the concierges (hotels without a bar)","Email 3 pub-crawl operators","Partner with Escape Room Riga for Mon–Wed","Pitch a LIAA blog-trip + 3–4 outlets","Line up 5–10 local micro-bloggers","Corporate: LinkedIn outreach + 5 agencies + offer to host AmCham"]}},
+  {ph:{en:"Month 2+ — paid / long game"}, items:{en:["List a cocktail masterclass on GetYourGuide + Viator + Airbnb","Commission 2–3 Reels","Launch a weekly pub-quiz","Co-brand with an alcohol brand","Enter Monin Cup / Riga Food; aim at the Europe's 50 Best radar","Run one open corporate showcase evening"]}}
+];
+function planIntro(){
+  const cols = ROADMAP.map((p,pi)=>{
+    const items = t(p.items).map((it,ii)=>{
+      const k="rm:"+pi+":"+ii;
+      let on=false; try{ on = localStorage.getItem(k)==="1"; }catch(e){}
+      return `<li><label class="chk"><input type="checkbox" data-rm="${k}"${on?" checked":""}><span>${esc(it)}</span></label></li>`;
+    }).join("");
+    return `<div class="phase"><h4>${esc(t(p.ph))}</h4><ul>${items}</ul></div>`;
+  }).join("");
+  return `<div class="roadmap">${cols}</div>`;
+}
+const TEMPLATES = [
+  {name:{en:"Cocktail-guide editor (LiveRiga / latvia.travel)"}, body:{en:"Subject: Stuora — a hidden speakeasy for your Riga cocktail guide\n\nHello [name],\n\nI run Stuora, a speakeasy cocktail bar in the Old Town (Audēju iela 15). We build garnish-forward cocktails on house infusions of roots, fruit, smoke and spice — think \"Tomato & Sprats Mary\" in a vintage ryumochnaya setting.\n\nWe'd love to be considered for your Riga cocktail guide. Happy to send high-res photos or host you for a tasting.\n\nThank you,\n[your name] · stuora.lv · @stuora.bar"}},
+  {name:{en:"Hotel concierge"}, body:{en:"Hi [name],\n\nWe're Stuora, a hidden speakeasy 5 minutes from [hotel] (Audēju iela 15). Guests after an atmospheric evening — craft cocktails, house infusions, an intimate room — love it.\n\nWe'd gladly offer your guests a welcome drink on presentation of your card, and leave a few map-cards at the desk (our entrance is intentionally hard to find).\n\nCould we drop by this week to say hello?\n\n[your name] · stuora.lv"}},
+  {name:{en:"Event / DMC agency (corporate)"}, body:{en:"Hi [name],\n\nStuora is a speakeasy cocktail bar in Riga's Old Town, available for private corporate events early in the week. We run cocktail masterclasses, \"build-your-own-infusion\" team sessions and cocktail battles for 8–40 guests.\n\nWe'd like to partner as a venue/activity for your clients (referral terms welcome). May I send a one-page sheet with formats, capacity and net prices — or host your team for a short taster?\n\n[your name] · stuora.lv"}},
+  {name:{en:"Pub-crawl operator"}, body:{en:"Hi [name],\n\nWe're Stuora, an intimate speakeasy right in the Old Town crawl area (Audēju iela 15). We'd make an unusual, memorable stop — a welcome infusion-shot for your group in a hidden 1920s room.\n\nWe suit smaller / premium groups rather than large crowds. Could we discuss adding Stuora to a route?\n\n[your name] · stuora.lv"}},
+  {name:{en:"Alcohol brand (co-branding)"}, body:{en:"Hello [name],\n\nStuora is a Riga speakeasy known for house infusions. We'd love to build a signature serve around [brand] and run a joint tasting evening — content, sampling and a branded cocktail on our menu for the night.\n\nWould your team be open to product support or co-funding an event?\n\n[your name] · stuora.lv"}}
+];
+function templatesIntro(){
+  return `<div class="tpls">${TEMPLATES.map((tp,i)=>`<div class="tpl"><div class="tpl-top"><h4>${esc(t(tp.name))}</h4><button class="copybtn" data-copy="tpl-${i}">Copy</button></div><pre id="tpl-${i}">${esc(t(tp.body))}</pre></div>`).join("")}</div>`;
+}
+const METRICS = [
+  {m:{en:"Reviews / month + rating"}, w:{en:"Leading signal on Google & Tripadvisor; hitting the review volume is what earns Travelers' Choice."}, k:{en:"Steady new reviews via a table QR"}},
+  {m:{en:"Listing actions (Google)"}, w:{en:"In Business Profile insights: views → directions / calls / website clicks. Shows if the card converts."}, k:{en:"Watch the monthly trend"}},
+  {m:{en:"Booking share by channel"}, w:{en:"Walk-in vs pub-crawl vs corporate — so you fund what works and drop what doesn't."}, k:{en:"Tag links with UTM"}},
+  {m:{en:"Repeat visits / NPS"}, w:{en:"For locals, retention beats reach. Ask guests to rate 0–10."}, k:{en:"Flag if NPS < ~55"}},
+  {m:{en:"Cost per guest"}, w:{en:"Marketing spend ÷ new guests — keeps paid channels honest."}, k:{en:"Reassess if it climbs"}},
+  {m:{en:"Corporate: leads → bookings"}, w:{en:"Enquiries, conversion, average event value and Mon–Wed occupancy — the direct business goal."}, k:{en:"Track average event value"}}
+];
+function metricsIntro(){
+  return `<div class="metrics">${METRICS.map(x=>`<div class="metric"><h4>${esc(t(x.m))}</h4><p>${esc(t(x.w))}</p><div class="metric-t">${esc(t(x.k))}</div></div>`).join("")}</div>`;
+}
+function buildProgress(){
+  const cards = [...document.querySelectorAll(".card:not(.optional)")];
+  let live=0, applied=0; const total=cards.length;
+  cards.forEach(el=>{ const on=el.querySelector(".trk-seg.on"); const s=on?on.dataset.st:"todo"; if(s==="live")live++; else if(s==="applied")applied++; });
+  const pct = total? Math.round(live/total*100):0;
+  const el=document.getElementById("progress");
+  if(el) el.innerHTML = `<div class="pbar"><div class="pfill" style="width:${pct}%"></div></div><div class="plabel"><b>${live}</b> live · <b>${applied}</b> in progress · <b>${total-live-applied}</b> to start <span>(${pct}% launched)</span></div>`;
 }
 
 /* ============ RENDER ============ */
@@ -613,14 +751,13 @@ function card(c){
   }
   const pills = [
     `<span class="pill ${c.cost}">${costLabel[c.cost]}</span>`,
-    `<span class="pill status-${c.status}">${statusLabel[c.status]}</span>`,
     `<span class="pill prio">Priority ${c.priority}</span>`
   ].join("");
   const steps = t(c.steps).map((s,i)=>`<li><span>${i+1}</span>${esc(s)}</li>`).join("");
   const cta = c.cta
     ? `<a class="cta" href="${esc(c.cta.url)}" target="_blank" rel="noopener">${esc(t(c.cta.label))} <span class="arw">↗</span></a>`
     : (c.note?`<p class="note">${esc(t(c.note))}</p>`:"");
-  return `<article class="card" data-cost="${c.cost}" data-priority="${c.priority}" data-status="${c.status}">
+  return `<article class="card" data-cost="${c.cost}" data-priority="${c.priority}" data-status="${c.status}" data-aud="${(c.aud||[]).join(' ')}">
     <div class="card-top">
       <div><h3>${esc(c.name)}</h3><div class="domain">${esc(c.domain)}</div></div>
     </div>
@@ -632,6 +769,7 @@ function card(c){
     </div>
     <ol class="steps">${steps}</ol>
     ${cta}
+    ${trackerHTML(c)}
   </article>`;
 }
 
@@ -639,7 +777,7 @@ function render(){
   const app = document.getElementById("app");
   app.innerHTML = BLOCKS.map(b=>{
     const cards = CH.filter(c=>c.b===b.id).map(card).join("");
-    const intro = b.id==="corp" ? corpIntro() : "";
+    const intro = b.id==="corp" ? corpIntro() : b.id==="plan" ? planIntro() : b.id==="templates" ? templatesIntro() : b.id==="metrics" ? metricsIntro() : "";
     return `<section class="block" id="block-${b.id}">
       <div class="block-head"><span class="block-idx">${b.idx}</span><h2>${esc(t(b.title))}</h2></div>
       <p class="block-sub">${esc(t(b.sub))}</p>
@@ -651,6 +789,7 @@ function render(){
   document.getElementById("navlinks").innerHTML = BLOCKS.map(b=>`<a href="#block-${b.id}">${esc(t(b.title))}</a>`).join("");
   applyFilter();
   buildStats();
+  buildProgress();
 }
 
 function buildStats(){
@@ -667,22 +806,53 @@ function buildStats(){
 }
 
 function applyFilter(){
+  const f = state.filter, a = state.aud;
   document.querySelectorAll(".card").forEach(el=>{
     let show = true;
-    const f = state.filter;
     if(f==="free") show = el.dataset.cost==="free" || el.dataset.cost==="mixed";
     else if(f==="paid") show = el.dataset.cost==="paid" || el.dataset.cost==="mixed";
     else if(f==="p1") show = el.dataset.priority==="1";
+    if(show && a && a!=="all") show = (el.dataset.aud||"").split(" ").includes(a);
     el.classList.toggle("hidden", !show);
   });
-  // hide empty blocks
+  // hide empty channel blocks; content-only blocks (roadmap/templates/metrics) have no cards — keep them
   document.querySelectorAll(".block").forEach(bl=>{
-    const any = [...bl.querySelectorAll(".card")].some(c=>!c.classList.contains("hidden"));
+    const cards = bl.querySelectorAll(".card");
+    if(cards.length===0) return;
+    const any = [...cards].some(c=>!c.classList.contains("hidden"));
     bl.classList.toggle("hidden", !any);
   });
 }
 
 /* ============ CONTROLS ============ */
+document.querySelectorAll(".audbtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".audbtn").forEach(b=>b.setAttribute("aria-pressed","false"));
+    btn.setAttribute("aria-pressed","true");
+    state.aud = btn.dataset.aud;
+    applyFilter();
+  });
+});
+document.getElementById("app").addEventListener("click", e=>{
+  const seg = e.target.closest(".trk-seg");
+  if(seg){
+    const trk = seg.closest(".trk");
+    try{ localStorage.setItem(trk.dataset.key, seg.dataset.st); }catch(err){}
+    trk.querySelectorAll(".trk-seg").forEach(b=>{ const on=b===seg; b.classList.toggle("on",on); b.setAttribute("aria-pressed",on); });
+    buildProgress();
+    return;
+  }
+  const cp = e.target.closest(".copybtn");
+  if(cp){
+    const src = document.getElementById(cp.dataset.copy);
+    if(src && navigator.clipboard){ navigator.clipboard.writeText(src.textContent).then(()=>{ cp.textContent="Copied ✓"; setTimeout(()=>cp.textContent="Copy",1500); }).catch(()=>{}); }
+    return;
+  }
+});
+document.getElementById("app").addEventListener("change", e=>{
+  const cb = e.target.closest("input[data-rm]");
+  if(cb){ try{ localStorage.setItem(cb.dataset.rm, cb.checked?"1":"0"); }catch(err){} }
+});
 document.querySelectorAll(".filterbtn").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".filterbtn").forEach(b=>b.setAttribute("aria-pressed","false"));
