@@ -51,7 +51,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:84px}
+html{scroll-behavior:smooth; scroll-padding-top:104px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0; background:var(--ground); color:var(--ink);
@@ -90,8 +90,9 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif; text-wrap:balance; margin:0; font
   backdrop-filter:blur(12px) saturate(1.2); -webkit-backdrop-filter:blur(12px) saturate(1.2);
   border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
 }
-.toolbar-inner{display:flex; align-items:center; gap:14px; padding:11px 22px; max-width:1140px; margin:0 auto; overflow-x:auto}
-.navlinks{display:flex; gap:4px; flex:1; min-width:0}
+.toolbar-inner{display:flex; align-items:center; gap:14px; padding:9px 22px; max-width:1140px; margin:0 auto; overflow-x:auto; scrollbar-width:thin}
+.toolbar-inner.toolbar-tools{border-top:1px solid var(--hairline-2)}
+.navlinks{display:flex; gap:4px; min-width:0}
 .navlinks a{
   white-space:nowrap; font-size:.82rem; padding:7px 11px; border-radius:8px; text-decoration:none;
   color:var(--ink-soft); font-weight:500; transition:background .15s,color .15s;
@@ -271,8 +272,10 @@ footer a:hover{text-decoration:underline}
 </div>
 
 <nav class="toolbar" aria-label="Sections and filters">
-  <div class="toolbar-inner">
+  <div class="toolbar-inner toolbar-nav">
     <div class="navlinks" id="navlinks"></div>
+  </div>
+  <div class="toolbar-inner toolbar-tools">
     <div class="tools">
       <span class="filterlabel">Show</span>
       <button class="filterbtn" data-filter="all" aria-pressed="true">All</button>
@@ -674,7 +677,7 @@ function trackerHTML(c){
 
 /* ============ ROADMAP / TEMPLATES ============ */
 const ROADMAP = [
-  {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Add a “leave a review” QR on tables (Google & Tripadvisor)","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories"]}},
+  {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Add a “leave a review” QR on tables (Google & Tripadvisor)","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories","Claim your auto-created RestaurantGuru page"]}},
   {ph:{en:"Weeks 2–4 — free / barter"}, items:{en:["Walk the concierges (hotels without a bar)","Email 3 pub-crawl operators","Partner with Escape Room Riga for Mon–Wed","Pitch a LIAA blog-trip + 3–4 outlets","Line up 5–10 local micro-bloggers","Corporate: LinkedIn outreach + 5 agencies + offer to host AmCham"]}},
   {ph:{en:"Month 2+ — paid / long game"}, items:{en:["List a cocktail masterclass on GetYourGuide + Viator + Airbnb","Commission 2–3 Reels","Launch a weekly pub-quiz","Co-brand with an alcohol brand","Enter Monin Cup / Riga Food; aim at the Europe's 50 Best radar","Run one open corporate showcase evening"]}}
 ];
