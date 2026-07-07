@@ -242,6 +242,10 @@ main{padding:20px 0 40px}
 .corp-cta h4{font-family:"Fraunces",serif; font-size:1.15rem; margin:0 0 3px; color:var(--ink)}
 .corp-cta p{margin:0; font-size:.85rem; color:var(--ink-soft); max-width:54ch}
 
+/* Excel download link */
+.xls-link{display:inline-flex; align-items:center; gap:7px; margin-top:16px; font-size:.85rem; font-weight:600; color:var(--brass); text-decoration:none; border:1px solid color-mix(in srgb,var(--brass) 45%,var(--hairline)); border-radius:9px; padding:8px 14px; width:fit-content; transition:border-color .15s,background .15s}
+.xls-link:hover{border-color:var(--brass); background:color-mix(in srgb,var(--brass) 8%,transparent)}
+
 a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--brass); outline-offset:2px}
 
 /* ============ FOOTER ============ */
@@ -269,6 +273,7 @@ footer a:hover{text-decoration:underline}
     <div class="statline" id="statline"></div>
     <div class="progress" id="progress"></div>
     <div class="updated" id="updated"></div>
+    <a class="xls-link" href="stuora-growth-playbook.xlsx" download>⤓ Download the Excel version (clickable links)</a>
   </header>
 </div>
 
@@ -344,12 +349,10 @@ const BLOCKS = [
   {id:"plan", idx:"▶", title:{en:"Your rollout plan"}, sub:{en:"A week-by-week checklist. Tick things off as you go — progress is saved on this device."}},
   {id:"a", idx:"A", title:{en:"Untapped & high-traffic"}, sub:{en:"Big audiences where the bar is not present yet. This is where to spend the first week."}},
   {id:"corp", idx:"◆", title:{en:"For corporate clients"}, sub:{en:"The bar is free early in the week (Mon–Wed) — ideal for private corporate events. Two sales tracks: reach HR & office managers directly on LinkedIn, and partner with event agencies & business chambers who bring clients to you."}},
-  {id:"b", idx:"B", title:{en:"Amplify what already works"}, sub:{en:"Channels you already own — sharpen them and turn them into a review engine."}},
+  {id:"b", idx:"B", title:{en:"Locals, social & press"}, sub:{en:"Reach Rigans — including the Russian-speaking half of the city — plus earned press."}},
   {id:"c", idx:"C", title:{en:"Partnerships & foot traffic"}, sub:{en:"Send other businesses' guests through your door — mostly free, mostly barter."}},
   {id:"d", idx:"D", title:{en:"Awards & recognition"}, sub:{en:"The long game for reputation. Can't be bought — earned by being seen."}},
-  {id:"e", idx:"E", title:{en:"Claim your auto-listings (optional)"}, sub:{en:"Not new reach — housekeeping on cards other sites already created from your Google data."}},
   {id:"templates", idx:"✎", title:{en:"Ready-to-send pitches"}, sub:{en:"Copy, fill the blanks, send. These remove the friction from actually reaching out."}},
-  {id:"metrics", idx:"∑", title:{en:"How to tell it's working"}, sub:{en:"A handful of numbers worth tracking monthly — leading signals, not vanity metrics."}},
   {id:"x", idx:"?", title:{en:"Optional & lower-confidence"}, sub:{en:"We're less sure about these — treat them as “your call”, not rules. Two are worth a cheap test; one is a genuine caution."}}
 ];
 
@@ -518,18 +521,11 @@ const CH = [
    cta:{label:{en:"Map Old Town hotels"}, url:"https://www.google.com/maps/search/hotels+Old+Town+Riga"}},
 
   /* ---------- BLOCK B ---------- */
-  {b:"b", cost:"free", priority:1, status:"live", name:"Google Business Profile",
-   domain:"business.google.com",
-   gives:{en:"Your main local-discovery channel (already ~5.0 / 40 reviews). Also reaches Russian-speaking locals — who use Google, not Yandex."},
-   traffic:{en:"Highest-intent local search"}, price:{en:"Free (ads optional)"},
-   steps:{en:["Add categories (Cocktail bar + Speakeasy), 20–30 photos incl. the entrance.","Post weekly (new infusions).","Put a “leave a review” QR on tables — build the review flywheel."]},
-   cta:{label:{en:"Manage profile"}, url:"https://business.google.com/"}},
-
-  {b:"b", cost:"mixed", priority:2, status:"live", name:"Instagram + micro-influencers",
-   domain:"instagram.com/stuora.bar · collabstr",
-   gives:{en:"Reach both locals and tourists via user content. Direct barter is cheaper than a marketplace."},
-   traffic:{en:"Social discovery, high shareability"}, price:{en:"Barter (free) or ~$50–100 per clip"},
-   steps:{en:["Find Riga food/drink micro-bloggers (geotag Audēju iela, #rigabars) — barter drinks for Reels.","Or hire on Collabstr (note: a platform fee applies on top of the clip price)."]},
+  {b:"b", cost:"mixed", priority:2, status:"missing", name:"Micro-influencers (Riga)",
+   domain:"local bloggers · collabstr",
+   gives:{en:"Get local food & drink creators to post about the bar — reaches both locals and tourists, and gives you content."},
+   traffic:{en:"Social reach + shareable content"}, price:{en:"Barter (free) or ~$50–100 per clip"},
+   steps:{en:["Find Riga food/drink micro-bloggers (search #rigabars, the Audēju geotag) and invite them for a barter — drinks for a Reel.","Or hire directly on Collabstr."]},
    cta:{label:{en:"Browse Riga creators"}, url:"https://collabstr.com/influencer-marketing/riga-rix-latvia"}},
 
   {b:"b", cost:"free", priority:3, status:"missing", name:"LIAA press & blogger trips",
@@ -611,21 +607,6 @@ const CH = [
    steps:{en:["Enter your bartender in Monin Cup Latvia.","Attend / take a stand at Riga Food."]},
    cta:{label:{en:"Riga Food expo"}, url:"https://www.bt1.lv/rigafood/eng/"}},
 
-  /* ---------- BLOCK E ---------- */
-  {b:"e", cost:"free", priority:2, status:"missing", name:"RestaurantGuru",
-   domain:"restaurantguru.com",
-   gives:{en:"A 20M+ visits/month aggregator that already auto-created a Stuora card from your Google data — but it's unmanaged. Claiming is the highest-value “claim”."},
-   traffic:{en:"20M+ monthly visitors"}, price:{en:"Free business account"},
-   steps:{en:["Claim a free business account at restaurantguru.com/business.","Fix photos, hours; add promotions."]},
-   cta:{label:{en:"Claim on RestaurantGuru"}, url:"https://restaurantguru.com/businessLanding"}},
-
-  {b:"e", cost:"free", priority:3, status:"missing", name:"Name audit (everything else)",
-   domain:'Google: "Stuora" Riga',
-   gives:{en:"A one-time sweep: search your name and claim/correct every auto-created card (directmap.info and others) so nothing points guests to wrong info."},
-   traffic:{en:"Reputation hygiene"}, price:{en:"Free — just time"},
-   steps:{en:["Search “Stuora” Riga in Google, scan 3–5 pages.","For each third-party card: claim / correct / add your Instagram link."]},
-   cta:{label:{en:"Run the search"}, url:"https://www.google.com/search?q=%22Stuora%22+Riga+bar"}},
-
   /* ---------- BLOCK X — OPTIONAL / LOWER CONFIDENCE ---------- */
   {b:"x", avoid:true, flag:{en:"Likely low value"}, name:"Yandex Maps",
    why:{en:"Probably not worth it for Latvia — Russian tourists are visa-restricted until end-2026 and Yandex has been blocked here since Dec 2023 (needs a VPN). Not 100% certain, though: if you specifically want Russian-speaking Rigans (53.5% of the city), it's a minor “maybe” — but Google + Instagram + Russian-language listings reach them better and for free. Verdict: low priority, not forbidden."}},
@@ -673,7 +654,7 @@ const AUD_BLOCK = {a:["tourists"], corp:["corporate"], b:["locals"], c:["tourist
 const AUD_OVERRIDE = {
   "LiveRiga":["tourists","locals"], "Apple Maps":["tourists","locals"], "Bing Places":["tourists","locals"],
   "Editorial features (earned PR)":["tourists","locals"], "Local directories & guides":["tourists","locals"],
-  "Google Business Profile":["tourists","locals"], "Instagram + micro-influencers":["tourists","locals"],
+  "Micro-influencers (Riga)":["tourists","locals"],
   "Reach Russian-speaking Rigans":["locals"], "Facebook (events & locals)":["locals"], "LIAA press & blogger trips":["tourists"],
   "Escape Room Riga":["tourists","locals"], "Pub-quiz night":["locals"], "Hotel concierges":["tourists"], "Cruise tourism":["tourists"],
   "Alcohol-brand co-branding":["tourists","locals"]
@@ -693,7 +674,7 @@ function trackerHTML(c){
 
 /* ============ ROADMAP / TEMPLATES / METRICS ============ */
 const ROADMAP = [
-  {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Optimise Google Business Profile: photos, categories, review QR","Run a name audit + claim RestaurantGuru","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories"]}},
+  {ph:{en:"Week 1 — free, biggest impact"}, items:{en:["Create your Tripadvisor listing (Get Listed + claim)","Add a “leave a review” QR on tables (Google & Tripadvisor)","Finish Bing Places; add Apple Maps + Foursquare","Submit to Atlas Obscura","Pitch the LiveRiga & latvia.travel cocktail guides","Add cards on local directories"]}},
   {ph:{en:"Weeks 2–4 — free / barter"}, items:{en:["Walk the concierges (hotels without a bar)","Email 3 pub-crawl operators","Partner with Escape Room Riga for Mon–Wed","Pitch a LIAA blog-trip + 3–4 outlets","Line up 5–10 local micro-bloggers","Corporate: LinkedIn outreach + 5 agencies + offer to host AmCham"]}},
   {ph:{en:"Month 2+ — paid / long game"}, items:{en:["List a cocktail masterclass on GetYourGuide + Viator + Airbnb","Commission 2–3 Reels","Launch a weekly pub-quiz","Co-brand with an alcohol brand","Enter Monin Cup / Riga Food; aim at the Europe's 50 Best radar","Run one open corporate showcase evening"]}}
 ];
