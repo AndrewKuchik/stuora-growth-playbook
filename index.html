@@ -449,6 +449,13 @@ const CH = [
    steps:{en:["Email guides@falstaff.com (or the site contact form) to be listed.","Send concept, photos and signature drinks."]},
    cta:{label:{en:"Email Falstaff guides"}, url:"mailto:guides@falstaff.com?subject=Stuora%20cocktail%20bar%2C%20Riga%20%E2%80%94%20listing%20request&body=Hello%2C%20we%27d%20like%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20to%20be%20considered%20for%20the%20Falstaff%20bar%20guide."}},
 
+  {b:"a", cost:"free", priority:2, status:"missing", name:"RestaurantGuru",
+   domain:"restaurantguru.com",
+   gives:{en:"A 20M+ visits/month bar & restaurant aggregator (pulls from Google, Yelp, Foursquare). Stuora's page already exists — auto-built from your Google data, but unclaimed. Claiming is free and lets you fix photos/hours and reply to reviews."},
+   traffic:{en:"20M+ monthly visitors"}, price:{en:"Free (business account)"},
+   steps:{en:["Open Stuora's existing page and use “Claim your business”.","Confirm a free business account to verify ownership.","Fix photos, hours & description; reply to reviews."]},
+   cta:{label:{en:"Open & claim your listing"}, url:"https://restaurantguru.com/Stuora-Riga"}},
+
   /* ---------- BLOCK CORP — corporate outreach channels ---------- */
   {b:"corp", cost:"free", priority:1, status:"missing", name:"LinkedIn",
    domain:"linkedin.com",
@@ -630,8 +637,8 @@ function corpIntro(){
   const pkgs = CORP_PACKAGES.map(p=>`<div class="pkg${p.featured?' feat':''}">${p.featured?'<span class="pkg-tag">Signature</span>':''}<h4>${esc(t(p.name))}</h4><div class="pkg-price">${esc(t(p.price))}</div><div class="pkg-min">${esc(t(p.min))}</div><ul>${t(p.specs).map(s=>`<li>${esc(s)}</li>`).join("")}</ul></div>`).join("");
   return `<div class="corp-intro">
     <div class="corp-cta">
-      <div><h4>Book a corporate event</h4><p>Point all your outreach to one place. <b>Replace the email below with the bar's real inbox / WhatsApp before sharing.</b></p></div>
-      <a class="cta" href="mailto:hello@stuora.lv?subject=Corporate%20event%20enquiry%20%E2%80%94%20Stuora">Enquire →</a>
+      <div><h4>Book a corporate event</h4><p>Point all your outreach to one place — the bar's booking inbox.</p></div>
+      <a class="cta" href="mailto:stuorasmm@gmail.com?subject=Corporate%20event%20enquiry%20%E2%80%94%20Stuora">Enquire →</a>
     </div>
     <h3 class="corp-h">Signature formats — built on the speakeasy &amp; house infusions</h3>
     <div class="fmt-grid">${fmts}</div>
@@ -646,7 +653,7 @@ function corpIntro(){
 const AUD_BLOCK = {a:["tourists"], corp:["corporate"], b:["locals"], c:["tourists","locals"], d:["tourists","locals"], x:[]};
 const AUD_OVERRIDE = {
   "LiveRiga":["tourists","locals"], "Apple Maps":["tourists","locals"], "Bing Places":["tourists","locals"],
-  "Editorial features (earned PR)":["tourists","locals"], "Local directories & guides":["tourists","locals"],
+  "Editorial features (earned PR)":["tourists","locals"], "Local directories & guides":["tourists","locals"], "RestaurantGuru":["tourists","locals"],
   "Micro-influencers (Riga)":["tourists","locals"],
   "Reach Russian-speaking Rigans":["locals"], "Facebook (events & locals)":["locals"], "LIAA press & blogger trips":["tourists"],
   "Escape Room Riga":["tourists","locals"], "Pub-quiz night":["locals"], "Hotel concierges":["tourists"], "Cruise tourism":["tourists"],
