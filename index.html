@@ -366,7 +366,7 @@ const CH = [
    domain:"liveriga.com",
    gives:{en:"Riga's official city tourism portal — with a curated “Best Cocktail Bars in Riga” guide you're absent from."},
    traffic:{en:"Tourists actively planning Riga"}, price:{en:"Free (listed on request)"},
-   steps:{en:["Verified: there is NO submission form anywhere on the portal. Email is the only route.","Email travel@riga.lv, copy invest@riga.lv. Phone of the Tourist Information Centre: +371 67037900.","Write in Latvian: the portal is run by a municipal agency, and by law those accept documents only in the state language.","Pitch the editor for the cocktail guide in the same email: house infusions, ryumochnaya (old-school shot bar) concept, 3-5 photos.","Ready-to-send letter is in the outreach kit."]},
+   steps:{en:["Verified: there is NO submission form anywhere on the portal. Email is the only route.","Email travel@riga.lv, copy invest@riga.lv. Phone of the Tourist Information Centre: +371 67037900.","Write in Latvian: the portal is run by a municipal agency, and by law those accept documents only in the state language.","Pitch the editor for the cocktail guide in the same email: a quiet room off the tourist flow, house infusions on natural seasonal ingredients, vegetarian and non-alcoholic options, 3-5 photos.","Ready-to-send letter is in the outreach kit."]},
    cta:{label:{en:"Email LiveRiga"}, url:"mailto:travel@riga.lv?cc=invest@riga.lv&subject=L%C5%ABgums%20iek%C4%BCaut%20b%C4%81ru%20%22Stuora%22%20liveriga.com%20objektu%20datub%C4%81z%C4%93%20un%20koktei%C4%BCu%20ce%C4%BCved%C4%AB"}},
 
   {b:"a", cost:"free", priority:1, status:"missing", name:"latvia.travel",
@@ -378,7 +378,7 @@ const CH = [
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"Atlas Obscura",
    domain:"atlasobscura.com",
-   gives:{en:"International guide to hidden, wondrous places. A concealed рюмочная-style speakeasy is a perfect fit for curious travelers."},
+   gives:{en:"International guide to hidden, wondrous places. A bar with a discreet entrance on a quiet Old Town street is a natural fit for curious travelers."},
    traffic:{en:"Global, curiosity-driven travelers"}, price:{en:"Free (user submission)"},
    steps:{en:["Create a free account at atlasobscura.com/join, then use the “Add a Place” button (the form lives at atlasobscura.com/places/new).","Their FAQ: moderation can take several weeks, and submissions with at least 3 good photos and a detailed description get priority.","Exact address, photos.","Lead with the single most interesting thing — the hidden entrance, the infusions."]},
    cta:{label:{en:"Add a place"}, url:"https://www.atlasobscura.com/places/new"}},
@@ -436,7 +436,7 @@ const CH = [
    domain:"neighborhood.lv · Vogue · Lonely Planet",
    gives:{en:"Outlets that already cover Riga bars. A feature = authority links + tourist traffic, for the price of a good pitch."},
    traffic:{en:"High-trust editorial audiences"}, price:{en:"Free (earned)"},
-   steps:{en:["Neighborhood.lv: write to collabs@neighborhood.lv, copy hello@neighborhood.lv. Verified: their Cooperation page has no form, it tells you to email. They publish in Latvian, Russian and English, so pitch in Latvian.","Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, ryumochnaya (old-school shot bar) concept).","Attach photos + invite to a tasting.","Other targets, in English: Vogue Scandinavia, Lonely Planet, Hop Culture."]},
+   steps:{en:["Neighborhood.lv: write to collabs@neighborhood.lv, copy hello@neighborhood.lv. Verified: their Cooperation page has no form, it tells you to email. They publish in Latvian, Russian and English, so pitch in Latvian.","Email editors with a unique angle: a quiet room where people can actually talk, house infusions on natural seasonal ingredients, a non-alcoholic list that stands on its own.","Attach photos + invite to a tasting.","Other targets, in English: Vogue Scandinavia, Lonely Planet, Hop Culture."]},
    cta:{label:{en:"See Neighborhood.lv"}, url:"https://neighborhood.lv/en/where-to-drink-cocktails-in-riga-top-14-bars/"}},
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Local directories & guides",
@@ -694,7 +694,7 @@ function planIntro(){
   return `<div class="roadmap">${cols}</div>`;
 }
 const TEMPLATES = [
-  {name:{en:"Cocktail-guide editor (LiveRiga / latvia.travel)"}, body:{en:"Subject: Stuora — a hidden speakeasy for your Riga cocktail guide\n\nHello [name],\n\nI run Stuora, a speakeasy cocktail bar in the Old Town (Audēju iela 15). We build garnish-forward cocktails on house infusions of roots, fruit, smoke and spice — think \"Tomato & Sprats Mary\" in a vintage ryumochnaya setting.\n\nWe'd love to be considered for your Riga cocktail guide. Happy to send high-res photos or host you for a tasting.\n\nThank you,\n[your name] · stuora.lv · @stuora.bar"}},
+  {name:{en:"Cocktail-guide editor (LiveRiga / latvia.travel)"}, body:{en:"Subject: Stuora, a quiet Old Town bar for your Riga cocktail guide\n\nHello [name],\n\nI run Stuora, a small cocktail bar at Audēju iela 15, on a quiet Old Town street just off the main tourist flow. The entrance is discreet, in the speakeasy spirit, and the room is deliberately unhurried: people come here to sit down and talk.\n\nOur signature is house-made infusions built on natural, seasonal ingredients, with vegetarian-friendly options and full non-alcoholic versions of every drink.\n\nWe'd love to be considered for your Riga cocktail guide. Happy to send high-res photos or host you for a tasting.\n\nThank you,\nAndrejs Birzgals · +371 29270207 · stuora.lv · @stuora.bar"}},
   {name:{en:"Hotel concierge"}, body:{en:"Hi [name],\n\nWe're Stuora, a hidden speakeasy 5 minutes from [hotel] (Audēju iela 15). Guests after an atmospheric evening — craft cocktails, house infusions, an intimate room — love it.\n\nWe'd gladly offer your guests a welcome drink on presentation of your card, and leave a few map-cards at the desk (our entrance is intentionally hard to find).\n\nCould we drop by this week to say hello?\n\n[your name] · stuora.lv"}},
   {name:{en:"Event / DMC agency (corporate)"}, body:{en:"Hi [name],\n\nStuora is a speakeasy cocktail bar in Riga's Old Town, available for private corporate events early in the week. We run cocktail masterclasses, \"build-your-own-infusion\" team sessions and cocktail battles for 8–40 guests.\n\nWe'd like to partner as a venue/activity for your clients (referral terms welcome). May I send a one-page sheet with formats, capacity and net prices — or host your team for a short taster?\n\n[your name] · stuora.lv"}},
   {name:{en:"Pub-crawl operator"}, body:{en:"Hi [name],\n\nWe're Stuora, an intimate speakeasy right in the Old Town crawl area (Audēju iela 15). We'd make an unusual, memorable stop — a welcome infusion-shot for your group in a hidden 1920s room.\n\nWe suit smaller / premium groups rather than large crowds. Could we discuss adding Stuora to a route?\n\n[your name] · stuora.lv"}},
