@@ -267,6 +267,7 @@ footer a:hover{text-decoration:underline}
     <div class="statline" id="statline"></div>
     <div class="progress" id="progress"></div>
     <div class="updated" id="updated"></div>
+    <a class="xls-link" href="letters.html">✉ Outreach kit: verified contacts, ready-to-send letters &amp; hidden forms</a>
     <a class="xls-link" href="stuora-growth-playbook.xlsx" download>⤓ Download the Excel version (clickable links)</a>
   </header>
 </div>
@@ -339,7 +340,7 @@ footer a:hover{text-decoration:underline}
 const LOCALES = [{code:"en", label:"English"}];
 const state = {lang:"en", filter:"all", aud:"all"};
 const t = (o)=> (o && (o[state.lang] ?? o.en)) || "";
-const UPDATED = "2026-07-06";
+const UPDATED = "2026-07-22";
 
 const BLOCKS = [
   {id:"plan", idx:"▶", title:{en:"Your rollout plan"}, sub:{en:"A week-by-week checklist. Tick things off as you go — progress is saved on this device."}},
@@ -365,22 +366,22 @@ const CH = [
    domain:"liveriga.com",
    gives:{en:"Riga's official city tourism portal — with a curated “Best Cocktail Bars in Riga” guide you're absent from."},
    traffic:{en:"Tourists actively planning Riga"}, price:{en:"Free (listed on request)"},
-   steps:{en:["Submit the venue via portal contacts / Tourist Info Centre at the Town Hall.","Pitch the editor for the cocktail guide: house infusions, ryumochnaya (old-school shot bar) concept, 3–5 photos."]},
-   cta:{label:{en:"Open the cocktail guide"}, url:"https://www.liveriga.com/en/visit/eat-drink/time-for-a-cocktail"}},
+   steps:{en:["Verified: there is NO submission form anywhere on the portal. Email is the only route.","Email travel@riga.lv, copy invest@riga.lv. Phone of the Tourist Information Centre: +371 67037900.","Write in Latvian: the portal is run by a municipal agency, and by law those accept documents only in the state language.","Pitch the editor for the cocktail guide in the same email: house infusions, ryumochnaya (old-school shot bar) concept, 3-5 photos.","Ready-to-send letter is in the outreach kit."]},
+   cta:{label:{en:"Email LiveRiga"}, url:"mailto:travel@riga.lv?cc=invest@riga.lv&subject=L%C5%ABgums%20iek%C4%BCaut%20b%C4%81ru%20%22Stuora%22%20liveriga.com%20objektu%20datub%C4%81z%C4%93%20un%20koktei%C4%BCu%20ce%C4%BCved%C4%AB"}},
 
   {b:"a", cost:"free", priority:1, status:"missing", name:"latvia.travel",
    domain:"latvia.travel · LIAA",
    gives:{en:"Latvia's national tourism portal. Its editorial cocktail guide lists 10 bars — a speakeasy is already in it, so the format fits. You're missing."},
    traffic:{en:"National official reach + endorsement"}, price:{en:"Free"},
-   steps:{en:["Submit via LIAA's “Publishing information in latvia.travel” e-service, or email tourism@liaa.gov.lv (verify the address first).","Add a short editorial pitch: what makes Stuora unique + photos."]},
-   cta:{label:{en:"Email LIAA"}, url:"mailto:tourism@liaa.gov.lv?subject=Stuora%20cocktail%20bar%20%E2%80%94%20listing%20%26%20cocktail%20guide&body=Hello%2C%20we%27d%20like%20to%20list%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20on%20latvia.travel%20and%20be%20considered%20for%20the%20Riga%20cocktail%20guide."}},
+   steps:{en:["Use the form: latvia.travel/en/application-form/tourist_object. Reviewed in 3 to 10 working days.","Requirements (verified): description up to 200 words in Latvian, at least 4 horizontal photos from 720px, exact GPS coordinates.","Follow up by email to tourism@liaa.gov.lv, in Latvian: LIAA is a state agency.","Add a short editorial pitch: what makes Stuora unique + photos."]},
+   cta:{label:{en:"Open the submission form"}, url:"https://www.latvia.travel/en/application-form/tourist_object"}},
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"Atlas Obscura",
    domain:"atlasobscura.com",
    gives:{en:"International guide to hidden, wondrous places. A concealed рюмочная-style speakeasy is a perfect fit for curious travelers."},
    traffic:{en:"Global, curiosity-driven travelers"}, price:{en:"Free (user submission)"},
-   steps:{en:["Use “Add a place” (see FAQ): exact address, photos.","Lead with the single most interesting thing — the hidden entrance, the infusions."]},
-   cta:{label:{en:"How to submit (FAQ)"}, url:"https://www.atlasobscura.com/faq"}},
+   steps:{en:["Create a free account at atlasobscura.com/join, then use the “Add a Place” button (the form lives at atlasobscura.com/places/new).","Their FAQ: moderation can take several weeks, and submissions with at least 3 good photos and a detailed description get priority.","Exact address, photos.","Lead with the single most interesting thing — the hidden entrance, the infusions."]},
+   cta:{label:{en:"Add a place"}, url:"https://www.atlasobscura.com/places/new"}},
 
   {b:"a", cost:"paid", priority:2, status:"missing", name:"GetYourGuide",
    domain:"getyourguide.supply",
@@ -407,7 +408,7 @@ const CH = [
    domain:"redfoxtours.eu · riga-pub-crawl.com",
    gives:{en:"Groups of tourists delivered to your door. Routes already run through your Old Town block (Kaļķu / Peldu)."},
    traffic:{en:"Nightly tourist groups"}, price:{en:"Usually free — you give a welcome-drink"},
-   steps:{en:["Email operators directly, e.g. Red Fox info@redfoxtours.eu — there's no application form.","Pitch as an unusual speakeasy stop with a welcome infusion shot.","Choose small / premium crawls — big loud groups clash with the intimate room."]},
+   steps:{en:["Verified: neither operator has a form for bars, only booking forms for tourists. Email is the only way.","Red Fox Tours: info@redfoxtours.eu, +371 29376677. Riga Pub Crawl: info@riga-pub-crawl.com, +371 66163448.","Write in English: their whole product is aimed at foreign visitors.","Pitch as an unusual speakeasy stop with a welcome infusion shot.","Choose small / premium crawls, because big loud groups clash with the intimate room."]},
    cta:{label:{en:"Contact Red Fox Tours"}, url:"https://redfoxtours.eu/riga-pub-crawl.html"}},
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"Apple Maps",
@@ -426,31 +427,31 @@ const CH = [
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Foursquare",
    domain:"business.foursquare.com/claim",
-   gives:{en:"Foursquare data still feeds some travel apps, but it closed its consumer City Guide app in late 2024, so the payoff is smaller. Verify that claiming still works before spending time."},
-   traffic:{en:"Downstream app & guide network"}, price:{en:"Free"},
-   steps:{en:["Claim the venue at business.foursquare.com/claim.","Correct category, hours, photos."]},
-   cta:{label:{en:"Claim listing"}, url:"https://business.foursquare.com/claim/"}},
+   gives:{en:"Foursquare data still feeds some travel apps, but it closed its consumer City Guide app in late 2024, so the payoff is smaller. Claiming still works (verified)."},
+   traffic:{en:"Downstream app & guide network"}, price:{en:"Free (phone verification)"},
+   steps:{en:["Claim at foursquare.com/venue/claim. Note: the old business.foursquare.com/claim link is dead.","Ownership is verified by a call to the venue phone, which is free.","The $20 charge is only for instant access without waiting. Skip it.","Correct category, hours, photos."]},
+   cta:{label:{en:"Claim listing"}, url:"https://foursquare.com/venue/claim"}},
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Editorial features (earned PR)",
    domain:"neighborhood.lv · Vogue · Lonely Planet",
    gives:{en:"Outlets that already cover Riga bars. A feature = authority links + tourist traffic, for the price of a good pitch."},
    traffic:{en:"High-trust editorial audiences"}, price:{en:"Free (earned)"},
-   steps:{en:["Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, ryumochnaya (old-school shot bar) concept).","Attach photos + invite to a tasting.","Targets: Neighborhood.lv, Vogue Scandinavia, Lonely Planet, Hop Culture."]},
+   steps:{en:["Neighborhood.lv: write to collabs@neighborhood.lv, copy hello@neighborhood.lv. Verified: their Cooperation page has no form, it tells you to email. They publish in Latvian, Russian and English, so pitch in Latvian.","Email editors with a unique angle (house infusions, “Tomato & Sprats Mary”, ryumochnaya (old-school shot bar) concept).","Attach photos + invite to a tasting.","Other targets, in English: Vogue Scandinavia, Lonely Planet, Hop Culture."]},
    cta:{label:{en:"See Neighborhood.lv"}, url:"https://neighborhood.lv/en/where-to-drink-cocktails-in-riga-top-14-bars/"}},
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Local directories & guides",
    domain:"nomax · wanderlog · 1188 · likealocal",
    gives:{en:"Long-tail “where to drink in Riga” visibility across many small guides that tourists and locals browse."},
    traffic:{en:"Search long-tail + planners"}, price:{en:"Free (some upsells)"},
-   steps:{en:["Add / request inclusion on: Nomax, Wanderlog, LikeALocal, Local Life, Riga Guide.","Register on Latvian catalogs 1188.lv and Gurmania.lv."]},
-   cta:{label:{en:"Add on 1188.lv"}, url:"https://www.1188.lv/ru/katalog/registratsiya-kompanii"}},
+   steps:{en:["Gurmania.lv has a hidden self-service account: gurmania.lv/lv/rcp-register. Their own page says registering a new venue is currently free, and they will even create the first entries for you if you send the details.","1188.lv: fill the company form at 1188.lv/ru/katalog/registratsiya-kompanii. Enter the name and description in Latvian. Support: info@1188.lv, 80001188.","Skip Wanderlog as a separate task: it pulls its data from Google, so fixing the Google Business Profile is enough.","Add / request inclusion on: Nomax, LikeALocal, Local Life, Riga Guide."]},
+   cta:{label:{en:"Register on Gurmania"}, url:"https://gurmania.lv/lv/rcp-register"}},
 
   {b:"a", cost:"free", priority:3, status:"missing", name:"Falstaff Bar Guide",
    domain:"falstaff.com",
    gives:{en:"International drinks guide that already lists Riga's nosaints — a credibility channel for craft cocktail bars. Free to be listed if you meet the quality bar."},
    traffic:{en:"International drinks audience"}, price:{en:"Free"},
-   steps:{en:["Email guides@falstaff.com (or the site contact form) to be listed.","Send concept, photos and signature drinks."]},
-   cta:{label:{en:"Email Falstaff guides"}, url:"mailto:guides@falstaff.com?subject=Stuora%20cocktail%20bar%2C%20Riga%20%E2%80%94%20listing%20request&body=Hello%2C%20we%27d%20like%20Stuora%20(Aud%C4%93ju%20iela%2015%2C%20Riga)%20to%20be%20considered%20for%20the%20Falstaff%20bar%20guide."}},
+   steps:{en:["Email guides@falstaff.com to be listed. Their FAQ confirms listing is free of charge.","Send concept, photos and signature drinks.","Once the listing exists, request access to Falstaff ServicePoint, their B2B portal: email servicepoint@falstaff.com with the subject “Request Access”. From there you edit your own card and sign up for their tastings.","Do not write to sales@falstaff.com: that is the paid enhanced profile, which you do not need."]},
+   cta:{label:{en:"Email Falstaff guides"}, url:"mailto:guides@falstaff.com?subject=Listing%20request%3A%20Stuora%2C%20cocktail%20bar%2C%20Riga%2C%20Latvia"}},
 
   {b:"a", cost:"free", priority:2, status:"missing", name:"RestaurantGuru",
    domain:"restaurantguru.com",
@@ -477,37 +478,37 @@ const CH = [
   {b:"corp", cost:"free", priority:2, status:"missing", name:"Meet Rīga (MICE)",
    domain:"meetriga.com",
    gives:{en:"Riga's official convention bureau — a supplier registry connecting event organizers with local venues. Inbound MICE & after-conference leads."},
-   traffic:{en:"Congress & MICE organizers"}, price:{en:"Free listing"},
-   steps:{en:["Apply to be listed as a venue / activity supplier.","Position Stuora for receptions & team activities."]},
-   cta:{label:{en:"Get listed"}, url:"https://meetriga.com/en/"}},
+   traffic:{en:"Congress & MICE organizers"}, price:{en:"Free listing (their services are free)"},
+   steps:{en:["Use the “Send inquiry” form on their contact page: it accepts an attachment up to 7 MB, so send a one-page PDF with formats, capacity and photos.","Verified: there is no separate supplier application form, because they personally visit every service provider before adding them to the database. So the goal is to book that visit.","Email in Latvian. Careful with the address: the page shows meet@riga.lv as text but the mailto link is meet@liveriga.lv. Use both.","Ignore “Submit an RFP”: that form is for event organisers, not for venues.","Position Stuora for receptions & team activities."]},
+   cta:{label:{en:"Open the inquiry form"}, url:"https://www.meetriga.com/en/7545-contact-us"}},
 
   {b:"corp", cost:"mixed", priority:2, status:"missing", name:"Business chambers (AmCham & co.)",
    domain:"amcham.lv",
    gives:{en:"Communities of exactly the decision-makers you want. AmCham's “Business After Hours” lets a member host peers on-site — a perfect showcase."},
    traffic:{en:"150+ international companies"}, price:{en:"Free to host · membership paid"},
-   steps:{en:["Offer to host an AmCham “Business After Hours” networking night at the bar.","They bring the audience; you show the venue.","Later, join the one chamber closest to your target."]},
-   cta:{label:{en:"AmCham Latvia"}, url:"https://www.amcham.lv/"}},
+   steps:{en:["Email amcham@amcham.lv, +371 20717791, in English: it is the American Chamber and English is its working language.","Verified: their membership pages return 404 on direct links, so email is the working route.","Offer to host an AmCham “Business After Hours” networking night at the bar.","They bring the audience; you show the venue.","Later, join the one chamber closest to your target."]},
+   cta:{label:{en:"Email AmCham"}, url:"mailto:amcham@amcham.lv?subject=Offer%20to%20host%20your%20networking%20evening%20at%20a%20hidden%20Old%20Town%20speakeasy"}},
 
   {b:"corp", cost:"free", priority:2, status:"missing", name:"Coworkings & startup hubs",
    domain:"startuphouse.lv",
    gives:{en:"Where startup & IT teams concentrate — the crowd that books offbeat team-building."},
    traffic:{en:"Startup & IT teams"}, price:{en:"Free (partnership)"},
-   steps:{en:["Offer residents a perk (promo class / first-booking discount).","Host one demo evening for the community manager & residents.","Leave a flyer / QR."]},
+   steps:{en:["Email kristians.jenciuss@startuphouse.lv in English. Their site also has a Typeform application behind the “Fill the form” button.","Offer residents a perk (promo class / first-booking discount).","Host one demo evening for the community manager & residents.","Leave a flyer / QR."]},
    cta:{label:{en:"Startup House Riga"}, url:"https://www.startuphouse.lv/"}},
 
   {b:"corp", cost:"mixed", priority:2, status:"missing", name:"HR communities (LPVA)",
    domain:"lpva.lv",
    gives:{en:"The people who actually decide on team-building. Get in front of them directly."},
-   traffic:{en:"HR decision-makers"}, price:{en:"Free to partner · events may be paid"},
-   steps:{en:["Offer LPVA to host their afterparty / networking at Stuora.","Speak at or sponsor an HR event with a mini-tasting."]},
-   cta:{label:{en:"LPVA events"}, url:"https://lpva.lv/events"}},
+   traffic:{en:"HR decision-makers"}, price:{en:"Free to partner · membership is paid"},
+   steps:{en:["Email lpva@lpva.lv, +371 29163036, in Latvian. Their contact page also has a built-in message form.","Offer LPVA to host their afterparty / networking at Stuora.","You do not need to join: hosting works without membership. For reference, membership costs 50 EUR to enter plus 270 EUR a year for companies under 50 staff, and the application is a Word file on their site.","Speak at or sponsor an HR event with a mini-tasting."]},
+   cta:{label:{en:"Email LPVA"}, url:"mailto:lpva@lpva.lv?subject=Pied%C4%81v%C4%81jums%3A%20telpa%20LPVA%20networking%20vakaram%20Vecr%C4%ABgas%20speakeasy%20b%C4%81r%C4%81"}},
 
   {b:"corp", cost:"free", priority:3, status:"missing", name:"Experience-gift shops",
    domain:"davanuserviss.lv",
    gives:{en:"Gift-experience shops where companies buy team activities as vouchers — a place to be listed for inbound corporate leads."},
    traffic:{en:"Companies buying activity gifts"}, price:{en:"Free / commission (verify)"},
-   steps:{en:["List your masterclass on experience-gift shops such as Dāvanu Serviss.","Note: Weasgley (weasgley.com) and Ballītes.lv are event organizers (competitors), not open directories — approach them only as a subcontracting partner who can send you groups."]},
-   cta:{label:{en:"Dāvanu Serviss (business)"}, url:"https://www.davanuserviss.lv/biznesa-davanas/komandas-saliedesanai/"}},
+   steps:{en:["Dāvanu Serviss has a proper partner application form: davanuserviss.lv/klut-par-partneri. Fill it in Latvian and they contact you. Phone: +371 26699899.","Terms and commission are not published, they are agreed after you apply.","Note: Weasgley (weasgley.com) and Ballītes.lv are event organizers (competitors), not open directories — approach them only as a subcontracting partner who can send you groups."]},
+   cta:{label:{en:"Apply as a partner"}, url:"https://www.davanuserviss.lv/klut-par-partneri/"}},
 
   {b:"corp", cost:"mixed", priority:3, status:"missing", name:"Eventbrite / Meetup showcase",
    domain:"eventbrite.com · meetup.com",
@@ -542,8 +543,8 @@ const CH = [
    domain:"afishamira.com · meeting.lv",
    gives:{en:"53.5% of Rigans are native Russian speakers — about half your local audience. Reach them without Yandex: Google works, plus Russian-language listings and creators."},
    traffic:{en:"Half of Riga's locals"}, price:{en:"Free / barter"},
-   steps:{en:["Post events on Russian-language what's-on sites: afishamira.com, meeting.lv/afisha, rus.tvnet.lv, rus.delfi.lv.","Publish bilingual posts (LV / RU / EN).","Invite Russian-speaking Riga micro-bloggers (barter)."]},
-   cta:{label:{en:"Afisha Mira · Riga"}, url:"https://afishamira.com/city/riga/"}},
+   steps:{en:["meeting.lv: use the “Добавить информацию” form in the site footer, it goes straight to the editors. Free. Write in Russian.","Afisha Mira: correction after checking. They list charity events for free, but commercial listings are paid. There is no public email or submission form either, only Telegram @AfishaMira. Treat it as a paid option, not a free one.","Post events on rus.tvnet.lv and rus.delfi.lv.","Publish bilingual posts (LV / RU / EN).","Invite Russian-speaking Riga micro-bloggers (barter)."]},
+   cta:{label:{en:"Submit via meeting.lv"}, url:"http://www.meeting.lv/service/about_us.php"}},
 
   {b:"b", cost:"free", priority:3, status:"missing", name:"Facebook (events & locals)",
    domain:"facebook.com",
@@ -557,15 +558,15 @@ const CH = [
    domain:"escaperoom.lv",
    gives:{en:"A big operator selling corporate/team events — natural “after the quest, drinks at Stuora”. Also fills your private Mon–Wed."},
    traffic:{en:"Corporate & tourist groups"}, price:{en:"Free / barter referral"},
-   steps:{en:["Propose a “quest → cocktails” package + a group promo code.","Offer to host their corporate groups on Mon–Wed."]},
-   cta:{label:{en:"Contact Escape Room"}, url:"https://escaperoom.lv/en/"}},
+   steps:{en:["Email info@xroom.lv, +371 22066566. Verified: no contact form on their site, email only. Write in Latvian.","Propose a “quest → cocktails” package + a group promo code.","Offer to host their corporate groups on Mon–Wed."]},
+   cta:{label:{en:"Email Escape Room"}, url:"mailto:info@xroom.lv?subject=Sadarb%C4%ABbas%20pied%C4%81v%C4%81jums%3A%20p%C4%93c%20kvesta%20koktei%C4%BCi%20b%C4%81r%C4%81%20Stuora"}},
 
   {b:"c", cost:"free", priority:3, status:"missing", name:"Pub-quiz night",
    domain:"extrareality.lv",
    gives:{en:"A recurring weekday quiz brings a steady local crowd — and gets you onto Riga's quiz aggregator."},
    traffic:{en:"Local regulars, weeknights"}, price:{en:"Free"},
-   steps:{en:["Run a weekly quiz (e.g. a private Tue slot).","Get listed on the Riga quiz agenda (Extrareality)."]},
-   cta:{label:{en:"See quiz agenda"}, url:"https://extrareality.lv/en/riga/afisha"}},
+   steps:{en:["Run a weekly quiz (e.g. a private Tue slot).","Get listed on the Riga quiz agenda: email info@extrareality.lv, +371 28723286. They do have a partner dashboard, but access is granted by hand after you write, there is no sign-up form.","Note: kaskurkad.lv, Latvia's biggest what's-on calendar, is NOT free. It charges 100 EUR + VAT for an organiser account and another 100 EUR + VAT to register a venue."]},
+   cta:{label:{en:"Email Extrareality"}, url:"mailto:info@extrareality.lv?subject=Sadarb%C4%ABba%3A%20pub%20kvizs%20b%C4%81r%C4%81%20Stuora"}},
 
   {b:"c", cost:"free", priority:2, status:"missing", name:"Hotel concierges",
    domain:"boutique hotels within 10 min",
