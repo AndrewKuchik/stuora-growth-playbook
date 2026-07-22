@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuora: письма и заявки на размещение</title>
+<style>
+  :root{
+    --bg:#fbfaf8; --card:#fff; --tx:#1a1a1a; --mut:#6b6660; --line:#e6e1da;
+    --acc:#8a5a2b; --acc-soft:#f4ece2; --ok:#2e7d52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#15130f; --card:#1e1b16; --tx:#f0ece5; --mut:#a09a90; --line:#332e27;
+           --acc:#d8a25f; --acc-soft:#2a2219; --ok:#5fbd8a; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+  h1{font-size:28px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--mut);margin:0 0 28px}
+  h2{font-size:20px;margin:44px 0 4px;padding-top:20px;border-top:1px solid var(--line)}
+  h2:first-of-type{border-top:0;padding-top:0}
+  .lead{color:var(--mut);margin:0 0 18px;font-size:15px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:18px 18px 16px;margin:0 0 18px}
+  .ttl{font-weight:600;font-size:17px;margin:0 0 2px}
+  .meta{color:var(--mut);font-size:14px;margin:0 0 14px}
+  .lang{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;
+    background:var(--acc-soft);color:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px;
+    vertical-align:2px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+  .lbl{font-size:13px;color:var(--mut);min-width:64px}
+  .val{font-weight:600;word-break:break-all}
+  button{font:inherit;font-size:13px;font-weight:600;cursor:pointer;
+    background:var(--acc);color:#fff;border:0;border-radius:7px;padding:6px 12px}
+  button:hover{opacity:.88}
+  button.ghost{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+  button.done{background:var(--ok)}
+  .body{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);
+    border-radius:9px;padding:14px 16px;margin:10px 0 0;font-size:15px;line-height:1.65}
+  .note{font-size:14px;color:var(--mut);margin:10px 0 0}
+  ul{margin:8px 0 0;padding-left:20px} li{margin:4px 0}
+  a{color:var(--acc)}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600}
+  .fill{background:var(--acc-soft);border-radius:4px;padding:0 3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Stuora: письма и заявки на размещение</h1>
+<p class="sub">Нажмите «Копировать текст». В буфер попадёт обычный текст без форматирования: вставляйте прямо в Gmail.<br>
+Andrejs Birzgals, +371 29270207, stuorasmm@gmail.com</p>
+
+<div class="card" style="background:var(--acc-soft);border-color:var(--acc)">
+<p class="ttl" style="margin-bottom:8px">Что осталось вписать вручную</p>
+<p style="margin:0;font-size:15px">В текстах есть подсвеченные места вроде <span class="fill">[ievietot darba laiku]</span>. Это то, что знаете только вы:
+часы работы, вместимость зала, GPS-координаты, три фирменных коктейля, число настоек, размер групп.
+Заполните перед отправкой.</p>
+</div>
+
+
+<h2>Письма на латышском</h2>
+<p class="lead">По закону о госязыке (Valsts valodas likums, 10. pants) государственные и муниципальные учреждения
+принимают документы только на латышском. LiveRiga и Meet Rīga это муниципальное агентство, latvia.travel это LIAA.</p>
+
+<!-- 1 -->
+<div class="card">
+  <p class="ttl">1. LiveRiga, официальный турпортал Риги <span class="lang">LV</span></p>
+  <p class="meta">Формы добавления объекта на сайте нет, только почта. Цель: попасть в гид «Time for a cocktail».</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">travel@riga.lv</span>
+    <button class="ghost" data-copy="travel@riga.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Копия</span><span class="val">invest@riga.lv</span></div>
+  <div class="row"><span class="lbl">Телефон</span><span class="val">+371 67037900</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s1">Копировать тему</button>
+    <button data-src="b1">Копировать текст</button></div>
+  <div class="body" id="s1">Lūgums iekļaut bāru "Stuora" liveriga.com objektu datubāzē un kokteiļu ceļvedī</div>
+  <div class="body" id="b1">Godātā LIVE RĪGA komanda!
+
+Lūdzam iekļaut mūsu bāru Rīgas tūrisma portāla liveriga.com objektu datubāzē, kā arī izvērtēt iespēju to iekļaut redakcijas veidotajā ceļvedī "Time for a cocktail".
+
+Par bāru:
+Stuora ir speakeasy tipa kokteiļu bārs Vecrīgā, Audēju ielā 15. Ieeja ir apzināti slēpta, bet interjers veidots kā vintage "rjumočnaja", vecās skolas dzertuve, kas pārveidota par mūsdienīgu kokteiļu bāru. Mūsu piedāvājuma pamatā ir pašu gatavoti uzlējumi, tostarp vietējais "Tomato &amp; Sprats Mary".
+
+Kāpēc tas varētu interesēt portāla auditoriju:
+- Rīgai netipisks formāts, slēpts bārs, nevis ielas līmeņa iestāde;
+- viesus apkalpojam latviešu, angļu un krievu valodā;
+- no ceturtdienas līdz svētdienai esam atvērti individuāliem apmeklētājiem, no pirmdienas līdz trešdienai telpa ir pieejama privātiem un korporatīviem pasākumiem.
+
+Pamatinformācija:
+Nosaukums: Stuora
+Adrese: Audēju iela 15, Rīga
+Mājaslapa: stuora.lv
+Instagram: @stuora.bar
+E-pasts: stuorasmm@gmail.com
+Tālrunis: +371 29270207
+Darba laiks: [ievietot darba laiku]
+
+Varam nosūtīt augstas izšķirtspējas fotogrāfijas un aprakstu jebkurā nepieciešamajā apjomā latviešu un angļu valodā. Labprāt uzņemsim portāla redaktoru vai Tūrisma informācijas centra kolēģi uz degustāciju, lai vieta būtu apskatīta klātienē.
+
+Lūdzu, informējiet, kādi materiāli no mums ir nepieciešami un vai objekta iekļaušanu datubāzē un ceļvedī kārto viena un tā pati atbildīgā persona.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <p class="ttl">2. Meet Rīga, конвенционное бюро (корпоративы и MICE) <span class="lang">LV</span></p>
+  <p class="meta">То же учреждение, что LiveRiga, но другой отдел и другие люди. Письма отправлять отдельно.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">meet@riga.lv</span>
+    <button class="ghost" data-copy="meet@riga.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефон</span><span class="val">+371 25727845</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s2">Копировать тему</button>
+    <button data-src="b2">Копировать текст</button></div>
+  <div class="body" id="s2">Pieteikums iekļaušanai MEET RĪGA pakalpojumu sniedzēju datubāzē, bārs Stuora</div>
+  <div class="body" id="b2">Godātā MEET RĪGA komanda!
+
+Lūdzam iekļaut mūs vietējo pakalpojumu sniedzēju datubāzē kā pasākumu norises vietu un aktivitāšu piedāvātāju konferenču un korporatīvo pasākumu organizatoriem.
+
+Stuora ir speakeasy tipa kokteiļu bārs, Audēju iela 15, Vecrīga. No pirmdienas līdz trešdienai telpa ir pieejama ekskluzīvai nomai pilnā apjomā, pārējās dienās pēc vienošanās.
+
+Ko varam nodrošināt konferenču un korporatīvajām grupām:
+- pieņemšanas pēc konferencēm ar visas telpas nomu;
+- "Infusion Lab", praktiska komandas aktivitāte: grupa pagatavo savu uzlējumu un aizved līdzi pudeli ar uzņēmuma nosaukumu uz etiķetes;
+- kokteiļu meistarklases un aklās degustācijas, katram formātam ir pilnībā bezalkoholiska versija;
+- ietilpība: [ievietot skaitu] viesi sēdvietās, [ievietot skaitu] stāvvietās.
+
+Atrodamies 10 minūšu gājiena attālumā no lielākās daļas Vecrīgas konferenču viesnīcu un no kruīza termināļa.
+
+Lūdzu, norādiet, kas ir nepieciešams iekļaušanai datubāzē: aizpildāma anketa, uzņēmuma apraksts vai klātienes tikšanās. Labprāt uzņemsim Jūsu komandu uz demonstrācijas pasākumu, lai varētu novērtēt telpu un formātus. Visu informāciju pēc pieprasījuma nosūtīsim arī angļu valodā.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <p class="ttl">3. LIAA, портал latvia.travel <span class="lang">LV</span></p>
+  <p class="meta">Отправлять после заполнения анкеты, как сопроводительное письмо.
+    Анкета: <a href="https://www.latvia.travel/en/application-form/tourist_object" target="_blank" rel="noopener">latvia.travel, add tourist object</a></p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">tourism@liaa.gov.lv</span>
+    <button class="ghost" data-copy="tourism@liaa.gov.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s3">Копировать тему</button>
+    <button data-src="b3">Копировать текст</button></div>
+  <div class="body" id="s3">Pieteikums tūrisma objekta publicēšanai latvia.travel, kokteiļu bārs Stuora, Rīga</div>
+  <div class="body" id="b3">Labdien!
+
+Esam iesnieguši pieteikumu tūrisma objekta publicēšanai portālā latvia.travel (anketa iesniegta [ievietot datumu]). Rakstām, lai apstiprinātu iesniegumu un piedāvātu papildu materiālus.
+
+Objekts: Stuora, speakeasy tipa kokteiļu bārs
+Adrese: Audēju iela 15, Rīga
+GPS: [ievietot koordinātas]
+Mājaslapa: stuora.lv
+Instagram: @stuora.bar
+E-pasts: stuorasmm@gmail.com
+Tālrunis: +371 29270207
+
+Īss apraksts: slēpts speakeasy tipa kokteiļu bārs Vecrīgā ar pašu gatavotiem uzlējumiem un vintage "rjumočnaja" estētiku. Piedāvājam gan individuālu apmeklējumu, gan kokteiļu meistarklases un degustācijas grupām. Viesus apkalpojam latviešu, angļu un krievu valodā.
+
+Atbilstoši informācijas kvalitātes prasībām esam sagatavojuši:
+- aprakstu latviešu valodā līdz 200 vārdiem un tā tulkojumu angļu valodā;
+- [ievietot skaitu] horizontālas fotogrāfijas augstā izšķirtspējā, ne mazāk kā 720 px;
+- precīzas GPS koordinātas.
+
+Papildus lūdzam izvērtēt iespēju iekļaut bāru portāla redakcijas veidotajā Rīgas kokteiļu bāru ceļvedī, kurā līdzīga formāta iestāde jau ir pārstāvēta.
+
+Lūdzu, informējiet, ja ir nepieciešami papildu materiāli vai precizējumi.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <p class="ttl">4. Gurmania.lv, каталог ресторанов и баров <span class="lang">LV</span></p>
+  <p class="meta">Формы «добавить заведение» на сайте нет, только почта.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">info@gurmania.lv</span>
+    <button class="ghost" data-copy="info@gurmania.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефон</span><span class="val">+371 27811218</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s4">Копировать тему</button>
+    <button data-src="b4">Копировать текст</button></div>
+  <div class="body" id="s4">Lūgums pievienot bāru Stuora Gurmania.lv katalogam</div>
+  <div class="body" id="b4">Labdien!
+
+Lūdzam pievienot mūsu bāru Gurmania.lv katalogam.
+
+Nosaukums: Stuora
+Adrese: Audēju iela 15, Rīga
+Veids: kokteiļu bārs, speakeasy
+Mājaslapa: stuora.lv
+Instagram: @stuora.bar
+E-pasts: stuorasmm@gmail.com
+Tālrunis: +371 29270207
+Darba laiks: [ievietot darba laiku]
+
+Īss apraksts: slēpts speakeasy tipa kokteiļu bārs Vecrīgā ar mājās gatavotiem uzlējumiem un vintage "rjumočnaja" estētiku. No ceturtdienas līdz svētdienai atvērts apmeklētājiem, no pirmdienas līdz trešdienai pieejams privātiem un korporatīviem pasākumiem.
+
+Fotogrāfijas un dzērienu karti nosūtīsim uzreiz pēc pieprasījuma. Lūdzu, informējiet, kāda informācija vēl ir nepieciešama un vai ievietošana katalogā ir bez maksas.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <p class="ttl">5. Neighborhood.lv, издание про Ригу (бесплатный PR) <span class="lang">LV</span></p>
+  <p class="meta">Выходит на латышском, русском и английском. Уже делали гид по коктейльным барам Риги, вас там нет.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">collabs@neighborhood.lv</span>
+    <button class="ghost" data-copy="collabs@neighborhood.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Копия</span><span class="val">hello@neighborhood.lv</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s5">Копировать тему</button>
+    <button data-src="b5">Копировать текст</button></div>
+  <div class="body" id="s5">Stāsta ideja: bārs, kas slēptā Vecrīgas telpā gatavo pats savus uzlējumus</div>
+  <div class="body" id="b5">Sveiki, Neighborhood komanda!
+
+Stāsta ideja un vienlaikus atgādinājums, ka Jūsu ceļvedī par Rīgas kokteiļu bāriem mūsu nav.
+
+Stuora, Audēju iela 15, ir speakeasy ar ieeju, kurai lielākā daļa cilvēku paiet garām. Iekšpusē ir apzināta "rjumočnaja", vecās skolas dzertuve, pārveidota par kokteiļu bāru. Viss interesantais mūsu kartē sākas ar uzlējumu, ko gatavojam paši, tostarp "Tomato &amp; Sprats Mary", kas izklausās pēc joka, līdz to nogaršo.
+
+Iespējamie stāsta leņķi:
+1. Kā bārs pats izgatavo [ievietot skaitu] uzlējumus: process, neveiksmes, receptes.
+2. Rīgas speakeasy aina 2026. gadā: kas īsti slēpjas un kāpēc.
+3. Dzēriens, kas būvēts ap latvisku ikonu, šprotēm vai Melno balzamu, un ko ārzemnieki pasūta divreiz.
+
+Labprāt uzaicinām Jūsu autoru un fotogrāfu uz degustāciju jebkurā vakarā. No pirmdienas līdz trešdienai varam aizvērt zāli, lai būtu pietiekami kluss fotografēšanai.
+
+Fotogrāfijas un pilnu dzērienu karti nosūtīsim pēc pieprasījuma. Materiālus varam sagatavot latviešu, angļu un krievu valodā.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <p class="ttl">6. LPVA, латвийская ассоциация персонала (HR) <span class="lang">LV</span></p>
+  <p class="meta">Это те люди, которые и решают про тимбилдинги.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">lpva@lpva.lv</span>
+    <button class="ghost" data-copy="lpva@lpva.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефон</span><span class="val">+371 29163036</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s6">Копировать тему</button>
+    <button data-src="b6">Копировать текст</button></div>
+  <div class="body" id="s6">Piedāvājums: telpa LPVA networking vakaram Vecrīgas speakeasy bārā</div>
+  <div class="body" id="b6">Godātā LPVA komanda!
+
+Piedāvājam savu telpu kādam no Jūsu pasākumiem, biedrībai bez maksas.
+
+Stuora ir speakeasy tipa kokteiļu bārs Audēju ielā 15, Vecrīgā. No pirmdienas līdz trešdienai visa telpa ir pieejama privātiem pasākumiem, tieši tajās dienās, kad parasti notiek networking vakari.
+
+Ko nodrošinām organizatoram bez maksas:
+- visas telpas ekskluzīvu izmantošanu vakaram;
+- sagaidīšanas dzērienu no mūsu pašu uzlējumiem katram viesim;
+- īsu "Infusion Lab" ledlauzi, kurā viesi kopā pagatavo un nosauc uzlējumu;
+- bezalkoholisku alternatīvu katram dzērienam.
+
+Jūs atvedat auditoriju, mēs parādām, ko telpa spēj. Viesi maksā tikai par to, ko pasūta papildus sagaidīšanas dzērienam, vai arī vienojamies par fiksētu paketi uz vienu personu.
+
+Vai varam atrast 20 minūtes, lai parādītu telpu klātienē?
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <p class="ttl">7. Escape Room Riga и Extrareality, партнёрство «квест, потом коктейли» <span class="lang">LV</span></p>
+  <p class="meta">Обе компании латвийские, сайты на латышском. Одно письмо подходит для обеих.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">info@xroom.lv</span>
+    <button class="ghost" data-copy="info@xroom.lv">Копировать адрес</button>
+    <span class="val">info@extrareality.lv</span>
+    <button class="ghost" data-copy="info@extrareality.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефоны</span><span class="val">+371 22066566, +371 28723286</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s7">Копировать тему</button>
+    <button data-src="b7">Копировать текст</button></div>
+  <div class="body" id="s7">Sadarbības piedāvājums: pēc kvesta kokteiļi bārā Stuora</div>
+  <div class="body" id="b7">Labdien!
+
+Mēs esam Stuora, speakeasy tipa kokteiļu bārs Vecrīgā, Audēju ielā 15. Piedāvājam sadarbību Jūsu korporatīvajām un tūristu grupām.
+
+Ideja ir vienkārša: Jūs pārdodat kvestu, mēs uzņemam grupu pēc tā.
+- Pakete "kvests un kokteiļi": Jūsu viesi ierodas pie mums ar promo kodu un saņem sagaidīšanas uzlējumu.
+- No pirmdienas līdz trešdienai atdodam visu zāli privātām grupām, tieši tajās dienās korporatīvie pasākumi tiek rezervēti visbiežāk.
+- Varam piedāvāt kokteiļu meistarklasi kā programmas turpinājumu, katram formātam ir pilnībā bezalkoholiska versija.
+- Par komisiju vai atlaižu nosacījumiem varam vienoties, esam elastīgi.
+
+Atsevišķi Extrareality komandai: esam gatavi uzņemt pie sevis pub kvizu darba dienas vakarā un tikt iekļauti Jūsu Rīgas viktorīnu afišā.
+
+Aicinām Jūs ciemos, parādīsim zāli, iedosim nogaršot uzlējumus un vienosimies uz vietas.
+
+Ar cieņu,
+Andrejs Birzgals
+Bārs Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+
+<h2>Письма на английском</h2>
+<p class="lead">Международные площадки, плюс латвийские компании, которые работают только с иностранцами.</p>
+
+<!-- 8 -->
+<div class="card">
+  <p class="ttl">8. Falstaff Bar Guide, международный гид <span class="lang">EN</span></p>
+  <p class="meta">Размещение бесплатное, это подтверждено в их FAQ. Адрес sales@falstaff.com это платный профиль, он вам не нужен.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">guides@falstaff.com</span>
+    <button class="ghost" data-copy="guides@falstaff.com">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s8">Копировать тему</button>
+    <button data-src="b8">Копировать текст</button></div>
+  <div class="body" id="s8">Listing request: Stuora, cocktail bar, Riga, Latvia</div>
+  <div class="body" id="b8">Dear Falstaff Guides team,
+
+We would like to request a listing for our bar in the Falstaff Bar Guide.
+
+Stuora, Audēju iela 15, Riga, Latvia.
+A speakeasy cocktail bar in Riga's Old Town, built around house made infusions and a vintage "ryumochnaya" aesthetic, the old school shot bar rebuilt as a cocktail bar. Hidden entrance, around [insert number] seats, a bar led menu that changes seasonally.
+
+Signature drinks: [insert three cocktails], plus a rotating range of in house infusions.
+
+Website: stuora.lv
+Instagram: @stuora.bar
+E-mail: stuorasmm@gmail.com
+Phone: +371 29270207
+
+We can send high resolution photography, the current menu and full opening hours in whatever format your editors need. Latvia is currently thinly represented in the guide, and we would be glad to host a Falstaff taster in Riga.
+
+Please let us know the next step.
+
+Kind regards,
+Andrejs Birzgals
+Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <p class="ttl">9. Паб-краулы: Red Fox Tours и Riga Pub Crawl <span class="lang">EN</span></p>
+  <p class="meta">Маршрут Red Fox уже проходит по Peldu и Kaļķu, это ваш квартал. Форм для баров нет, только почта.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">info@redfoxtours.eu</span>
+    <button class="ghost" data-copy="info@redfoxtours.eu">Копировать адрес</button>
+    <span class="val">info@riga-pub-crawl.com</span>
+    <button class="ghost" data-copy="info@riga-pub-crawl.com">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефоны</span><span class="val">+371 29376677, +371 66163448</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s9">Копировать тему</button>
+    <button data-src="b9">Копировать текст</button></div>
+  <div class="body" id="s9">Partnership offer: Stuora speakeasy as a stop on your pub crawl</div>
+  <div class="body" id="b9">Hello,
+
+Your route already runs through Peldu and Kaļķu. We are three minutes away at Audēju iela 15.
+
+Stuora is a hidden speakeasy bar with house made infusions, and we would like to be one of the stops on your crawl.
+
+What we offer your groups:
+- a welcome infusion shot for every guest in the group, on us;
+- the hidden entrance moment, a genuine highlight for a tour and good photo and video content for your social media;
+- a group rate on the following drinks: [insert drinks and prices];
+- guests served in English, Latvian and Russian.
+
+One condition: our room is intimate, so we work best with groups of up to [insert number] people, and we would agree the arrival time in advance.
+
+Would you like to come by this week and see the place? Drinks on us.
+
+Kind regards,
+Andrejs Birzgals
+Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <p class="ttl">10. AmCham Latvia и Startup House Riga <span class="lang">EN</span></p>
+  <p class="meta">AmCham это Американская торговая палата, рабочий язык английский. Startup House тоже работает на английском.</p>
+  <div class="row"><span class="lbl">Кому</span><span class="val">amcham@amcham.lv</span>
+    <button class="ghost" data-copy="amcham@amcham.lv">Копировать адрес</button>
+    <span class="val">kristians.jenciuss@startuphouse.lv</span>
+    <button class="ghost" data-copy="kristians.jenciuss@startuphouse.lv">Копировать адрес</button></div>
+  <div class="row"><span class="lbl">Телефон</span><span class="val">+371 20717791</span></div>
+  <div class="row"><span class="lbl">Тема</span>
+    <button class="ghost" data-src="s10">Копировать тему</button>
+    <button data-src="b10">Копировать текст</button></div>
+  <div class="body" id="s10">Offer to host your networking evening at a hidden Old Town speakeasy</div>
+  <div class="body" id="b10">Dear [AmCham / Startup House] team,
+
+We would like to offer our venue for one of your networking events, free of charge for the organisation.
+
+Stuora is a speakeasy cocktail bar at Audēju iela 15 in the Old Town. On Monday to Wednesday the whole room is available for private events, which is exactly when networking evenings usually happen.
+
+What we provide at no cost to you:
+- exclusive use of the venue for the evening;
+- a welcome drink made from our own infusions for every guest;
+- a short "Infusion Lab" icebreaker, where guests make and name an infusion together;
+- a non alcoholic option for every drink served.
+
+You bring the audience, we show what the venue can do. Guests pay only for what they order beyond the welcome drink, or you take a fixed package per person, whichever you prefer.
+
+Could we book 20 minutes to show you the room?
+
+Kind regards,
+Andrejs Birzgals
+Stuora
++371 29270207
+stuorasmm@gmail.com</div>
+</div>
+
+
+<h2>Формы: письмо не нужно</h2>
+<div class="card">
+<table>
+<tr><th>Канал</th><th>Ссылка</th><th>Язык</th><th>Что важно</th></tr>
+<tr><td>latvia.travel</td><td><a href="https://www.latvia.travel/en/application-form/tourist_object" target="_blank" rel="noopener">Add tourist object</a></td><td>LV</td><td>Описание до 200 слов на латышском, минимум 4 горизонтальных фото от 720 px, точные GPS</td></tr>
+<tr><td>LIAA пресс-туры</td><td><a href="https://www.latvia.travel/en/media-request-form-2" target="_blank" rel="noopener">Media request</a>, <a href="https://www.latvia.travel/en/influencer-request-form" target="_blank" rel="noopener">Influencer request</a></td><td>EN</td><td>Форму заполняет журналист или блогер, вы предлагаете себя точкой маршрута</td></tr>
+<tr><td>Atlas Obscura</td><td><a href="https://www.atlasobscura.com/places/new" target="_blank" rel="noopener">Add a Place</a></td><td>EN</td><td>Нужен бесплатный аккаунт. Приоритет заявкам с 3 и более хорошими фото, модерация несколько недель</td></tr>
+<tr><td>1188.lv</td><td><a href="https://www.1188.lv/ru/katalog/registratsiya-kompanii" target="_blank" rel="noopener">Регистрация компании</a></td><td>LV</td><td>Интерфейс есть русский, но название и описание вносите на латышском</td></tr>
+<tr><td>Dāvanu Serviss</td><td><a href="https://www.davanuserviss.lv/klut-par-partneri/" target="_blank" rel="noopener">Kļūt par partneri</a></td><td>LV</td><td>После заявки связываются сами</td></tr>
+<tr><td>meeting.lv</td><td><a href="http://www.meeting.lv/service/about_us.php" target="_blank" rel="noopener">Добавить информацию</a></td><td>RU</td><td>Форма в подвале сайта, уходит прямо в редакцию</td></tr>
+<tr><td>Falstaff</td><td><a href="https://www.falstaff.com/en/my-tip-for-falstaff" target="_blank" rel="noopener">My tip for Falstaff</a></td><td>EN</td><td>Запасной вариант, письмо надёжнее</td></tr>
+</table>
+</div>
+
+
+<h2>Кабинеты: регистрируетесь сами</h2>
+<div class="card">
+<table>
+<tr><th>Канал</th><th>Куда идти</th><th>Заметка</th></tr>
+<tr><td>Tripadvisor</td><td><a href="https://www.tripadvisor.com/Owners" target="_blank" rel="noopener">tripadvisor.com/Owners</a>, кнопка Add a Listing</td><td>Сначала проверьте, не создал ли страницу гость. Бесплатно, проверка 3 до 5 дней</td></tr>
+<tr><td>Apple Maps</td><td><a href="https://businessconnect.apple.com/" target="_blank" rel="noopener">businessconnect.apple.com</a></td><td>Бесплатно, важно для туристов с айфонами</td></tr>
+<tr><td>Bing Places</td><td><a href="https://www.bingplaces.com/" target="_blank" rel="noopener">bingplaces.com</a></td><td>Уже начато, надо доделать</td></tr>
+<tr><td>RestaurantGuru</td><td><a href="https://restaurantguru.com/Stuora-Riga" target="_blank" rel="noopener">restaurantguru.com/Stuora-Riga</a>, кнопка Claim your business</td><td>Страница уже существует, создана из данных Google</td></tr>
+<tr><td>Foursquare</td><td><a href="https://business.foursquare.com/claim/" target="_blank" rel="noopener">business.foursquare.com/claim</a></td><td>Ценность упала после закрытия City Guide в конце 2024, делайте в последнюю очередь</td></tr>
+<tr><td>Facebook</td><td><a href="https://www.facebook.com/pages/create" target="_blank" rel="noopener">facebook.com/pages/create</a></td><td>Локальная аудитория 35 плюс и русскоязычные рижане</td></tr>
+<tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/company/setup/new/" target="_blank" rel="noopener">Создать страницу компании</a></td><td>Главный канал выхода на HR и офис-менеджеров</td></tr>
+</table>
+</div>
+
+
+<h2>Порядок действий</h2>
+<div class="card">
+<ol>
+<li>Формы, около 40 минут: latvia.travel, потом 1188.lv, Dāvanu Serviss, Atlas Obscura.</li>
+<li>Письма на латышском, около 30 минут: LiveRiga, Meet Rīga, LIAA, Gurmania, Neighborhood.</li>
+<li>Письма на английском, около 15 минут: Falstaff, оба паб-краула.</li>
+<li>Кабинеты, около 40 минут: Tripadvisor, Apple, Bing, RestaurantGuru.</li>
+<li>На следующий день: Escape Room, Extrareality, LPVA, AmCham, Startup House.</li>
+</ol>
+<p class="note">Латышские тексты составлены грамотно, но перед отправкой в учреждения их стоит дать глянуть носителю языка. Это две минуты, а обращение в муниципальное агентство лучше отправлять вычитанным.</p>
+</div>
+
+</div>
+
+<script>
+function flash(btn){
+  const old = btn.textContent;
+  btn.textContent = "Скопировано";
+  btn.classList.add("done");
+  setTimeout(()=>{ btn.textContent = old; btn.classList.remove("done"); }, 1600);
+}
+function copyText(text, btn){
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(()=>flash(btn));
+  } else {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    flash(btn);
+  }
+}
+document.addEventListener("click", e=>{
+  const b = e.target.closest("button");
+  if(!b) return;
+  if(b.dataset.copy){ copyText(b.dataset.copy, b); return; }
+  if(b.dataset.src){
+    const el = document.getElementById(b.dataset.src);
+    if(el) copyText(el.textContent, b);
+  }
+});
+</script>
+</body>
+</html>

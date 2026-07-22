@@ -1,5 +1,10 @@
 # Stuora — Outreach Kit: куда писать, на каком языке и что именно
 
+> **Готовые письма для отправки живут в `letters.html`** (живая версия:
+> https://andrewkuchik.github.io/stuora-growth-playbook/letters.html).
+> Там кнопки «копировать», подставлены имя Andrejs Birzgals и телефон +371 29270207,
+> и убраны длинные тире. Этот файл — исследовательские заметки и обоснования.
+
 Проверено вручную (веб-поиск + открытие страниц) в июле 2026.
 Бар: **Stuora**, Audēju iela 15, Rīga · speakeasy · домашние настойки · @stuora.bar · stuora.lv · stuorasmm@gmail.com
 
