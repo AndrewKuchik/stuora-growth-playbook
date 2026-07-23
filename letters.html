@@ -23,14 +23,13 @@
   h2:first-of-type{border-top:0;padding-top:0}
   .lead{color:var(--mut);margin:0 0 18px;font-size:15px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:18px 18px 16px;margin:0 0 18px}
+    padding:18px 18px 16px;margin:0 0 18px;scroll-margin-top:16px}
   .ttl{font-weight:600;font-size:17px;margin:0 0 2px}
   .meta{color:var(--mut);font-size:14px;margin:0 0 14px}
   .lang{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;
     background:var(--acc-soft);color:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px;
     vertical-align:2px}
   .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
-  .lbl{font-size:13px;color:var(--mut);min-width:64px}
   .val{font-weight:600;word-break:break-all}
   button{font:inherit;font-size:13px;font-weight:600;cursor:pointer;
     background:var(--acc);color:#fff;border:0;border-radius:7px;padding:6px 12px}
@@ -58,22 +57,31 @@
 
 <h1>Stuora: письма и заявки на размещение</h1>
 <p class="sub">Кнопка «Открыть в Gmail» откроет готовое письмо в браузере: адрес, тема и текст уже подставлены, остаётся нажать «Отправить».<br>
-Кнопка «Открыть в почтовой программе» нужна, только если вы пользуетесь Outlook или Почтой Windows.<br>
 Andrejs Birzgals, +371 29270207, stuorasmm@gmail.com</p>
 
 <div class="card" style="background:var(--acc-soft);border-color:var(--acc)">
+<p class="ttl" style="margin-bottom:8px">Как передать письма другому человеку</p>
+<p style="margin:0 0 10px;font-size:15px">Работает и то, и другое:</p>
+<ul style="margin:0 0 10px">
+<li><b>Всю подборку целиком.</b> Просто перешлите ссылку на эту страницу. Человек открывает её у себя, жмёт «Открыть в Gmail» и отправляет со своего адреса.</li>
+<li><b>Одно конкретное письмо.</b> У каждого письма есть кнопка <b>«Ссылка для коллеги»</b>. Она копирует ссылку, которая сразу открывает готовое письмо в Gmail. Кидаете её в WhatsApp или Telegram, человек нажимает и отправляет.</li>
+</ul>
+<p style="margin:0;font-size:14px;color:var(--mut)">Письмо уйдёт с того адреса, под которым человек залогинен в Gmail. Если нужно, чтобы всё уходило именно от бара, пусть войдёт в stuorasmm@gmail.com.</p>
+</div>
+
+<div class="card">
 <p class="ttl" style="margin-bottom:8px">Как мы себя описываем в этих письмах</p>
-<p style="margin:0 0 10px;font-size:15px">Небольшой атмосферный коктейль-бар на тихой улочке Старого города, в стороне от основных потоков.
-Намеренно негромкое место, куда приходят посидеть и нормально поговорить, а не перекрикивать музыку. Вход неприметный, в духе speakeasy.
-Главная особенность: домашние настойки на натуральных сезонных ингредиентах. В карте есть вегетарианские позиции и полностью безалкогольные версии напитков.</p>
-<p style="margin:0;font-size:14px;color:var(--mut)">Ни «рюмочной», ни винтажа, ни советских отсылок в текстах нет. Это убрано намеренно.</p>
+<p style="margin:0 0 10px;font-size:15px">Атмосферный коктейль-бар в Старом городе, Audēju iela 15. К нам приходят, чтобы спокойно посидеть и поговорить, в speakeasy-настроении.
+Основа: настойки собственного приготовления на натуральных сезонных ингредиентах. Из безалкогольного своя комбуча, улун и гибискус.
+Гостей обслуживаем на латышском, английском и русском.</p>
+<p style="margin:0;font-size:14px;color:var(--mut)">Убрано намеренно: «рюмочная», винтаж и советские отсылки, слово «небольшой», формулировки про «неприметный вход» и «мы не громкое место», упоминания вегетарианского меню, часы работы.</p>
 </div>
 
 <div class="card">
 <p class="ttl" style="margin-bottom:8px">Что осталось вписать вручную</p>
-<p style="margin:0;font-size:15px">В текстах есть подсвеченные места вроде <span class="fill">[ievietot darba laiku]</span>. Это то, что знаете только вы:
-часы работы, вместимость зала, три фирменных коктейля, число настоек, максимальный размер группы.
-Заполните перед отправкой, письмо открывается уже готовым, править можно прямо в почте.</p>
+<p style="margin:0;font-size:15px">Осталось всего три места, все подсвечены: <span class="fill">вместимость зала</span> (в письмах Falstaff и Meet Rīga),
+<span class="fill">максимальный размер группы</span> и <span class="fill">цены для групп</span> (в письмах паб-краулам).
+Названия настоек и коктейлей я взял с вашего сайта, их вписывать не нужно.</p>
 </div>
 
 
@@ -82,12 +90,13 @@ Andrejs Birzgals, +371 29270207, stuorasmm@gmail.com</p>
 По закону о госязыке (Valsts valodas likums, 10. pants) в муниципальные и государственные учреждения пишем на латышском.</p>
 
 <!-- 1 -->
-<div class="card" data-to="travel@riga.lv" data-cc="invest@riga.lv" data-sid="s1" data-bid="b1">
+<div class="card" id="p1" data-to="travel@riga.lv" data-cc="invest@riga.lv" data-sid="s1" data-bid="b1">
   <p class="ttl">1. LiveRiga, официальный турпортал Риги <span class="lang">LV</span></p>
   <p class="meta">Формы на портале нет, проверено трижды. Цель: попасть в гид «Time for a cocktail». Телефон Туринфоцентра +371 67037900.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">travel@riga.lv, копия invest@riga.lv</span>
   </div>
   <div class="row">
@@ -100,17 +109,18 @@ Andrejs Birzgals, +371 29270207, stuorasmm@gmail.com</p>
 
 Lūdzam iekļaut mūsu bāru liveriga.com objektu datubāzē un izvērtēt iespēju to iekļaut ceļvedī "Time for a cocktail".
 
-Stuora ir neliels atmosfērisks kokteiļu bārs Vecrīgā, Audēju ielā 15, klusā ielā nomaļus no galvenajām tūristu plūsmām. Mēs apzināti neesam skaļa vieta: pie mums nāk, lai mierīgi apsēstos un parunātu. Ieeja ir diskrēta, speakeasy noskaņā.
+Stuora ir atmosfērisks kokteiļu bārs Vecrīgā, Audēju ielā 15. Pie mums nāk, lai mierīgi apsēstos un parunātu, speakeasy noskaņā.
 
-Mūsu galvenā lieta ir pašu gatavoti uzlējumi no dabīgām sezonālām sastāvdaļām. Ēdienkartē ir veģetāriem piemērotas pozīcijas un pilnībā bezalkoholiskas versijas. Viesus apkalpojam latviešu, angļu un krievu valodā. No ceturtdienas līdz svētdienai esam atvērti apmeklētājiem, no pirmdienas līdz trešdienai telpa pieejama privātiem pasākumiem.
+Mūsu pamatā ir pašu gatavoti uzlējumi no dabīgām sezonālām sastāvdaļām: kūpinātu plūmju degvīns, avenu un priežu džins, burkānu un diļļu burbons, sēņu burbons un citi. Uz tiem būvēti arī mūsu kokteiļi, piemēram, "Tomato & Sprats Mary", "Cowberry Negroni" un "Pickle Martini". No bezalkoholiskā piedāvājam pašu gatavotu kombuču, oolong un hibiska.
+
+Viesus apkalpojam latviešu, angļu un krievu valodā. No ceturtdienas līdz svētdienai esam atvērti apmeklētājiem, no pirmdienas līdz trešdienai telpa pieejama privātiem pasākumiem.
 
 Nosaukums: Stuora
-Adrese: Audēju iela 15, Rīga
+Adrese: Audēju iela 15, Rīga (ieeja no Rīdzenes ielas)
 Mājaslapa: stuora.lv
 Instagram: @stuora.bar
 E-pasts: stuorasmm@gmail.com
 Tālrunis: +371 29270207
-Darba laiks: [ievietot darba laiku]
 
 Fotogrāfijas un aprakstu latviešu un angļu valodā nosūtīsim pēc pieprasījuma. Labprāt uzņemsim redaktoru vai Tūrisma informācijas centra kolēģi uz degustāciju.
 
@@ -124,13 +134,14 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 2 -->
-<div class="card" data-to="guides@falstaff.com" data-sid="s2" data-bid="b2">
+<div class="card" id="p2" data-to="guides@falstaff.com" data-sid="s2" data-bid="b2">
   <p class="ttl">2. Falstaff Bar Guide, международный гид <span class="lang">EN</span></p>
   <p class="meta">Размещение бесплатное, подтверждено их FAQ. Не пишите на sales@falstaff.com, это платный профиль.
     Когда карточка появится, попросите доступ в их B2B-кабинет письмом на servicepoint@falstaff.com с темой «Request Access».</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">guides@falstaff.com</span>
   </div>
   <div class="row">
@@ -144,19 +155,20 @@ stuorasmm@gmail.com</div>
 We would like to request a listing for our bar in the Falstaff Bar Guide.
 
 Stuora, Audēju iela 15, Riga, Latvia.
-A small, atmospheric cocktail bar in Riga's Old Town, on a quiet street just off the main tourist flow. A deliberately unhurried room where guests sit down and talk rather than shout over music, with a discreet entrance in the speakeasy spirit.
+An atmospheric cocktail bar in Riga's Old Town, in a speakeasy mood. People come here to sit down and talk over one good drink.
 
-Our signature is house made infusions built on natural, seasonal ingredients. The list changes with the season, and the menu includes vegetarian friendly options and full non alcoholic versions of our drinks.
+Everything on our list is built on infusions we make in house from natural, seasonal ingredients: smoked plum vodka, blackcurrant and chilli vodka, raspberry and pine gin, redcurrant and hibiscus tequila, carrot and dill bourbon, mushroom bourbon and others.
 
-Signature drinks: [insert three cocktails].
-Seats: around [insert number].
+Signature cocktails: Tomato & Sprats Mary, Cowberry Negroni, Cherry Boulevardier, Carrot & Dill, Pickle Martini.
+Non-alcoholic: our own oolong and hibiscus kombucha, brewed in house.
+Seats: around [ВСТАВИТЬ ЧИСЛО].
 
 Website: stuora.lv
 Instagram: @stuora.bar
 E-mail: stuorasmm@gmail.com
 Phone: +371 29270207
 
-We can send high resolution photography, the current menu and full opening hours in whatever format your editors need. Latvia is thinly represented in the guide, and we would be glad to host a Falstaff taster in Riga.
+We can send high resolution photography and the current menu in whatever format your editors need. Latvia is thinly represented in the guide, and we would be glad to host a Falstaff taster in Riga.
 
 Please let us know the next step.
 
@@ -168,12 +180,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 3 -->
-<div class="card" data-to="collabs@neighborhood.lv" data-cc="hello@neighborhood.lv" data-sid="s3" data-bid="b3">
+<div class="card" id="p3" data-to="collabs@neighborhood.lv" data-cc="hello@neighborhood.lv" data-sid="s3" data-bid="b3">
   <p class="ttl">3. Neighborhood.lv, издание про Ригу <span class="lang">LV</span></p>
   <p class="meta">Страница Cooperation есть, но формы на ней нет, там прямо написано писать. Издание выходит на трёх языках.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">collabs@neighborhood.lv, копия hello@</span>
   </div>
   <div class="row">
@@ -181,19 +194,19 @@ stuorasmm@gmail.com</div>
     <button class="ghost" data-src="b3">Копировать текст</button>
     <button class="ghost" data-copy="collabs@neighborhood.lv">Копировать адрес</button>
   </div>
-  <div class="body" id="s3">Stāsta ideja: klusais kokteiļu bārs Vecrīgā, kas gatavo pats savus uzlējumus</div>
+  <div class="body" id="s3">Stāsta ideja: bārs Vecrīgā, kas visu savu karti būvē uz pašu gatavotiem uzlējumiem</div>
   <div class="body" id="b3">Sveiki, Neighborhood komanda!
 
 Stāsta ideja un vienlaikus atgādinājums, ka Jūsu ceļvedī par Rīgas kokteiļu bāriem mūsu nav.
 
-Stuora, Audēju iela 15, ir neliels atmosfērisks bārs klusā Vecrīgas ielā, nedaudz nomaļus no galvenajām plūsmām. Ieeja ir diskrēta, un tas ir apzināti: mēs esam vieta, kur cilvēki apsēžas un sarunājas, nevis kliedz pāri mūzikai.
+Stuora, Audēju iela 15, ir atmosfērisks kokteiļu bārs Vecrīgā. Pie mums nāk, lai mierīgi apsēstos un parunātu, speakeasy noskaņā.
 
-Viss interesantais mūsu kartē sākas ar uzlējumu, ko gatavojam paši no dabīgām, sezonālām sastāvdaļām. Ir arī veģetāriem piemērotas pozīcijas un pilnībā bezalkoholiskas versijas.
+Viss interesantais mūsu kartē sākas ar uzlējumu, ko gatavojam paši: kūpinātu plūmju degvīns, upeņu un čili degvīns, avenu un priežu džins, sarkano jāņogu un hibiska tekila, burkānu un diļļu burbons, sēņu burbons. Uz tiem būvēti kokteiļi, tostarp "Tomato & Sprats Mary" un "Cowberry Negroni". No bezalkoholiskā gatavojam savu kombuču, oolong un hibiska.
 
 Iespējamie stāsta leņķi:
-1. Kā bārs pats izgatavo [ievietot skaitu] uzlējumus: sastāvdaļas, sezona un tas, kas galu galā paliek kartē.
-2. Kur Vecrīgā vispār var normāli parunāties: klusās vietas skaļajā kvartālā.
-3. Bezalkoholiskā karte kā pilnvērtīga izvēle, nevis piekāpšanās.
+1. Bārs, kur pat bezalkoholiskais tiek gatavots mājās: kā top uzlējumi un kombuča, kas izdodas un kas ne.
+2. Kur Vecrīgā vispār var normāli parunāties, nevis kliegt pāri mūzikai.
+3. Latviskās garšas kokteiļos: šprotes, brūklenes, sēnes un dilles kā nopietnas sastāvdaļas, nevis joks.
 
 Labprāt uzaicinām Jūsu autoru un fotogrāfu uz degustāciju. No pirmdienas līdz trešdienai varam aizvērt zāli, lai būtu kluss fotografēšanai. Materiālus varam sagatavot latviešu, angļu un krievu valodā.
 
@@ -205,12 +218,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 4 -->
-<div class="card" data-to="info@redfoxtours.eu" data-sid="s4" data-bid="b4">
+<div class="card" id="p4" data-to="info@redfoxtours.eu" data-sid="s4" data-bid="b4">
   <p class="ttl">4. Red Fox Tours, паб-краул <span class="lang">EN</span></p>
   <p class="meta">Маршрут уже идёт по Peldu и Kaļķu, это ваш квартал. Форма на сайте только для брони туров, для баров ничего нет. Тел. +371 29376677.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">info@redfoxtours.eu</span>
   </div>
   <div class="row">
@@ -218,22 +232,21 @@ stuorasmm@gmail.com</div>
     <button class="ghost" data-src="b4">Копировать текст</button>
     <button class="ghost" data-copy="info@redfoxtours.eu">Копировать адрес</button>
   </div>
-  <div class="body" id="s4">Partnership offer: Stuora as a quieter stop on your pub crawl</div>
+  <div class="body" id="s4">Partnership offer: Stuora as a stop on your pub crawl</div>
   <div class="body" id="b4">Hello,
 
 Your route already runs through Peldu and Kaļķu. We are three minutes away at Audēju iela 15.
 
-Stuora is a small cocktail bar on a quiet Old Town street, with a discreet entrance in the speakeasy spirit. We make our own infusions from natural, seasonal ingredients, and we would like to be one of the stops on your crawl.
+Stuora is an atmospheric cocktail bar in a speakeasy mood, and we would like to be one of the stops on your crawl. Everything we pour is built on infusions we make in house: smoked plum vodka, raspberry and pine gin, carrot and dill bourbon and others.
 
 What we offer your groups:
 - a welcome infusion shot for every guest in the group, on us;
-- the discreet entrance, which is a real moment for a tour and good photo and video content for your social media;
-- a change of pace: a calmer room in the middle of a loud night, which groups tend to remember;
-- a group rate on the following drinks: [insert drinks and prices];
-- vegetarian friendly options and non alcoholic versions for guests who want them;
+- something groups actually remember: eleven house infusions, and cocktails like Tomato & Sprats Mary that people photograph before they drink;
+- our own kombucha for anyone who is not drinking, oolong or hibiscus;
+- a group rate on the following drinks: [ВСТАВИТЬ НАПИТКИ И ЦЕНЫ];
 - guests served in English, Latvian and Russian.
 
-One condition: our room is small and quiet by design, so we work best with groups of up to [insert number] people, and we would agree the arrival time in advance.
+One condition: the room is intimate, so we work best with groups of up to [ВСТАВИТЬ ЧИСЛО] people, and we would agree the arrival time in advance.
 
 Would you like to come by this week and see the place? Drinks on us.
 
@@ -245,12 +258,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 5 -->
-<div class="card" data-to="info@riga-pub-crawl.com" data-sid="s5" data-bid="b5">
+<div class="card" id="p5" data-to="info@riga-pub-crawl.com" data-sid="s5" data-bid="b5">
   <p class="ttl">5. Riga Pub Crawl <span class="lang">EN</span></p>
   <p class="meta">Второй оператор, тот же подход. Форма только для брони. Тел. +371 66163448, Tirgoņu iela 10.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">info@riga-pub-crawl.com</span>
   </div>
   <div class="row">
@@ -258,22 +272,21 @@ stuorasmm@gmail.com</div>
     <button class="ghost" data-src="b5">Копировать текст</button>
     <button class="ghost" data-copy="info@riga-pub-crawl.com">Копировать адрес</button>
   </div>
-  <div class="body" id="s5">Partnership offer: Stuora as a quieter stop on your pub crawl</div>
+  <div class="body" id="s5">Partnership offer: Stuora as a stop on your pub crawl</div>
   <div class="body" id="b5">Hello,
 
 We are three minutes from your Old Town route, at Audēju iela 15.
 
-Stuora is a small cocktail bar on a quiet Old Town street, with a discreet entrance in the speakeasy spirit. We make our own infusions from natural, seasonal ingredients, and we would like to be one of the stops on your crawl.
+Stuora is an atmospheric cocktail bar in a speakeasy mood, and we would like to be one of the stops on your crawl. Everything we pour is built on infusions we make in house: smoked plum vodka, raspberry and pine gin, carrot and dill bourbon and others.
 
 What we offer your groups:
 - a welcome infusion shot for every guest in the group, on us;
-- the discreet entrance, which is a real moment for a tour and good photo and video content for your social media;
-- a change of pace: a calmer room in the middle of a loud night, which groups tend to remember;
-- a group rate on the following drinks: [insert drinks and prices];
-- vegetarian friendly options and non alcoholic versions for guests who want them;
+- something groups actually remember: eleven house infusions, and cocktails like Tomato & Sprats Mary that people photograph before they drink;
+- our own kombucha for anyone who is not drinking, oolong or hibiscus;
+- a group rate on the following drinks: [ВСТАВИТЬ НАПИТКИ И ЦЕНЫ];
 - guests served in English, Latvian and Russian.
 
-One condition: our room is small and quiet by design, so we work best with groups of up to [insert number] people, and we would agree the arrival time in advance.
+One condition: the room is intimate, so we work best with groups of up to [ВСТАВИТЬ ЧИСЛО] people, and we would agree the arrival time in advance.
 
 Would you like to come by this week and see the place? Drinks on us.
 
@@ -285,12 +298,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 6 -->
-<div class="card" data-to="info@xroom.lv" data-sid="s6" data-bid="b6">
+<div class="card" id="p6" data-to="info@xroom.lv" data-sid="s6" data-bid="b6">
   <p class="ttl">6. Escape Room Riga, партнёрство после квеста <span class="lang">LV</span></p>
   <p class="meta">Формы на сайте нет, только телефон и почта. Тел. +371 22066566.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">info@xroom.lv</span>
   </div>
   <div class="row">
@@ -301,13 +315,14 @@ stuorasmm@gmail.com</div>
   <div class="body" id="s6">Sadarbības piedāvājums: pēc kvesta kokteiļi bārā Stuora</div>
   <div class="body" id="b6">Labdien!
 
-Mēs esam Stuora, neliels kokteiļu bārs klusā Vecrīgas ielā, Audēju ielā 15. Piedāvājam sadarbību Jūsu korporatīvajām un tūristu grupām.
+Mēs esam Stuora, atmosfērisks kokteiļu bārs Vecrīgā, Audēju ielā 15. Piedāvājam sadarbību Jūsu korporatīvajām un tūristu grupām.
 
-Ideja ir vienkārša: Jūs pārdodat kvestu, mēs uzņemam grupu pēc tā.
+Ideja ir vienkārša: Jūs pārdodat kvestu, mēs uzņemam grupu pēc tā. Pēc kvesta cilvēki grib apsēsties un pārrunāt, kas tikko notika, un mēs esam tieši tāda vieta.
+
 - Pakete "kvests un kokteiļi": Jūsu viesi ierodas pie mums ar promo kodu un saņem sagaidīšanas uzlējumu.
 - No pirmdienas līdz trešdienai atdodam visu zāli privātām grupām, tieši tajās dienās korporatīvie pasākumi tiek rezervēti visbiežāk.
-- Varam piedāvāt kokteiļu meistarklasi kā programmas turpinājumu. Ir veģetāriem piemērotas pozīcijas un pilnībā bezalkoholiska versija katram formātam.
-- Pēc kvesta cilvēki grib apsēsties un pārrunāt, kas tikko notika. Mēs esam tieši tāda vieta: klusa un atmosfēriska, nevis skaļa.
+- Visu gatavojam paši: vienpadsmit uzlējumi, tostarp kūpinātu plūmju degvīns un sēņu burbons, un pašu darīta kombuča tiem, kas nedzer alkoholu.
+- Varam piedāvāt kokteiļu meistarklasi kā programmas turpinājumu.
 - Par komisiju vai atlaižu nosacījumiem varam vienoties, esam elastīgi.
 
 Aicinām Jūs ciemos, parādīsim zāli, iedosim nogaršot uzlējumus un vienosimies uz vietas.
@@ -320,12 +335,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 7 -->
-<div class="card" data-to="info@extrareality.lv" data-sid="s7" data-bid="b7">
+<div class="card" id="p7" data-to="info@extrareality.lv" data-sid="s7" data-bid="b7">
   <p class="ttl">7. Extrareality, афиша квизов Риги <span class="lang">LV</span></p>
   <p class="meta">Кабинет для партнёров есть, но доступ дают вручную после письма, формы регистрации нет. Тел. +371 28723286.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">info@extrareality.lv</span>
   </div>
   <div class="row">
@@ -336,14 +352,15 @@ stuorasmm@gmail.com</div>
   <div class="body" id="s7">Sadarbība: pub kvizs un kokteiļi bārā Stuora</div>
   <div class="body" id="b7">Labdien!
 
-Mēs esam Stuora, neliels atmosfērisks kokteiļu bārs klusā Vecrīgas ielā, Audēju ielā 15.
+Mēs esam Stuora, atmosfērisks kokteiļu bārs Vecrīgā, Audēju ielā 15.
 
 Esam gatavi uzņemt pie sevis pub kvizu darba dienas vakarā un lūdzam iekļaut mūs Jūsu Rīgas viktorīnu afišā. Lūdzu, pastāstiet, kā notiek pievienošanās un vai varam saņemt pieeju partneru kabinetam.
 
 Kāpēc telpa der viktorīnai:
-- esam klusa vieta, kur komandas viena otru dzird, un tas viktorīnā ir svarīgi;
+- pie mums nāk, lai apsēstos un parunātu, tāpēc komandas viena otru dzird, un viktorīnā tas ir svarīgi;
 - no pirmdienas līdz trešdienai atdodam visu zāli, tieši darba dienu vakaros;
-- piedāvājam pašu gatavotus uzlējumus no dabīgām sezonālām sastāvdaļām, ir veģetāriem piemērotas pozīcijas un pilnībā bezalkoholiskas versijas;
+- visu gatavojam paši: vienpadsmit uzlējumi, tostarp kūpinātu plūmju degvīns, avenu un priežu džins un sēņu burbons;
+- no bezalkoholiskā piedāvājam pašu darītu kombuču, oolong un hibiska, tā ka komandas var spēlēt arī bez alkohola;
 - varam sagatavot īpašu piedāvājumu viktorīnas dalībniekiem.
 
 Atsevišķi piedāvājam sadarbību ar Jūsu kvestu grupām: pakete "kvests un kokteiļi" ar promo kodu un sagaidīšanas uzlējumu. Par komisiju vai atlaidēm varam vienoties.
@@ -358,12 +375,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 8 -->
-<div class="card" data-to="lpva@lpva.lv" data-sid="s8" data-bid="b8">
+<div class="card" id="p8" data-to="lpva@lpva.lv" data-sid="s8" data-bid="b8">
   <p class="ttl">8. LPVA, латвийская ассоциация персонала (HR) <span class="lang">LV</span></p>
   <p class="meta">Те, кто и решает про тимбилдинги. Членство у них платное, но вам оно не нужно: письмо предлагает бесплатно провести у вас их вечер. Тел. +371 29163036.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">lpva@lpva.lv</span>
   </div>
   <div class="row">
@@ -376,13 +394,13 @@ stuorasmm@gmail.com</div>
 
 Piedāvājam savu telpu kādam no Jūsu pasākumiem, biedrībai bez maksas.
 
-Stuora ir neliels atmosfērisks kokteiļu bārs Audēju ielā 15, klusā Vecrīgas ielā. Tā ir vieta, kur var normāli sarunāties, un tieši tas networking vakaros parasti pietrūkst. No pirmdienas līdz trešdienai visa telpa ir pieejama privātiem pasākumiem.
+Stuora ir atmosfērisks kokteiļu bārs Vecrīgā, Audēju ielā 15. Pie mums nāk, lai apsēstos un parunātu, un tieši tas networking vakaros parasti pietrūkst. No pirmdienas līdz trešdienai visa telpa ir pieejama privātiem pasākumiem.
 
 Ko nodrošinām organizatoram bez maksas:
 - visas telpas ekskluzīvu izmantošanu vakaram;
 - sagaidīšanas dzērienu no mūsu pašu uzlējumiem katram viesim;
 - īsu meistarklasi kā ledlauzi, kurā viesi kopā pagatavo un nosauc uzlējumu;
-- veģetāriem piemērotas uzkodas un bezalkoholisku alternatīvu katram dzērienam.
+- pašu darītu kombuču tiem, kas nedzer alkoholu, tā ka neviens nestāv ar tukšu glāzi.
 
 Jūs atvedat auditoriju, mēs parādām, ko telpa spēj. Viesi maksā tikai par to, ko pasūta papildus sagaidīšanas dzērienam, vai arī vienojamies par fiksētu paketi uz vienu personu.
 
@@ -396,12 +414,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 9 -->
-<div class="card" data-to="amcham@amcham.lv" data-sid="s9" data-bid="b9">
+<div class="card" id="p9" data-to="amcham@amcham.lv" data-sid="s9" data-bid="b9">
   <p class="ttl">9. AmCham Latvia, Американская торговая палата <span class="lang">EN</span></p>
   <p class="meta">Страницы членства отдают 404, работает только почта. Рабочий язык английский. Тел. +371 20717791.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">amcham@amcham.lv</span>
   </div>
   <div class="row">
@@ -409,18 +428,18 @@ stuorasmm@gmail.com</div>
     <button class="ghost" data-src="b9">Копировать текст</button>
     <button class="ghost" data-copy="amcham@amcham.lv">Копировать адрес</button>
   </div>
-  <div class="body" id="s9">Offer to host your networking evening in a quiet Old Town bar</div>
+  <div class="body" id="s9">Offer to host your networking evening at Stuora, Old Town Riga</div>
   <div class="body" id="b9">Dear AmCham team,
 
 We would like to offer our venue for one of your networking events, free of charge for the chamber.
 
-Stuora is a small cocktail bar at Audēju iela 15, on a quiet Old Town street. It is an unhurried room where people can actually hear each other, which is usually the missing piece at a networking evening. On Monday to Wednesday the whole room is available for private events.
+Stuora is an atmospheric cocktail bar at Audēju iela 15 in the Old Town, in a speakeasy mood. People come here to sit down and talk, which is usually the missing piece at a networking evening. On Monday to Wednesday the whole room is available for private events.
 
 What we provide at no cost to you:
 - exclusive use of the venue for the evening;
-- a welcome drink made from our own infusions for every guest;
+- a welcome drink for every guest, made from one of our eleven house infusions;
 - a short infusion making icebreaker, where guests mix and name a blend together;
-- vegetarian friendly snacks and a non alcoholic option for every drink served.
+- our own oolong and hibiscus kombucha for guests who are not drinking.
 
 You bring the audience, we show what the venue can do. Guests pay only for what they order beyond the welcome drink, or you take a fixed package per person, whichever you prefer.
 
@@ -434,12 +453,13 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 10 -->
-<div class="card" data-to="kristians.jenciuss@startuphouse.lv" data-sid="s10" data-bid="b10">
+<div class="card" id="p10" data-to="kristians.jenciuss@startuphouse.lv" data-sid="s10" data-bid="b10">
   <p class="ttl">10. Startup House Riga <span class="lang">EN</span></p>
   <p class="meta">Стартап-среда, стандарт английский. На сайте есть ещё анкета Typeform по кнопке Fill the form.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">kristians.jenciuss@startuphouse.lv</span>
   </div>
   <div class="row">
@@ -447,17 +467,17 @@ stuorasmm@gmail.com</div>
     <button class="ghost" data-src="b10">Копировать текст</button>
     <button class="ghost" data-copy="kristians.jenciuss@startuphouse.lv">Копировать адрес</button>
   </div>
-  <div class="body" id="s10">Offer for your residents: a quiet Old Town bar for team evenings</div>
+  <div class="body" id="s10">Offer for your residents: an Old Town bar for team evenings</div>
   <div class="body" id="b10">Hello,
 
 We would like to offer something to the Startup House community.
 
-Stuora is a small cocktail bar at Audēju iela 15, on a quiet Old Town street. It is an unhurried room where people can actually hear each other, and on Monday to Wednesday the whole space is available for private groups. We make our own infusions from natural, seasonal ingredients, and every format has vegetarian friendly snacks and a full non alcoholic version.
+Stuora is an atmospheric cocktail bar at Audēju iela 15 in the Old Town, in a speakeasy mood. People come here to sit down and talk. On Monday to Wednesday the whole space is available for private groups. Everything we serve is made in house: eleven infusions, from smoked plum vodka to mushroom bourbon, plus our own oolong and hibiscus kombucha for anyone who is not drinking.
 
 What we propose:
 - a standing perk for residents: a welcome infusion, or a discount on the first team booking;
 - one demo evening for you and the residents, on us, so the community sees the place first hand;
-- team formats for 8 to 30 people: an infusion workshop, a cocktail class, or a blind tasting;
+- team formats: an infusion workshop, a cocktail class, or a blind tasting;
 - a flyer or QR code at the space, if that is allowed.
 
 Could we book 20 minutes to show you the room, or agree a date for the demo evening?
@@ -470,13 +490,14 @@ stuorasmm@gmail.com</div>
 </div>
 
 <!-- 11 -->
-<div class="card" data-to="info@gurmania.lv" data-sid="s11" data-bid="b11">
+<div class="card" id="p11" data-to="info@gurmania.lv" data-sid="s11" data-bid="b11">
   <p class="ttl">11. Gurmania.lv, каталог заведений <span class="lang">LV</span></p>
   <p class="meta">Тут сначала попробуйте кабинет <a href="https://gurmania.lv/lv/rcp-register" target="_blank" rel="noopener">gurmania.lv/lv/rcp-register</a>, регистрация сейчас бесплатна.
     Это письмо на случай, если кабинет не пустит, или если хотите, чтобы карточку завели за вас. Тел. +371 27811218.</p>
   <div class="send">
     <button class="big" data-gmail>Открыть в Gmail</button>
-    <button class="ghost" data-mail>Открыть в почтовой программе</button>
+    <button class="ghost" data-share>Ссылка для коллеги</button>
+    <button class="ghost" data-mail>Почтовая программа</button>
     <span class="hint">info@gurmania.lv</span>
   </div>
   <div class="row">
@@ -490,15 +511,14 @@ stuorasmm@gmail.com</div>
 Lūdzam pievienot mūsu bāru Gurmania.lv katalogam.
 
 Nosaukums: Stuora
-Adrese: Audēju iela 15, Rīga
+Adrese: Audēju iela 15, Rīga (ieeja no Rīdzenes ielas)
 Veids: kokteiļu bārs
 Mājaslapa: stuora.lv
 Instagram: @stuora.bar
 E-pasts: stuorasmm@gmail.com
 Tālrunis: +371 29270207
-Darba laiks: [ievietot darba laiku]
 
-Īss apraksts: neliels atmosfērisks kokteiļu bārs klusā Vecrīgas ielā, ar diskrētu ieeju speakeasy noskaņā. Vieta, kur var mierīgi apsēsties un parunāt. Piedāvājam pašu gatavotus uzlējumus no dabīgām sezonālām sastāvdaļām, ir veģetāriem piemērotas pozīcijas un pilnībā bezalkoholiskas dzērienu versijas. No ceturtdienas līdz svētdienai atvērts apmeklētājiem, no pirmdienas līdz trešdienai pieejams privātiem un korporatīviem pasākumiem.
+Īss apraksts: atmosfērisks kokteiļu bārs Vecrīgā speakeasy noskaņā, kur nāk, lai mierīgi apsēstos un parunātu. Visu gatavojam paši: vienpadsmit uzlējumi no dabīgām sezonālām sastāvdaļām, tostarp kūpinātu plūmju degvīns, avenu un priežu džins un sēņu burbons, uz kuriem būvēti mūsu kokteiļi. No bezalkoholiskā gatavojam savu kombuču, oolong un hibiska. No ceturtdienas līdz svētdienai atvērts apmeklētājiem, no pirmdienas līdz trešdienai pieejams privātiem un korporatīviem pasākumiem.
 
 Fotogrāfijas un dzērienu karti nosūtīsim uzreiz pēc pieprasījuma. Lūdzu, informējiet, kāda informācija vēl ir nepieciešama.
 
@@ -546,7 +566,7 @@ stuorasmm@gmail.com</div>
 <h2>Порядок действий</h2>
 <div class="card">
 <ol>
-<li>Одиннадцать писем выше: открываете, дописываете подсвеченные места, отправляете. Около часа на все.</li>
+<li>Одиннадцать писем выше: открываете, дописываете три подсвеченных места, отправляете. Около часа на все.</li>
 <li>Формы: latvia.travel, Gurmania, 1188.lv, Dāvanu Serviss, Atlas Obscura, Meet Rīga. Около 50 минут.</li>
 <li>Кабинеты: Tripadvisor, Apple, Bing, RestaurantGuru, Foursquare. Около 40 минут.</li>
 </ol>
@@ -560,11 +580,11 @@ function flash(btn, word){
   const old = btn.textContent;
   btn.textContent = word || "Скопировано";
   btn.classList.add("done");
-  setTimeout(()=>{ btn.textContent = old; btn.classList.remove("done"); }, 1600);
+  setTimeout(()=>{ btn.textContent = old; btn.classList.remove("done"); }, 1800);
 }
-function copyText(text, btn){
+function copyText(text, btn, word){
   if(navigator.clipboard && window.isSecureContext){
-    navigator.clipboard.writeText(text).then(()=>flash(btn));
+    navigator.clipboard.writeText(text).then(()=>flash(btn, word));
   } else {
     const ta = document.createElement("textarea");
     ta.value = text;
@@ -572,25 +592,30 @@ function copyText(text, btn){
     document.body.appendChild(ta); ta.select();
     document.execCommand("copy");
     document.body.removeChild(ta);
-    flash(btn);
+    flash(btn, word);
   }
+}
+function gmailUrl(card){
+  const subj = document.getElementById(card.dataset.sid).textContent;
+  const body = document.getElementById(card.dataset.bid).textContent;
+  let url = "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=" + encodeURIComponent(card.dataset.to);
+  if(card.dataset.cc) url += "&cc=" + encodeURIComponent(card.dataset.cc);
+  return url + "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
 }
 document.addEventListener("click", e=>{
   const b = e.target.closest("button");
   if(!b) return;
+  const card = b.closest(".card");
   if(b.hasAttribute("data-gmail")){
-    const card = b.closest(".card");
-    const subj = document.getElementById(card.dataset.sid).textContent;
-    const body = document.getElementById(card.dataset.bid).textContent;
-    let url = "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=" + encodeURIComponent(card.dataset.to);
-    if(card.dataset.cc) url += "&cc=" + encodeURIComponent(card.dataset.cc);
-    url += "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
-    window.open(url, "_blank", "noopener");
+    window.open(gmailUrl(card), "_blank", "noopener");
     flash(b, "Открываю Gmail");
     return;
   }
+  if(b.hasAttribute("data-share")){
+    copyText(gmailUrl(card), b, "Ссылка скопирована");
+    return;
+  }
   if(b.hasAttribute("data-mail")){
-    const card = b.closest(".card");
     const subj = document.getElementById(card.dataset.sid).textContent;
     const body = document.getElementById(card.dataset.bid).textContent;
     let url = "mailto:" + card.dataset.to + "?";
